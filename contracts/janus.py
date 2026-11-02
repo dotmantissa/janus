@@ -149,6 +149,8 @@ class Source:
     observed_upper: u64
     superseded_by: str
     quarantined: bool
+    confirmed: bool
+    confirmation_broadcasts: u8
 
 
 @allow_storage
@@ -219,7 +221,7 @@ class Janus(gl.Contract):
         if source_id not in self.sources:
             return False
         source = self.sources[source_id]
-        return not source.quarantined and not source.superseded_by and not self.authorities[source.authority_id].quarantined
+        return source.confirmed and not source.quarantined and not source.superseded_by and not self.authorities[source.authority_id].quarantined
 
     def _valid(self, request_id):
         if request_id not in self.requests:
@@ -243,7 +245,7 @@ class Janus(gl.Contract):
         for name in c:
             if not isinstance(c[name], str) or not c[name] or len(c[name]) > 512:
                 fail("AUTHORITY_CONFIG")
-        if not c["url_prefix"].startswith("https://") or "@" in c["url_prefix"] or not c["public_evidence_url"].startswith("https://"):
+        if not re.fullmatch(r"https://[A-Za-z0-9.-]+(?::[0-9]{1,5})?/[A-Za-z0-9/_.:~-]*", c["url_prefix"]) or "/../" in c["url_prefix"] or "/./" in c["url_prefix"] or not c["public_evidence_url"].startswith("https://"):
             fail("PUBLIC_HTTPS_REQUIRED")
         if authority_id in self.authorities:
             a = self.authorities[authority_id]
@@ -312,7 +314,7 @@ class Janus(gl.Contract):
             fail("PRINCIPAL_ONLY")
         if not a.confirmed or a.quarantined:
             fail("AUTHORITY_INACTIVE")
-        if not isinstance(m["url"], str) or len(m["url"]) > 1024 or not m["url"].startswith(c["url_prefix"]) or "@" in m["url"] or "?" in m["url"] or "#" in m["url"]:
+        if not isinstance(m["url"], str) or len(m["url"]) > 1024 or not m["url"].startswith(c["url_prefix"]) or not re.fullmatch(r"https://[A-Za-z0-9.-]+(?::[0-9]{1,5})?/[A-Za-z0-9/_.:~-]*", m["url"]) or "/../" in m["url"] or "/./" in m["url"]:
             fail("SOURCE_CHANNEL")
         if m["channel"] != c["channel"] or m["scope"] != c["scope"]:
             fail("SOURCE_SCOPE")
@@ -334,7 +336,7 @@ class Janus(gl.Contract):
             fail("SOURCE_REUSE")
         if len(self.source_history) >= self.capacity:
             fail("CAPACITY")
-        head_key = aid + ":" + m["subject_id"]
+        head_key = canon([aid, m["subject_id"]])
         if head_key in self.source_heads:
             old_id = self.source_heads[head_key]
             old = self.sources[old_id]
@@ -348,12 +350,39 @@ class Janus(gl.Contract):
         outcome = gl.eq_principle.strict_eq(fetch_committed)
         if outcome["status"] != "OK":
             fail(outcome["status"])
-        upper = integer(transaction_time(), 0, MAX_TIME)
-        self.sources[sid] = Source(aid, m["subject_id"], u32(m["revision"]), canon(m), outcome["text"], u64(upper), "", False)
+        self.sources[sid] = Source(aid, m["subject_id"], u32(m["revision"]), canon(m), outcome["text"], u64(0), "", False, False, u8(1))
         if head_key in self.source_heads:
             self.sources[self.source_heads[head_key]].superseded_by = sid
         self.source_heads[head_key] = sid
         self.source_history.append(sid)
+        gl.get_contract_at(gl.message.contract_address).emit(on="finalized").confirm_source(sid)
+
+    @gl.public.write
+    def confirm_source(self, source_id: str) -> None:
+        """The callback creation time bounds availability of finalized public text."""
+        if gl.message.sender_address != gl.message.contract_address:
+            fail("FINALIZED_SELF_MESSAGE_ONLY")
+        if source_id not in self.sources:
+            fail("SOURCE_MISSING")
+        s = self.sources[source_id]
+        if s.confirmed:
+            return
+        s.observed_upper = u64(integer(transaction_time(), 0, MAX_TIME))
+        s.confirmed = True
+
+    @gl.public.write
+    def retry_source_confirmation(self, source_id: str) -> None:
+        if source_id not in self.sources:
+            fail("SOURCE_MISSING")
+        s = self.sources[source_id]
+        if gl.message.sender_address != self.authorities[s.authority_id].principal:
+            fail("PRINCIPAL_ONLY")
+        if s.confirmed:
+            return
+        if s.confirmation_broadcasts >= 3:
+            fail("CONFIRMATION_RETRY_EXHAUSTED")
+        s.confirmation_broadcasts = u8(s.confirmation_broadcasts + 1)
+        gl.get_contract_at(gl.message.contract_address).emit(on="finalized").confirm_source(source_id)
 
     @gl.public.write
     def register_temporal_policy(self, policy_id: str, interpretation_rules: str, accepted_time_sources: str) -> None:
@@ -664,7 +693,7 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
         material_sources = sorted({a["witness"]["source_id"] for a in vector if a["witness"] and a["role"] in ("OCCURRENCE", "EFFECTIVE")})
         upper = max((int(self.sources[s].observed_upper) for s in material_sources), default=None)
         role_intervals["PUBLICATION"] = interval(None, upper + 1) if upper is not None else None
-        covered = {a["role"] for a in vector if a["role"] != "UNKNOWN"}
+        covered = {a["role"] for a in vector if a["role"] in ("OCCURRENCE", "EFFECTIVE")}
         if upper is not None:
             covered.add("PUBLICATION")
         missing = sorted(set(pc["interpretation"]["required_roles"]) - covered)
@@ -817,7 +846,7 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
         if source_id not in self.sources:
             fail("SOURCE_MISSING")
         s = self.sources[source_id]
-        return {"manifest": json.loads(s.manifest), "raw_text": s.raw_text, "observed_upper": int(s.observed_upper), "valid": self._source_valid(source_id), "superseded_by": s.superseded_by}
+        return {"manifest": json.loads(s.manifest), "raw_text": s.raw_text, "observed_upper": int(s.observed_upper) if s.confirmed else None, "confirmed": s.confirmed, "confirmation_broadcasts": int(s.confirmation_broadcasts), "valid": self._source_valid(source_id), "superseded_by": s.superseded_by}
 
     @gl.public.view
     def get_policy(self, policy_id: str, revision: int) -> dict:

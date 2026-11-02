@@ -28,6 +28,9 @@ def packet(direct_vm, direct_deploy, direct_alice, direct_bob):
     record = {"source_id": "source1", "authority_id": "issuer", "channel": config["channel"], "url": "https://evidence.example/record", "raw_sha256": hashlib.sha256(raw).hexdigest(), "byte_length": len(raw), "revision": 1, "subject_id": "document", "scope": "service", "spans": [{"span_id": "temporal", "start": 0, "end": len(raw), "text": text}], "supersedes": ""}
     direct_vm.mock_web(r"https://evidence.example/.*", {"status": 200, "body": raw})
     c.observe_source(canon(record))
+    from genlayer import gl
+    with direct_vm.prank(gl.message.contract_address):
+        c.confirm_source(record["source_id"])  # synthetic release of captured finalized callback
     rules = {"revision": 1, "date_only_utc": True, "rules": [{"rule_id": "meaning", "instruction": "Resolve the stated effective and occurrence dates. Apply all controlling exceptions and corrections."}], "required_roles": ["EFFECTIVE", "PUBLICATION"]}
     c.register_temporal_policy("temporal", canon(rules), canon({"authorities": ["issuer"], "publication_support": "SIGNED_PUBLIC_OBSERVATION"}))
     consequence = digest({"action": "test_only"})

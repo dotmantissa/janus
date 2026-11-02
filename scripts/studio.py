@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import time
 from eth_account import Account
 from genlayer_py import create_client
@@ -30,6 +31,8 @@ def atomic(path, value):
 
 class Studio:
     def __init__(self, key_name="deployer", journal="studio"):
+        if not re.fullmatch(r'[A-Za-z0-9_-]{1,96}', journal):
+            raise ValueError('Journal must be a directory name using letters, numbers, _ or -')
         supplied = os.environ.get("JANUS_" + key_name.upper() + "_KEY")
         if supplied is None:
             supplied = (ROOT / '.secrets' / key_name).read_text().strip()
@@ -39,6 +42,17 @@ class Studio:
         self.folder.mkdir(parents=True, exist_ok=True)
         self.journal_path = self.folder / 'journal.json'
         self.journal = json.loads(self.journal_path.read_text()) if self.journal_path.exists() else {}
+        context_path = self.folder / 'context.json'
+        context = {'chain_id': studionet.id, 'account': self.account.address.lower()}
+        if context_path.exists():
+            assert json.loads(context_path.read_text()) == context, 'Journal belongs to another account or chain'
+        else:
+            for operation in self.journal:
+                receipt_path = self.folder / (operation + '.json')
+                if receipt_path.exists():
+                    previous = json.loads(receipt_path.read_text())
+                    assert previous['from_address'].lower() == context['account'], 'Journal belongs to another account'
+            atomic(context_path, context)
 
     def transaction(self, operation, specification, submit, expect_success=True):
         binding = digest(specification)
@@ -58,6 +72,7 @@ class Studio:
         else:
             receipt = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=7000, retries=200, full_transaction=True)
             atomic(receipt_path, receipt)
+        assert receipt.get('status_name') == 'FINALIZED', 'Receipt is not finalized: ' + tx
         succeeded = tx_execution_succeeded(receipt)
         print(operation, 'FINALIZED', 'SUCCESS' if succeeded else 'FAILED', flush=True)
         if succeeded != expect_success:
@@ -85,6 +100,7 @@ class Studio:
                 raise AssertionError('Unrecognized child transaction')
             r = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=7000, retries=200, full_transaction=True)
             atomic(self.folder / ('child-' + tx + '.json'), r)
+            assert r.get('status_name') == 'FINALIZED', 'Child receipt is not finalized: ' + tx
             assert tx_execution_succeeded(r), 'Finalized child execution failed: ' + tx
             self.await_children(r)
 

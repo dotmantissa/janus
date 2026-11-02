@@ -1,4 +1,7 @@
-contract_path: contracts/
+paths:
+  contracts: contracts/
+  artifacts: artifacts/
 networks:
+  default: localnet
   studionet: {}
   localnet: {}

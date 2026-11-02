@@ -21,6 +21,19 @@ def test_certifies_bound_roles_and_independent_validator(packet, direct_vm):
     assert direct_vm.run_validator() is True
 
 
+def test_publication_claims_cannot_supply_availability_coverage(packet, direct_vm):
+    for assertion in packet['output']['assertions']:
+        assertion['role'] = 'PUBLICATION'
+    direct_vm._llm_mocks.clear()
+    direct_vm.mock_llm(r'.*', canon(packet['output']))
+    assess_packet(packet)
+    certificate = packet['c'].get_interval_certificate('request1')['certificate']
+    assert certificate['lifecycle_status'] == 'UNKNOWN'
+    assert certificate['first_publication_upper'] is None
+    assert certificate['coverage']['missing_roles'] == ['EFFECTIVE', 'PUBLICATION']
+    assert direct_vm.run_validator() is True
+
+
 @pytest.mark.parametrize("mutation", ["wrong_role", "wrong_interval", "forged_span", "omitted_assertion", "omitted_exception", "coverage", "wrong_kind"])
 def test_valid_json_wrong_substance_rejected(packet, direct_vm, mutation):
     assess_packet(packet)
