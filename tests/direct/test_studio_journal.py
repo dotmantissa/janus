@@ -54,3 +54,14 @@ def test_journal_rejects_another_signer(journal, monkeypatch):
 def test_journal_directory_cannot_escape_evidence(journal):
     with pytest.raises(ValueError, match='directory name'):
         studio.Studio(journal='../outside')
+
+
+def test_finalized_child_receipts_are_reused_and_checked(journal):
+    studio.atomic(journal.folder / 'child-tx-child.json', {
+        'status_name': 'FINALIZED', 'execution_success': True, 'triggered_transactions': []})
+    journal.client.wait_for_transaction_receipt = lambda *a, **k: pytest.fail('Cached child polled again')
+    journal.await_children({'triggered_transactions': ['tx-child']})
+    studio.atomic(journal.folder / 'child-tx-child.json', {
+        'status_name': 'FINALIZED', 'execution_success': False, 'triggered_transactions': []})
+    with pytest.raises(AssertionError, match='child execution failed'):
+        journal.await_children({'triggered_transactions': ['tx-child']})

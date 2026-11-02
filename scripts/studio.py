@@ -70,7 +70,7 @@ class Studio:
         if receipt_path.exists():
             receipt = json.loads(receipt_path.read_text())
         else:
-            receipt = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=7000, retries=200, full_transaction=True)
+            receipt = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=15000, retries=100, full_transaction=True)
             atomic(receipt_path, receipt)
         assert receipt.get('status_name') == 'FINALIZED', 'Receipt is not finalized: ' + tx
         succeeded = tx_execution_succeeded(receipt)
@@ -98,8 +98,12 @@ class Studio:
             tx = child if isinstance(child, str) else child.get('hash', child.get('transaction_hash'))
             if not tx:
                 raise AssertionError('Unrecognized child transaction')
-            r = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=7000, retries=200, full_transaction=True)
-            atomic(self.folder / ('child-' + tx + '.json'), r)
+            child_path = self.folder / ('child-' + tx + '.json')
+            if child_path.exists():
+                r = json.loads(child_path.read_text())
+            else:
+                r = self.client.wait_for_transaction_receipt(tx, status=TransactionStatus.FINALIZED, interval=15000, retries=100, full_transaction=True)
+                atomic(child_path, r)
             assert r.get('status_name') == 'FINALIZED', 'Child receipt is not finalized: ' + tx
             assert tx_execution_succeeded(r), 'Finalized child execution failed: ' + tx
             self.await_children(r)
