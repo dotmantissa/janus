@@ -51,6 +51,9 @@ def main():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, 'Deployment source differs: ' + path
     resolver, gate, registry = deployment['resolver'], deployment['notice_consumer'], deployment['event_consumer']
     s, n, ev = Studio(journal=args.journal), Studio('notice', args.journal+'-notice'), Studio('event', args.journal+'-event')
+    verified_sources = [s.verify_source(address, path) for address, path in (
+        (resolver, 'contracts/janus.py'), (gate, 'contracts/notice_gate.py'), (registry, 'contracts/event_registry.py'))]
+    atomic(ROOT / 'evidence' / 'deployed-source-verification.json', verified_sources)
     configs = [
         ('node-schedule-observer', 'https://raw.githubusercontent.com/nodejs/Release/', 'https://github.com/nodejs/Release'),
         ('node-release-observer', 'https://raw.githubusercontent.com/nodejs/nodejs.org/', 'https://github.com/nodejs/nodejs.org'),
@@ -101,6 +104,7 @@ def main():
         envelope = {'request_id': rid, 'owner': s.account.address.lower(), 'parties': [], 'policy_id': pid, 'policy_revision': 1, 'subject_id': rid, 'subject_digest': digest(proposition), 'source_manifest_digest': digest(manifest), 'consumer': consumer.lower(), 'consequence_digest': config['consequence_digest'], 'generation': 1, 'deadline': '2032-01-01T00:00:00Z', 'target_time': target, 'supersedes': ''}
         atomic(ROOT/'evidence'/('request-'+rid+'.json'), {'proposition': proposition, 'manifest': manifest, 'envelope': envelope})
         cli.write('approve-'+rid, consumer, 'approve_request', [canon(envelope)])
+        assert cli.call(consumer, 'get_request_approval', [rid]) == canon(envelope)
         s.write('open-'+rid, resolver, 'open_record', [rid,proposition,target,canon(manifest),canon(envelope)])
         s.write('reserve-'+rid, resolver, 'reserve_assessment', [rid,1])
         r = s.write('assess-'+rid, resolver, 'assess_intervals', [rid,1])
