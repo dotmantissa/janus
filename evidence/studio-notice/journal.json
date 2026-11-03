@@ -1,0 +1,25 @@
+{
+  "deploy-notice": {
+    "binding": "5d0a011eda0a67336a3006367e7d9b91098ce5a81d456e57426b98177f33ccaf",
+    "specification": {
+      "file": "contracts/notice_gate.py",
+      "code_sha256": "89f0ddfc76677dac228e83af9bb3d1cb90ed628fcbae67cc4b873549d706b8ee",
+      "args": [
+        "addr#ad877a491c467e0bbb0a619675cc6aaa643bd0ba",
+        "notice-v1",
+        1,
+        2592000
+      ]
+    },
+    "tx": "0xac29b8e348b643243d2238d98fffefc860c77bf69586508840ec790407c6f997"
+  },
+  "register-notice": {
+    "binding": "a70eb2b91d014e0f04dbd90b27a78b4127375512ff56eaeaafbdd37766492cb6",
+    "specification": {
+      "address": "0xE9041384033Cb5b6a869539F889A1e730ef7ECfA",
+      "method": "register",
+      "args": []
+    },
+    "tx": "0x7cbdc569d558000b9fa8075ba3cf5ac8b0b48a286225820f4e1f1fe32fa160e9"
+  }
+}

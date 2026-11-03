@@ -1,0 +1,107 @@
+INFO: File `gltest.config.yaml` found in the current directory, using it
+INFO: Clearing artifacts directory: artifacts
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['studionet', 'localnet']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.7.0 -- /home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/dotmantissa/GenLayer_dApps/primitives/janus
+configfile: pytest.ini
+plugins: genlayer-test-0.29.2
+collecting ... collected 83 items
+
+tests/direct/test_bounds_delivery.py::test_four_complete_sources_six_assertions PASSED [  1%]
+tests/direct/test_bounds_delivery.py::test_complete_packet_cannot_truncate_a_missing_document PASSED [  2%]
+tests/direct/test_bounds_delivery.py::test_byte_limits_before_model_execution PASSED [  3%]
+tests/direct/test_bounds_delivery.py::test_oversized_joint_packet_rejected PASSED [  4%]
+tests/direct/test_bounds_delivery.py::test_invalid_utf8_and_forged_byte_mapping PASSED [  6%]
+tests/direct/test_bounds_delivery.py::test_delivery_journal_finalized_retries_ack_and_conflicts PASSED [  7%]
+tests/direct/test_bounds_delivery.py::test_controlling_intersection_conflict_unknown PASSED [  8%]
+tests/direct/test_consumers.py::test_authenticated_delivery_and_action[notice_gate.py] PASSED [  9%]
+tests/direct/test_consumers.py::test_authenticated_delivery_and_action[event_registry.py] PASSED [ 10%]
+tests/direct/test_consumers.py::test_unresolved_blocks_even_previous_permission[notice_gate.py] PASSED [ 12%]
+tests/direct/test_consumers.py::test_unresolved_blocks_even_previous_permission[event_registry.py] PASSED [ 13%]
+tests/direct/test_consumers.py::test_sender_binding_and_conflicting_operation[notice_gate.py] PASSED [ 14%]
+tests/direct/test_consumers.py::test_sender_binding_and_conflicting_operation[event_registry.py] PASSED [ 15%]
+tests/direct/test_consumers.py::test_stale_and_reordered_callback_cannot_clear_new_restriction[notice_gate.py] PASSED [ 16%]
+tests/direct/test_consumers.py::test_stale_and_reordered_callback_cannot_clear_new_restriction[event_registry.py] PASSED [ 18%]
+tests/direct/test_consumers.py::test_action_time_quarantine_check[notice_gate.py] PASSED [ 19%]
+tests/direct/test_consumers.py::test_action_time_quarantine_check[event_registry.py] PASSED [ 20%]
+tests/direct/test_consumers.py::test_notice_inclusive_upper_boundary_and_event_target[notice_gate.py] PASSED [ 21%]
+tests/direct/test_consumers.py::test_notice_inclusive_upper_boundary_and_event_target[event_registry.py] PASSED [ 22%]
+tests/direct/test_consumers.py::test_no_positive_action_without_finalized_callback[notice_gate.py] PASSED [ 24%]
+tests/direct/test_consumers.py::test_no_positive_action_without_finalized_callback[event_registry.py] PASSED [ 25%]
+tests/direct/test_intervals.py::test_utc_offset_and_integer_extremes[1970-01-01T00:00:00Z-0] PASSED [ 26%]
+tests/direct/test_intervals.py::test_utc_offset_and_integer_extremes[2025-01-01T01:00:00+01:00-1735689600] PASSED [ 27%]
+tests/direct/test_intervals.py::test_utc_offset_and_integer_extremes[2024-12-31T19:00:00-05:00-1735689600] PASSED [ 28%]
+tests/direct/test_intervals.py::test_utc_offset_and_integer_extremes[9999-12-31T23:59:59Z-253402300799] PASSED [ 30%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-01-01] PASSED [ 31%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-01-01T00:00:00] PASSED [ 32%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-01-01T00:00:60Z] PASSED [ 33%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-02-29T00:00:00Z] PASSED [ 34%]
+tests/direct/test_intervals.py::test_unsupported_times[1969-12-31T23:59:59Z] PASSED [ 36%]
+tests/direct/test_intervals.py::test_unsupported_times[1447 Ramadan 1] PASSED [ 37%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-01-01T00:00:00+14:01] PASSED [ 38%]
+tests/direct/test_intervals.py::test_unsupported_times[2025-01-01T00:00:00+00:60] PASSED [ 39%]
+tests/direct/test_intervals.py::test_date_only_explicit_policy PASSED    [ 40%]
+tests/direct/test_intervals.py::test_intersection_and_endpoint_boundaries PASSED [ 42%]
+tests/direct/test_intervals.py::test_backdated_heading_does_not_backdate_publication PASSED [ 43%]
+tests/direct/test_intervals.py::test_vmerror_and_expected_failure_agreement PASSED [ 44%]
+tests/direct/test_intervals.py::test_nondet_closures_pickle PASSED       [ 45%]
+tests/direct/test_resolver.py::test_certifies_bound_roles_and_independent_validator PASSED [ 46%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[wrong_role] PASSED [ 48%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[wrong_interval] PASSED [ 49%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[forged_span] PASSED [ 50%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[omitted_assertion] PASSED [ 51%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[omitted_exception] PASSED [ 53%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[coverage] PASSED [ 54%]
+tests/direct/test_resolver.py::test_valid_json_wrong_substance_rejected[wrong_kind] PASSED [ 55%]
+tests/direct/test_resolver.py::test_changed_source_rejected_by_validator PASSED [ 56%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[span] PASSED [ 57%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[date] PASSED [ 59%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[calendar] PASSED [ 60%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[json] PASSED [ 61%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[extra] PASSED [ 62%]
+tests/direct/test_resolver.py::test_hallucinated_or_malformed_model_fails[swapped] PASSED [ 63%]
+tests/direct/test_resolver.py::test_error_categories_rejected PASSED     [ 65%]
+tests/direct/test_resolver.py::test_unresolved_semantics_never_certify[EXCEPTION] PASSED [ 66%]
+tests/direct/test_resolver.py::test_unresolved_semantics_never_certify[CONTRADICTION] PASSED [ 67%]
+tests/direct/test_resolver.py::test_unresolved_semantics_never_certify[INCOMPLETE] PASSED [ 68%]
+tests/direct/test_resolver.py::test_unresolved_semantics_never_certify[INJECTION] PASSED [ 69%]
+tests/direct/test_resolver.py::test_undated_unknown_cannot_gain_publication PASSED [ 71%]
+tests/direct/test_resolver.py::test_outage_retry_exhaustion_and_recovery PASSED [ 72%]
+tests/direct/test_resolver.py::test_timeout_and_reserved_failed_attempts PASSED [ 73%]
+tests/direct/test_resolver.py::test_deadline_uses_network_time PASSED    [ 74%]
+tests/direct/test_resolver.py::test_permissions_and_locked_reuse PASSED  [ 75%]
+tests/direct/test_resolver.py::test_policy_revision_immutable PASSED     [ 77%]
+tests/direct/test_resolver.py::test_integer_limits[generation-18446744073709551616] PASSED [ 78%]
+tests/direct/test_resolver.py::test_integer_limits[generation-True] PASSED [ 79%]
+tests/direct/test_resolver.py::test_integer_limits[generation-0] PASSED  [ 80%]
+tests/direct/test_resolver.py::test_integer_limits[policy_revision-4294967296] PASSED [ 81%]
+tests/direct/test_resolver.py::test_source_and_assertion_limits PASSED   [ 83%]
+tests/direct/test_resolver.py::test_successor_invalidates_delivered_evidence PASSED [ 84%]
+tests/direct/test_resolver.py::test_quarantine_permanent[SOURCE-source1] PASSED [ 85%]
+tests/direct/test_resolver.py::test_quarantine_permanent[AUTHORITY-issuer] PASSED [ 86%]
+tests/direct/test_resolver.py::test_quarantine_permanent[POLICY-temporal:1] PASSED [ 87%]
+tests/direct/test_resolver.py::test_quarantine_permanent[REQUEST-request1] PASSED [ 89%]
+tests/direct/test_resolver.py::test_paginated_history PASSED             [ 90%]
+tests/direct/test_source_confirmation.py::test_only_finalized_self_callback_establishes_availability PASSED [ 91%]
+tests/direct/test_source_confirmation.py::test_confirmation_retries_are_principal_only_bounded_and_finalized PASSED [ 92%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/../outside] PASSED [ 93%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/./record] PASSED [ 95%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/%2e%2e/outside] PASSED [ 96%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/record?redirect=outside] PASSED [ 97%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/record#fragment] PASSED [ 98%]
+tests/direct/test_source_confirmation.py::test_source_url_cannot_escape_registered_channel[https://evidence.example/record\\outside] PASSED [100%]
+
+============================== 83 passed in 3.47s ==============================

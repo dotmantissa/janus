@@ -1,0 +1,34 @@
+{
+  "confirmation_broadcasts": 1,
+  "confirmed": true,
+  "manifest": {
+    "authority_id": "node-schedule-observer",
+    "byte_length": 3254,
+    "channel": "PUBLIC_NODEJS_RECORD",
+    "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+    "revision": 1,
+    "scope": "nodejs-release",
+    "source_id": "node-schedule-1",
+    "spans": [
+      {
+        "end": 2860,
+        "span_id": "v24",
+        "start": 2712,
+        "text": "\"v24\": {\n    \"start\": \"2025-05-06\",\n    \"lts\": \"2025-10-28\",\n    \"maintenance\": \"2026-10-20\",\n    \"end\": \"2028-04-30\",\n    \"codename\": \"Krypton\"\n  }"
+      },
+      {
+        "end": 3112,
+        "span_id": "v26",
+        "start": 2964,
+        "text": "\"v26\": {\n    \"start\": \"2026-05-05\",\n    \"lts\": \"2026-10-28\",\n    \"maintenance\": \"2027-10-20\",\n    \"end\": \"2029-04-30\",\n    \"codename\": \"Lithium\"\n  }"
+      }
+    ],
+    "subject_id": "schedule",
+    "supersedes": "",
+    "url": "https://raw.githubusercontent.com/nodejs/Release/c3e8696312969c95643cb52f05f124c161db87b2/schedule.json"
+  },
+  "observed_upper": 1793615762,
+  "raw_text": "{\n  \"v0.8\": {\n    \"start\": \"2012-06-25\",\n    \"end\": \"2014-07-31\"\n  },\n  \"v0.10\": {\n    \"start\": \"2013-03-11\",\n    \"end\": \"2016-10-31\"\n  },\n  \"v0.12\": {\n    \"start\": \"2015-02-06\",\n    \"end\": \"2016-12-31\"\n  },\n  \"v4\": {\n    \"start\": \"2015-09-08\",\n    \"lts\": \"2015-10-12\",\n    \"maintenance\": \"2017-04-01\",\n    \"end\": \"2018-04-30\",\n    \"codename\": \"Argon\"\n  },\n  \"v5\": {\n    \"start\": \"2015-10-29\",\n    \"maintenance\": \"2016-04-30\",\n    \"end\": \"2016-06-30\"\n  },\n  \"v6\": {\n    \"start\": \"2016-04-26\",\n    \"lts\": \"2016-10-18\",\n    \"maintenance\": \"2018-04-30\",\n    \"end\": \"2019-04-30\",\n    \"codename\": \"Boron\"\n  },\n  \"v7\": {\n    \"start\": \"2016-10-25\",\n    \"maintenance\": \"2017-04-30\",\n    \"end\": \"2017-06-30\"\n  },\n  \"v8\": {\n    \"start\": \"2017-05-30\",\n    \"lts\": \"2017-10-31\",\n    \"maintenance\": \"2019-01-01\",\n    \"end\": \"2019-12-31\",\n    \"codename\": \"Carbon\"\n  },\n  \"v9\": {\n    \"start\": \"2017-10-01\",\n    \"maintenance\": \"2018-04-01\",\n    \"end\": \"2018-06-30\"\n  },\n  \"v10\": {\n    \"start\": \"2018-04-24\",\n    \"lts\": \"2018-10-30\",\n    \"maintenance\": \"2020-05-19\",\n    \"end\": \"2021-04-30\",\n    \"codename\": \"Dubnium\"\n  },\n  \"v11\": {\n    \"start\": \"2018-10-23\",\n    \"maintenance\": \"2019-04-22\",\n    \"end\": \"2019-06-01\"\n  },\n  \"v12\": {\n    \"start\": \"2019-04-23\",\n    \"lts\": \"2019-10-21\",\n    \"maintenance\": \"2020-11-30\",\n    \"end\": \"2022-04-30\",\n    \"codename\": \"Erbium\"\n  },\n  \"v13\": {\n    \"start\": \"2019-10-22\",\n    \"maintenance\": \"2020-04-01\",\n    \"end\": \"2020-06-01\"\n  },\n  \"v14\": {\n    \"start\": \"2020-04-21\",\n    \"lts\": \"2020-10-27\",\n    \"maintenance\": \"2021-10-19\",\n    \"end\": \"2023-04-30\",\n    \"codename\": \"Fermium\"\n  },\n  \"v15\": {\n    \"start\": \"2020-10-20\",\n    \"maintenance\": \"2021-04-01\",\n    \"end\": \"2021-06-01\"\n  },\n  \"v16\": {\n    \"start\": \"2021-04-20\",\n    \"lts\": \"2021-10-26\",\n    \"maintenance\": \"2022-10-18\",\n    \"end\": \"2023-09-11\",\n    \"codename\": \"Gallium\"\n  },\n  \"v17\": {\n    \"start\": \"2021-10-19\",\n    \"maintenance\": \"2022-04-01\",\n    \"end\": \"2022-06-01\"\n  },\n  \"v18\": {\n    \"start\": \"2022-04-19\",\n    \"lts\": \"2022-10-25\",\n    \"maintenance\": \"2023-10-18\",\n    \"end\": \"2025-04-30\",\n    \"codename\": \"Hydrogen\"\n  },\n  \"v19\": {\n    \"start\": \"2022-10-18\",\n    \"maintenance\": \"2023-04-01\",\n    \"end\": \"2023-06-01\"\n  },\n  \"v20\": {\n    \"start\": \"2023-04-18\",\n    \"lts\": \"2023-10-24\",\n    \"maintenance\": \"2024-10-22\",\n    \"end\": \"2026-04-30\",\n    \"codename\": \"Iron\"\n  },\n  \"v21\": {\n    \"start\": \"2023-10-17\",\n    \"maintenance\": \"2024-04-01\",\n    \"end\": \"2024-06-01\"\n  },\n  \"v22\": {\n    \"start\": \"2024-04-24\",\n    \"lts\": \"2024-10-29\",\n    \"maintenance\": \"2025-10-21\",\n    \"end\": \"2027-04-30\",\n    \"codename\": \"Jod\"\n  },\n  \"v23\": {\n    \"start\": \"2024-10-16\",\n    \"maintenance\": \"2025-04-01\",\n    \"end\": \"2025-06-01\"\n  },\n  \"v24\": {\n    \"start\": \"2025-05-06\",\n    \"lts\": \"2025-10-28\",\n    \"maintenance\": \"2026-10-20\",\n    \"end\": \"2028-04-30\",\n    \"codename\": \"Krypton\"\n  },\n  \"v25\": {\n    \"start\": \"2025-10-15\",\n    \"maintenance\": \"2026-04-01\",\n    \"end\": \"2026-06-01\"\n  },\n  \"v26\": {\n    \"start\": \"2026-05-05\",\n    \"lts\": \"2026-10-28\",\n    \"maintenance\": \"2027-10-20\",\n    \"end\": \"2029-04-30\",\n    \"codename\": \"Lithium\"\n  },\n  \"v27\": {\n    \"alpha\": \"2026-10-28\",\n    \"start\": \"2027-04-22\",\n    \"lts\": \"2027-10-20\",\n    \"end\": \"2030-04-30\",\n    \"codename\": \"\"\n  }\n}\n",
+  "superseded_by": "",
+  "valid": true
+}

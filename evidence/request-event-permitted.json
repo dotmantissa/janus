@@ -1,0 +1,31 @@
+{
+  "proposition": "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+  "manifest": {
+    "records": [
+      "node-release-1"
+    ],
+    "assertions": [
+      {
+        "assertion_id": "temporal",
+        "question": "On what UTC date did the v24.1.0 release occurrence take place?",
+        "rule_id": "temporal-role"
+      }
+    ]
+  },
+  "envelope": {
+    "request_id": "event-permitted",
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "event-v1",
+    "policy_revision": 1,
+    "subject_id": "event-permitted",
+    "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+    "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+    "consumer": "0xc55c927d5a5f1401ac0017a8a9c8edc6da0bb59b",
+    "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+    "generation": 1,
+    "deadline": "2032-01-01T00:00:00Z",
+    "target_time": "2025-05-21T12:00:00Z",
+    "supersedes": ""
+  }
+}

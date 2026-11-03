@@ -1,0 +1,19 @@
+authority-node-schedule-observer FINALIZED SUCCESS
+accept-node-schedule-observer FINALIZED SUCCESS
+authority-node-release-observer FINALIZED SUCCESS
+accept-node-release-observer FINALIZED SUCCESS
+observe-node-schedule-1 FINALIZED SUCCESS
+Traceback (most recent call last):
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 111, in <module>
+    main()
+    ~~~~^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 58, in main
+    s.wait_for(resolver, 'get_source', [source['source_id']], lambda v: v['confirmed'])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 95, in wait_for
+    if predicate(result):
+       ~~~~~~~~~^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 58, in <lambda>
+    s.wait_for(resolver, 'get_source', [source['source_id']], lambda v: v['confirmed'])
+                                                                        ~^^^^^^^^^^^^^
+KeyError: 'confirmed'

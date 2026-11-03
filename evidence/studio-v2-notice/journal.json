@@ -1,0 +1,71 @@
+{
+  "deploy-notice": {
+    "binding": "49796d7ede33638cb8cc5c7726f8e319e70ef0cc2a101f34c508bb5d9c1bed8d",
+    "specification": {
+      "file": "contracts/notice_gate.py",
+      "code_sha256": "89f0ddfc76677dac228e83af9bb3d1cb90ed628fcbae67cc4b873549d706b8ee",
+      "args": [
+        "addr#18c6f68b614a3abca5e4967b13290ccfe782e922",
+        "notice-v1",
+        1,
+        2592000
+      ]
+    },
+    "tx": "0xc36e768f893c50c95004f8c7449b3229a4399aba9d69e1011995b94d3f3d7fac"
+  },
+  "register-notice": {
+    "binding": "3c2997247e15a7609e58ff5710ef3043d3e98394d2b0ec750bd7fa45178a921b",
+    "specification": {
+      "address": "0xBfEBCa71DA46ccaa81F019EF371e49F70daF5857",
+      "method": "register",
+      "args": []
+    },
+    "tx": "0xa718b323bf65db51deef8687009a8e46f865c6c197215eb13dbcf68f53324a42"
+  },
+  "approve-notice-permitted": {
+    "binding": "2e72765e65bd9e586068a5705861d92202b2a59c3e0c94143c7ab5dba573ea79",
+    "specification": {
+      "address": "0xBfEBCa71DA46ccaa81F019EF371e49F70daF5857",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xbfebca71da46ccaa81f019ef371e49f70daf5857\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-permitted\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"notice-permitted\",\"supersedes\":\"\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x16483000bfe16b17343444d92bb4ad9ec79af56586dee6bf969c30a6f313cb14"
+  },
+  "execute-notice-permitted": {
+    "binding": "837bc251011571509c61a0f5cbe7781c4c7a0cb55af4ca0ea9d59f9809bd6626",
+    "specification": {
+      "address": "0xBfEBCa71DA46ccaa81F019EF371e49F70daF5857",
+      "method": "execute",
+      "args": [
+        "notice-permitted",
+        "action-notice-permitted"
+      ]
+    },
+    "tx": "0xe9611609d555e2ac78074c645ce1ec8420e40776dfb8fe17a838071a6d11b9fc"
+  },
+  "approve-notice-refused": {
+    "binding": "f4bcfe68481fb109175cc819955e03011b301affdb7e26796676f61bb4606887",
+    "specification": {
+      "address": "0xBfEBCa71DA46ccaa81F019EF371e49F70daF5857",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xbfebca71da46ccaa81f019ef371e49f70daf5857\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-refused\",\"source_manifest_digest\":\"16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89\",\"subject_digest\":\"c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8\",\"subject_id\":\"notice-refused\",\"supersedes\":\"\",\"target_time\":\"2026-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x10d2496adcc5e213e7b5581948143a5319d14f8bb5da0e64f46f52e3e1728eef"
+  },
+  "execute-notice-refused": {
+    "binding": "9f747934672d9849c1c19c563bc552bdc3c0f06d150c6a43a1800333a6e46084",
+    "specification": {
+      "address": "0xBfEBCa71DA46ccaa81F019EF371e49F70daF5857",
+      "method": "execute",
+      "args": [
+        "notice-refused",
+        "action-notice-refused"
+      ]
+    },
+    "tx": "0xfe7dd867480913d736a29363449546044bd011740f4096d7523e8acdecd646fb"
+  }
+}

@@ -1,0 +1,52 @@
+authority-node-schedule-observer submitted 0x2b134b24083c3de593afe80d56b9665a0b55a92bd706cf5f6ab4239695082ea2
+authority-node-schedule-observer FINALIZED SUCCESS
+accept-node-schedule-observer submitted 0x8a6c3ceae8d8c1aa884f21aa1fd06864e9561968ec9a47df93f1ab085f784aa2
+accept-node-schedule-observer FINALIZED SUCCESS
+authority-node-release-observer submitted 0xa81e950024776e53a1729c23f077da5aa536e3be51905d15fa49342db68ab18b
+authority-node-release-observer FINALIZED SUCCESS
+accept-node-release-observer submitted 0xafed8d271ef3da0232467013dde4dd1377d57b2b19129871cfd72f352b24ac74
+accept-node-release-observer FINALIZED SUCCESS
+observe-node-schedule-1 submitted 0x0bf1e9df98df6910d42aba62c411e0154570a97192803ac5bb5bd8c0a7ef48a2
+observe-node-schedule-1 FINALIZED SUCCESS
+Traceback (most recent call last):
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 115, in <module>
+    print('VERIFIED',rid,ack['acknowledgement'],flush=True)
+    ^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 59, in main
+    r = s.write('observe-'+source['source_id'], resolver, 'observe_source', [canon(source)])
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 90, in write
+    return self.transaction(operation, {'address': address, 'method': method, 'args': args}, lambda: self.client.write_contract(address=address, function_name=method, args=args), expect_success)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 64, in transaction
+    tx = str(submit())
+             ~~~~~~^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 90, in <lambda>
+    return self.transaction(operation, {'address': address, 'method': method, 'args': args}, lambda: self.client.write_contract(address=address, function_name=method, args=args), expect_success)
+                                                                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/client/genlayer_client.py", line 118, in write_contract
+    return write_contract(
+        self=self,
+    ...<8 lines>...
+        sim_config=sim_config,
+    )
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/contracts/actions.py", line 123, in write_contract
+    return _send_transaction(
+        self=self,
+    ...<3 lines>...
+        sim_config=sim_config,
+    )
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/contracts/actions.py", line 344, in _send_transaction
+    tx_hash = self.provider.make_request(
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        method="eth_sendRawTransaction", params=params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["result"]
+    ^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 48, in make_request
+    self._raise_on_error(resp, method)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 54, in _raise_on_error
+    raise GenLayerError(
+        f"{ctx} failed (code={err.get('code', 'unknown')}): {err.get('message', 'unknown error')}"
+    )
+genlayer_py.exceptions.GenLayerError: eth_sendRawTransaction failed (code=-32029): Rate limit exceeded: 500 requests per hour

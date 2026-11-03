@@ -1,0 +1,30 @@
+INFO: File `gltest.config.yaml` found in the current directory, using it
+INFO: Clearing artifacts directory: artifacts
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['studionet', 'localnet']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.7.0 -- /home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/replay/bin/python
+cachedir: .pytest_cache
+rootdir: /home/dotmantissa/GenLayer_dApps/primitives/janus
+configfile: pytest.ini
+plugins: genlayer-test-0.29.2
+collecting ... collected 6 items
+
+tests/direct/test_studio_journal.py::test_submission_is_journaled_before_polling_and_resumed PASSED [ 16%]
+tests/direct/test_studio_journal.py::test_cached_receipt_requires_finality_and_execution_success[ACCEPTED-True] PASSED [ 33%]
+tests/direct/test_studio_journal.py::test_cached_receipt_requires_finality_and_execution_success[FINALIZED-False] PASSED [ 50%]
+tests/direct/test_studio_journal.py::test_journal_rejects_another_signer PASSED [ 66%]
+tests/direct/test_studio_journal.py::test_journal_directory_cannot_escape_evidence PASSED [ 83%]
+tests/direct/test_studio_journal.py::test_finalized_child_receipts_are_reused_and_checked PASSED [100%]
+
+============================== 6 passed in 0.03s ===============================

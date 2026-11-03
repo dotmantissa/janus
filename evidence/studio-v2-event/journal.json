@@ -1,0 +1,36 @@
+{
+  "deploy-event": {
+    "binding": "e81559145dd17f71bcd16da1567a2d0f12d9bbe1f407af2acc4b5a53efe012a8",
+    "specification": {
+      "file": "contracts/event_registry.py",
+      "code_sha256": "81bf65a81568d5c91661280294d0cd847b77edd4244aed247a8ceeb1c410432a",
+      "args": [
+        "addr#18c6f68b614a3abca5e4967b13290ccfe782e922",
+        "event-v1",
+        1,
+        0
+      ]
+    },
+    "tx": "0x612a901ded6c838b36b00a910bb818902e999a99ca50d0fe144027756aff2ffc"
+  },
+  "register-event": {
+    "binding": "102f258a2f881c01aef40707e8e87381267f445976c7def10b20848687f36337",
+    "specification": {
+      "address": "0xC55C927D5A5f1401aC0017a8A9C8EdC6Da0BB59B",
+      "method": "register",
+      "args": []
+    },
+    "tx": "0xcfd0a3d2d8fbebedc7f7d304e163f309abe13a9f2e3dc17a0ab44c1b5605115f"
+  },
+  "approve-event-permitted": {
+    "binding": "f128a57356d8acc14338f1bd91e003edb2134982e414965e1a3211b461f9e7eb",
+    "specification": {
+      "address": "0xC55C927D5A5f1401aC0017a8A9C8EdC6Da0BB59B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0xc55c927d5a5f1401ac0017a8a9c8edc6da0bb59b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"event-permitted\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"event-permitted\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x00190bad68f05c2457f92cbf07ad4c588d9caa54daa4d35ca18a1793d6036d01"
+  }
+}

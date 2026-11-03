@@ -1,0 +1,109 @@
+{
+  "deploy-janus": {
+    "binding": "4355c583dca7cd00f85db5de9d6925175e053e93a09e5d0e57c5e2f5f5d2463c",
+    "specification": {
+      "file": "contracts/janus.py",
+      "code_sha256": "d16ec5e58b3ee18dd17f95cad1cb6b565b0325e854fd8d4fb05c496960403386",
+      "args": [
+        10000
+      ]
+    },
+    "tx": "0x7ce7070f4250edcf3d9b39f24f757cbcc1393e4764f2d88390f4bf95c32509c3"
+  },
+  "authority-node-schedule-observer": {
+    "binding": "081759258003bcbef56c2b7bbc331a40bb23106febb9198089a11ad0fbbc20c1",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "register_authority",
+      "args": [
+        "node-schedule-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/Release\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/Release/\"}"
+      ]
+    },
+    "tx": "0x3b8fc16d6dc82202185c45f39441885ccfc9cfeebdf926bddd9a965e1d9cea6b"
+  },
+  "accept-node-schedule-observer": {
+    "binding": "673b6b9c6518b34030421cf3a4cd7e5210f3a7cf18c9043052c3ad78d543cc5d",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "accept_authority",
+      "args": [
+        "node-schedule-observer"
+      ]
+    },
+    "tx": "0xeda6924431dbf9c440a407cf6fd92737cc7f0c6c7010fb17d429e3c1eee7367e"
+  },
+  "authority-node-release-observer": {
+    "binding": "8dbeb5337f8e416c134268c0aa33d9f665e77ae972905ca017646823deaac143",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "register_authority",
+      "args": [
+        "node-release-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/nodejs.org\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/\"}"
+      ]
+    },
+    "tx": "0xdc987b80bac6cf1d9430b5baa27ce1dbbab25805003f28f5ba1911de475deba2"
+  },
+  "accept-node-release-observer": {
+    "binding": "1f60428be3736db11d81fbdb647a3df924057ea08be002f6fde03928a4c4d7b8",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "accept_authority",
+      "args": [
+        "node-release-observer"
+      ]
+    },
+    "tx": "0x418c9e5f315c5c36c340b5a096cd76464563b214cb275e1c881d320c087d5c1e"
+  },
+  "observe-node-schedule-1": {
+    "binding": "f2b7c6b959a545696dbcc1e75b60d2590607283d7e4228feeb5910299782b717",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-schedule-observer\",\"byte_length\":3254,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-schedule-1\",\"spans\":[{\"end\":2860,\"span_id\":\"v24\",\"start\":2712,\"text\":\"\\\"v24\\\": {\\n    \\\"start\\\": \\\"2025-05-06\\\",\\n    \\\"lts\\\": \\\"2025-10-28\\\",\\n    \\\"maintenance\\\": \\\"2026-10-20\\\",\\n    \\\"end\\\": \\\"2028-04-30\\\",\\n    \\\"codename\\\": \\\"Krypton\\\"\\n  }\"},{\"end\":3112,\"span_id\":\"v26\",\"start\":2964,\"text\":\"\\\"v26\\\": {\\n    \\\"start\\\": \\\"2026-05-05\\\",\\n    \\\"lts\\\": \\\"2026-10-28\\\",\\n    \\\"maintenance\\\": \\\"2027-10-20\\\",\\n    \\\"end\\\": \\\"2029-04-30\\\",\\n    \\\"codename\\\": \\\"Lithium\\\"\\n  }\"}],\"subject_id\":\"schedule\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/Release/c3e8696312969c95643cb52f05f124c161db87b2/schedule.json\"}"
+      ]
+    },
+    "tx": "0x41118e9dbbba81db3f7a59139c80cca184b82fb8797f44763ea596b374989931"
+  },
+  "observe-node-release-1": {
+    "binding": "77d187b0a3933da127d715c395fbe827eaeb0051a39321ca40e1eb30f3afdb35",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-release-observer\",\"byte_length\":21059,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-release-1\",\"spans\":[{\"end\":185,\"span_id\":\"release-header\",\"start\":0,\"text\":\"---\\ndate: '2025-05-21T15:31:30.747Z'\\ncategory: release\\ntitle: Node.js 24.1.0 (Current)\\nlayout: blog-post\\nauthor: Antoine du Hamel\\n---\\n\\n## 2025-05-21, Version 24.1.0 (Current), @aduh95\\n\\n\"}],\"subject_id\":\"v24.1.0\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/0555e2f37ef1a4f2114a9cc36d7d7e189046136c/apps/site/pages/en/blog/release/v24.1.0.md\"}"
+      ]
+    },
+    "tx": "0xd64e32b53592c89496410f04b50b17d51d72b154f516ee34fcbec77d000948e1"
+  },
+  "policy-notice-v1": {
+    "binding": "cabd117c357b3f8fc63a7251a7fafb4fa28700daf36f1ac2ad9af87a612276ec",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "register_temporal_policy",
+      "args": [
+        "notice-v1",
+        "{\"date_only_utc\":true,\"required_roles\":[\"EFFECTIVE\",\"PUBLICATION\"],\"revision\":1,\"rules\":[{\"instruction\":\"The Node.js schedule maintenance field is an effective start inclusive at UTC midnight. The end field ends maintenance exclusively at UTC midnight. Use EFFECTIVE and RANGE, with start=maintenance and end=end, for the specified major version. Never substitute alpha, start or lts fields. Dates in unrelated major versions are not controlling exceptions. Publication availability comes only from the signed public observation.\",\"rule_id\":\"temporal-role\"}]}",
+        "{\"authorities\":[\"node-schedule-observer\",\"node-release-observer\"],\"publication_support\":\"SIGNED_PUBLIC_OBSERVATION\"}"
+      ]
+    },
+    "tx": "0x69a21d7217a3c4418bc164f35bb8242feff862b58d52cec3e428c849172c99d8"
+  },
+  "policy-event-v1": {
+    "binding": "b7de52f7cbd4001d718c3d86f71d68802c63d8ec1fff3d9cfd81f3459eface87",
+    "specification": {
+      "address": "0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA",
+      "method": "register_temporal_policy",
+      "args": [
+        "event-v1",
+        "{\"date_only_utc\":true,\"required_roles\":[\"OCCURRENCE\"],\"revision\":1,\"rules\":[{\"instruction\":\"The release announcement heading date is the Gregorian UTC date of the announced release occurrence. Use OCCURRENCE and EXACT, with the whole date day from the heading. Frontmatter publication metadata cannot prove historical availability. Evaluate the occurrence independently of when the committed revision was observed. Check notable changes and corrections for any withdrawal or cancellation of this release.\",\"rule_id\":\"temporal-role\"}]}",
+        "{\"authorities\":[\"node-schedule-observer\",\"node-release-observer\"],\"publication_support\":\"SIGNED_PUBLIC_OBSERVATION\"}"
+      ]
+    },
+    "tx": "0x4851cc28c0d854d0c713faf73e5f5d887334111814dcf864ea556e3bca373ac9"
+  }
+}

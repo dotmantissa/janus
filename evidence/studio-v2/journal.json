@@ -1,0 +1,213 @@
+{
+  "deploy-janus": {
+    "binding": "de8e11f2262c4ed04a6ec20f70c03d52c44947d199581e59d9d1bc8491676beb",
+    "specification": {
+      "file": "contracts/janus.py",
+      "code_sha256": "b37ee6a27b65e254304110ab196ec00033067922b040074db77fa4846a84ec77",
+      "args": [
+        10000
+      ]
+    },
+    "tx": "0xeeda2567a18f12b1d30d1f7fdf1de99b1034e4486a6806e5cdcecb5988e3af4d"
+  },
+  "authority-node-schedule-observer": {
+    "binding": "56d0838edf8a2a3022cd173dacf27b92b1486bde81030f842c2ff1d7c482c52e",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "register_authority",
+      "args": [
+        "node-schedule-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/Release\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/Release/\"}"
+      ]
+    },
+    "tx": "0x2b134b24083c3de593afe80d56b9665a0b55a92bd706cf5f6ab4239695082ea2"
+  },
+  "accept-node-schedule-observer": {
+    "binding": "d9718a285228b1273f7bd2b7a08fa70e5d438024153b515fb32c4918091e015f",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "accept_authority",
+      "args": [
+        "node-schedule-observer"
+      ]
+    },
+    "tx": "0x8a6c3ceae8d8c1aa884f21aa1fd06864e9561968ec9a47df93f1ab085f784aa2"
+  },
+  "authority-node-release-observer": {
+    "binding": "6c9cc4ca97eb0413b66ce2ed6e76c43b08df503ed4181ae93638bce4de80e3ff",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "register_authority",
+      "args": [
+        "node-release-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/nodejs.org\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/\"}"
+      ]
+    },
+    "tx": "0xa81e950024776e53a1729c23f077da5aa536e3be51905d15fa49342db68ab18b"
+  },
+  "accept-node-release-observer": {
+    "binding": "6565a1baa65dd531366df8a6521e66fb21b96dca7632ad2fd731a101819045bf",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "accept_authority",
+      "args": [
+        "node-release-observer"
+      ]
+    },
+    "tx": "0xafed8d271ef3da0232467013dde4dd1377d57b2b19129871cfd72f352b24ac74"
+  },
+  "observe-node-schedule-1": {
+    "binding": "8be01bb5dc8078dbce757f9f0dee153feb353c893ea8da14e15b81342ec9ff8a",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-schedule-observer\",\"byte_length\":3254,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-schedule-1\",\"spans\":[{\"end\":2860,\"span_id\":\"v24\",\"start\":2712,\"text\":\"\\\"v24\\\": {\\n    \\\"start\\\": \\\"2025-05-06\\\",\\n    \\\"lts\\\": \\\"2025-10-28\\\",\\n    \\\"maintenance\\\": \\\"2026-10-20\\\",\\n    \\\"end\\\": \\\"2028-04-30\\\",\\n    \\\"codename\\\": \\\"Krypton\\\"\\n  }\"},{\"end\":3112,\"span_id\":\"v26\",\"start\":2964,\"text\":\"\\\"v26\\\": {\\n    \\\"start\\\": \\\"2026-05-05\\\",\\n    \\\"lts\\\": \\\"2026-10-28\\\",\\n    \\\"maintenance\\\": \\\"2027-10-20\\\",\\n    \\\"end\\\": \\\"2029-04-30\\\",\\n    \\\"codename\\\": \\\"Lithium\\\"\\n  }\"}],\"subject_id\":\"schedule\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/Release/c3e8696312969c95643cb52f05f124c161db87b2/schedule.json\"}"
+      ]
+    },
+    "tx": "0x0bf1e9df98df6910d42aba62c411e0154570a97192803ac5bb5bd8c0a7ef48a2"
+  },
+  "observe-node-release-1": {
+    "binding": "995c36a06f3d4d79edbfd726c9f6c6df2e18a8cfda6761c89c212c80c1c1d3de",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-release-observer\",\"byte_length\":21059,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-release-1\",\"spans\":[{\"end\":185,\"span_id\":\"release-header\",\"start\":0,\"text\":\"---\\ndate: '2025-05-21T15:31:30.747Z'\\ncategory: release\\ntitle: Node.js 24.1.0 (Current)\\nlayout: blog-post\\nauthor: Antoine du Hamel\\n---\\n\\n## 2025-05-21, Version 24.1.0 (Current), @aduh95\\n\\n\"}],\"subject_id\":\"v24.1.0\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/0555e2f37ef1a4f2114a9cc36d7d7e189046136c/apps/site/pages/en/blog/release/v24.1.0.md\"}"
+      ]
+    },
+    "tx": "0x580fba976bd537ba106c9dd6b179f0612cae2e8ef4c946f626b72160b1552446"
+  },
+  "policy-notice-v1": {
+    "binding": "96b08d24e8e22b79f303f307ac111209ee29d406eec9338714b34e7786b2078a",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "register_temporal_policy",
+      "args": [
+        "notice-v1",
+        "{\"date_only_utc\":true,\"required_roles\":[\"EFFECTIVE\",\"PUBLICATION\"],\"revision\":1,\"rules\":[{\"instruction\":\"The Node.js schedule maintenance field is an effective start inclusive at UTC midnight. The end field ends maintenance exclusively at UTC midnight. Use EFFECTIVE and RANGE, with start=maintenance and end=end, for the specified major version. Never substitute alpha, start or lts fields. Dates in unrelated major versions are not controlling exceptions. Publication availability comes only from the signed public observation.\",\"rule_id\":\"temporal-role\"}]}",
+        "{\"authorities\":[\"node-schedule-observer\",\"node-release-observer\"],\"publication_support\":\"SIGNED_PUBLIC_OBSERVATION\"}"
+      ]
+    },
+    "tx": "0x6b93ab611498845b1a3227880459d35e1b82a53ef653a8523adfd7ae8f4637a1"
+  },
+  "policy-event-v1": {
+    "binding": "984a297de361d655a9833f1ef8b33d02ea0ffad48909abc923008b212378c032",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "register_temporal_policy",
+      "args": [
+        "event-v1",
+        "{\"date_only_utc\":true,\"required_roles\":[\"OCCURRENCE\"],\"revision\":1,\"rules\":[{\"instruction\":\"The release announcement heading date is the Gregorian UTC date of the announced release occurrence. Use OCCURRENCE and EXACT, with the whole date day from the heading. Frontmatter publication metadata cannot prove historical availability. Evaluate the occurrence independently of when the committed revision was observed. Check notable changes and corrections for any withdrawal or cancellation of this release.\",\"rule_id\":\"temporal-role\"}]}",
+        "{\"authorities\":[\"node-schedule-observer\",\"node-release-observer\"],\"publication_support\":\"SIGNED_PUBLIC_OBSERVATION\"}"
+      ]
+    },
+    "tx": "0x92c985a840a74425b4e240b870bd9df6c181986d37308448a56cdc1c289a8d7e"
+  },
+  "open-notice-permitted": {
+    "binding": "95149a67c8ed80a70079649b4d84090808bd67cdfd39085eec5d538d515152ab",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "open_record",
+      "args": [
+        "notice-permitted",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xbfebca71da46ccaa81f019ef371e49f70daf5857\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-permitted\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"notice-permitted\",\"supersedes\":\"\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x6b2dc8fbb09c7ee2f6b9c99508833a1e789a0ad02fe9c97ebf41388e36f9c06e"
+  },
+  "reserve-notice-permitted": {
+    "binding": "3280fec303590abe216418c0ade335ed5b1ad5902ce4f4c447fb248ecf08babd",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "reserve_assessment",
+      "args": [
+        "notice-permitted",
+        1
+      ]
+    },
+    "tx": "0x36e75c786f1450115d69cc1962dc75f774e19189067291a776fac5715f705d4b"
+  },
+  "assess-notice-permitted": {
+    "binding": "36f7f170301f339b7464a4fc3e094d4b9e8a6e4e19dba1f0c33685e27b54ae82",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "assess_intervals",
+      "args": [
+        "notice-permitted",
+        1
+      ]
+    },
+    "tx": "0x6d4ea4ca3ef5aff3c384dc74a42f4217512ead1c8f4afbba6d9af973487e2079"
+  },
+  "publish-notice-permitted": {
+    "binding": "2baa4907d13ca7ef6a67f740ac21927f813ede420c96d426d706baa28a17e725",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "publish_to",
+      "args": [
+        "notice-permitted",
+        "addr#bfebca71da46ccaa81f019ef371e49f70daf5857",
+        "deliver-notice-permitted"
+      ]
+    },
+    "tx": "0xd633e3c1bf3eb42f8883d702823ec8ecaec0377108a94bca63e813e846bd99f2"
+  },
+  "open-notice-refused": {
+    "binding": "333aef907e81d1e3003af728e59da5d3edc82ef5942ff4ff6136eb88bf4a1dcf",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "open_record",
+      "args": [
+        "notice-refused",
+        "Node.js v24 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2026-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v24?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xbfebca71da46ccaa81f019ef371e49f70daf5857\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-refused\",\"source_manifest_digest\":\"16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89\",\"subject_digest\":\"c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8\",\"subject_id\":\"notice-refused\",\"supersedes\":\"\",\"target_time\":\"2026-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x2e735e2ca137c8081dbfaa9a5f9207ded332bb79819fbc0736cca4bef33e0a6b"
+  },
+  "reserve-notice-refused": {
+    "binding": "5d488db664fec2ab4f70d4117af37e1ccd7217aa83d7a0c73e78c62cf69af850",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "reserve_assessment",
+      "args": [
+        "notice-refused",
+        1
+      ]
+    },
+    "tx": "0x77c0ee9279f41efc92009e72412858fa70afecc1e4c925ba7f7e7a2889440b4e"
+  },
+  "assess-notice-refused": {
+    "binding": "1928795891ecbcb506b0c9fd5054f92afb634ec00fea33889c4881e4d7e28d76",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "assess_intervals",
+      "args": [
+        "notice-refused",
+        1
+      ]
+    },
+    "tx": "0x554db7f8a018263e92e51f9480eb52f9aa6fd0012312396429998470a4fca6f7"
+  },
+  "publish-notice-refused": {
+    "binding": "7e6c36c0ed5d2ac8c9b9e1f7c18820e6df29c0393b30c6465d8433bc48ef6064",
+    "specification": {
+      "address": "0x18c6F68B614a3aBca5e4967b13290CCfE782E922",
+      "method": "publish_to",
+      "args": [
+        "notice-refused",
+        "addr#bfebca71da46ccaa81f019ef371e49f70daf5857",
+        "deliver-notice-refused"
+      ]
+    },
+    "tx": "0x382e8cc67de8363ad6b0c89ba64e547dc738c330964003c1ef7fe4164fdc1504"
+  }
+}
