@@ -16,7 +16,7 @@ python3 -m pip --python .venv/replay/bin/python check
 .venv/replay/bin/python -m pytest tests/direct -v
 ```
 
-Results: no broken dependencies, all three contracts pass AST and SDK validation, and **91 direct tests pass** in 9.56 seconds in the final clean-environment replay on 2026-11-03. The earlier replay passed 90 tests in 4.02 seconds; the added case verifies that cached child receipts are reused and still checked for finalized execution success. All six transaction-journal regression cases pass. Logs: [installation](../evidence/clean-replay.log), [lint](../evidence/lint.log), [final tests](../evidence/direct-tests-final.log), [earlier tests](../evidence/clean-replay-tests.log), [journal regression checks](../evidence/journal-tests.log). The lock file includes transitive dependencies; the short requirements file pins the five direct dependencies.
+Results: no broken dependencies, all three contracts pass AST and SDK validation, and **93 direct tests pass** in 8.90 seconds in the final clean-environment replay on 2026-11-03. The earlier replay passed 90 tests in 4.02 seconds; the added case verifies that cached child receipts are reused and still checked for finalized execution success. All six transaction-journal regression cases pass. Two additional offline recovery checks verify that an interrupted replay preserves later completed summaries and that a new deployment does not inherit old consumer results. Logs: [installation](../evidence/clean-replay.log), [lint](../evidence/lint.log), [final tests](../evidence/direct-tests-final.log), [earlier tests](../evidence/clean-replay-tests.log), [journal regression checks](../evidence/journal-tests.log). The lock file includes transitive dependencies; the short requirements file pins the five direct dependencies.
 
 Direct verification covers:
 
@@ -31,7 +31,7 @@ Direct verification covers:
 | Authority and state | Immutable policy revisions, locked envelope reuse, separate roles, colon-containing authority/subject IDs, URL escape rejection, permanent quarantine and supersession |
 | Recovery | Separate attempt reservations, three-attempt recovery, actual network-time field, deadline expiry, bounded histories |
 | Consumer and delivery | Sender/binding checks, finalized emit selection, duplicate/reordered callbacks, stale generations, blocked successors, unresolved outcomes, acknowledgements, delivery retry limits and action-time validity |
-| Transaction tooling | Persist submission before polling, resume interrupted polls, reject conflicting operation reuse, require cached finality and execution success, reject another signer or path traversal |
+| Transaction tooling | Persist submission before polling, resume interrupted polls, reject conflicting operation reuse, require cached finality and execution success, reject another signer or path traversal; preserve completed live summaries across interrupted replay and isolate different deployments |
 
 The direct runtime executes leader code by default. The independent validator checks listed above explicitly invoke captured validators with separate or adversarial outcomes. Tests use synthetic web/model outputs and callback/source views; they do not prove network consensus, finality, or network callback authentication. The installed test runtime's `warp` helper does not refresh `gl.message_raw["datetime"]`; time-bound tests explicitly update that field. Production contracts read only the real network field.
 

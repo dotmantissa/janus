@@ -26,6 +26,20 @@ def assert_consensus(receipt):
     assert receipt['status_name'] == 'FINALIZED'
 
 
+def save_live_result(path, result, consumers):
+    """Keep completed cases when a resumed flow stops before revisiting them."""
+    previous = json.loads(path.read_text()) if path.exists() else []
+    current = {address.lower() for address in consumers}
+    records = [row for row in previous if row['delivery']['consumer'].lower() in current]
+    for index, row in enumerate(records):
+        if row['request_id'] == result['request_id']:
+            records[index] = result
+            break
+    else:
+        records.append(result)
+    atomic(path, records)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--journal')
@@ -81,7 +95,6 @@ def main():
         ('event-permitted', ev, registry, 'event-v1', 'The Node.js v24.1.0 release occurred on the date of its committed release announcement.', '2025-05-21T12:00:00Z', 'node-release-1', 'On what UTC date did the v24.1.0 release occurrence take place?', True),
         ('event-refused', ev, registry, 'event-v1', 'The Node.js v24.1.0 release occurred on the date of its committed release announcement.', '2025-05-22T00:00:00Z', 'node-release-1', 'On what UTC date did the v24.1.0 release occurrence take place?', False),
     ]
-    records = []
     for rid, cli, consumer, pid, proposition, target, sid, question, allowed in cases:
         config = cli.call(consumer, 'get_configuration')
         manifest = {'records': [sid], 'assertions': [{'assertion_id': 'temporal', 'question': question, 'rule_id': 'temporal-role'}]}
@@ -110,8 +123,7 @@ def main():
         if allowed:
             assert state['executed'] is True
             assert state['active'] is (pid=='event-v1')
-        records.append({'request_id':rid,'operation_id':operation,'certificate':result,'delivery':ack,'consumer_state':state,'expected_permitted':allowed})
-        atomic(ROOT/'evidence/live-results.json',records)
+        save_live_result(ROOT/'evidence/live-results.json', {'request_id':rid,'operation_id':operation,'certificate':result,'delivery':ack,'consumer_state':state,'expected_permitted':allowed}, [gate, registry])
         print('VERIFIED',rid,ack['acknowledgement'],flush=True)
     print('All four real-source finalized consumer flows verified.',flush=True)
 
