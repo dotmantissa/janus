@@ -204,3 +204,108 @@ Traceback (most recent call last):
         f"{ctx} failed (code={err.get('code', 'unknown')}): {err.get('message', 'unknown error')}"
     )
 genlayer_py.exceptions.GenLayerError: eth_sendRawTransaction failed (code=-32029): Rate limit exceeded: 500 requests per hour
+
+Rate-limit recovery attempt 1
+authority-node-schedule-observer FINALIZED SUCCESS
+accept-node-schedule-observer FINALIZED SUCCESS
+authority-node-release-observer FINALIZED SUCCESS
+accept-node-release-observer FINALIZED SUCCESS
+observe-node-schedule-1 FINALIZED SUCCESS
+observe-node-release-1 FINALIZED SUCCESS
+policy-notice-v1 FINALIZED SUCCESS
+policy-event-v1 FINALIZED SUCCESS
+register-notice FINALIZED SUCCESS
+register-event FINALIZED SUCCESS
+approve-notice-permitted FINALIZED SUCCESS
+open-notice-permitted FINALIZED SUCCESS
+reserve-notice-permitted FINALIZED SUCCESS
+assess-notice-permitted FINALIZED SUCCESS
+Traceback (most recent call last):
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 120, in <module>
+    main()
+    ~~~~^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 95, in main
+    result = s.call(resolver,'get_interval_certificate',[rid])
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 93, in call
+    return self.client.read_contract(address=address, function_name=method, args=args or [])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/client/genlayer_client.py", line 93, in read_contract
+    return read_contract(
+        self=self,
+    ...<7 lines>...
+        sim_config=sim_config,
+    )
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/contracts/actions.py", line 82, in read_contract
+    enc_result = self.provider.make_request(
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        method="gen_call",
+        ^^^^^^^^^^^^^^^^^^
+        params=[request_params],
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )["result"]
+    ^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 48, in make_request
+    self._raise_on_error(resp, method)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 54, in _raise_on_error
+    raise GenLayerError(
+        f"{ctx} failed (code={err.get('code', 'unknown')}): {err.get('message', 'unknown error')}"
+    )
+genlayer_py.exceptions.GenLayerError: gen_call failed (code=-32029): Rate limit exceeded: 500 requests per hour
+
+Rate-limit recovery attempt 2
+authority-node-schedule-observer FINALIZED SUCCESS
+accept-node-schedule-observer FINALIZED SUCCESS
+authority-node-release-observer FINALIZED SUCCESS
+accept-node-release-observer FINALIZED SUCCESS
+observe-node-schedule-1 FINALIZED SUCCESS
+observe-node-release-1 FINALIZED SUCCESS
+policy-notice-v1 FINALIZED SUCCESS
+policy-event-v1 FINALIZED SUCCESS
+register-notice FINALIZED SUCCESS
+register-event FINALIZED SUCCESS
+approve-notice-permitted FINALIZED SUCCESS
+open-notice-permitted FINALIZED SUCCESS
+reserve-notice-permitted FINALIZED SUCCESS
+assess-notice-permitted FINALIZED SUCCESS
+publish-notice-permitted FINALIZED SUCCESS
+execute-notice-permitted FINALIZED SUCCESS
+VERIFIED notice-permitted APPLIED
+approve-notice-refused FINALIZED SUCCESS
+open-notice-refused FINALIZED SUCCESS
+reserve-notice-refused FINALIZED SUCCESS
+assess-notice-refused FINALIZED SUCCESS
+publish-notice-refused FINALIZED SUCCESS
+execute-notice-refused FINALIZED FAILED
+Traceback (most recent call last):
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 120, in <module>
+    main()
+    ~~~~^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/live_flow.py", line 108, in main
+    state = cli.call(consumer,'get_state',[rid])
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/scripts/studio.py", line 93, in call
+    return self.client.read_contract(address=address, function_name=method, args=args or [])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/client/genlayer_client.py", line 93, in read_contract
+    return read_contract(
+        self=self,
+    ...<7 lines>...
+        sim_config=sim_config,
+    )
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/contracts/actions.py", line 82, in read_contract
+    enc_result = self.provider.make_request(
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        method="gen_call",
+        ^^^^^^^^^^^^^^^^^^
+        params=[request_params],
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )["result"]
+    ^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 48, in make_request
+    self._raise_on_error(resp, method)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/lib/python3.14/site-packages/genlayer_py/provider/provider.py", line 54, in _raise_on_error
+    raise GenLayerError(
+        f"{ctx} failed (code={err.get('code', 'unknown')}): {err.get('message', 'unknown error')}"
+    )
+genlayer_py.exceptions.GenLayerError: gen_call failed (code=-32029): Rate limit exceeded: 500 requests per hour
