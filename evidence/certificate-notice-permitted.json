@@ -7,7 +7,7 @@
       "OCCURRENCE": null
     },
     "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
-    "consumer": "0xbfebca71da46ccaa81f019ef371e49f70daf5857",
+    "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
     "controlling_rule_ids": [
       "temporal-role"
     ],
@@ -37,7 +37,7 @@
       }
     ],
     "exceptions": [],
-    "first_publication_upper": 1793615762,
+    "first_publication_upper": 1793703620,
     "generation": 1,
     "intervals": {
       "EFFECTIVE": {
@@ -50,7 +50,7 @@
       "PUBLICATION": {
         "lower": null,
         "lower_inclusive": true,
-        "upper": 1793615763,
+        "upper": 1793703621,
         "upper_inclusive": false
       }
     },
@@ -62,13 +62,15 @@
     "proposition": "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
     "publication_support": [
       {
-        "observation_upper": 1793615762,
+        "observation_upper": 1793703620,
         "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+        "redirect_policy": "REJECT",
         "source_id": "node-schedule-1",
-        "support": "SIGNED_PUBLIC_OBSERVATION"
+        "support": "SIGNED_PUBLIC_OBSERVATION",
+        "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
       }
     ],
-    "request_binding_digest": "d15043a1cb898b7d8aa66829181ad237a55d91e3b178920d43d0b5c9f0882361",
+    "request_binding_digest": "c39c2afc9c752dc18a657280507b29245ef871cb495e9b4bae91d2407bc33e49",
     "request_id": "notice-permitted",
     "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
     "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
@@ -80,7 +82,7 @@
   },
   "envelope": {
     "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
-    "consumer": "0xbfebca71da46ccaa81f019ef371e49f70daf5857",
+    "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
     "deadline": "2032-01-01T00:00:00Z",
     "generation": 1,
     "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",

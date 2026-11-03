@@ -1,0 +1,83 @@
+{
+  "deploy-janus": {
+    "binding": "99acccc9b7d1a4f56c507bfbc882c307792c80121262e5999dc0c32032b6682d",
+    "specification": {
+      "file": "contracts/janus.py",
+      "code_sha256": "a80a48c1f9ac42e1412faa213cbb6afaba8ef6ecb3174eb0cf9d31ea2c852cfb",
+      "args": [
+        10000
+      ]
+    },
+    "tx": "0x2e3049c760cfab754bee905864fbf4d6e1e04621b3cc897367361803a75c9013"
+  },
+  "authority-node-schedule-observer": {
+    "binding": "2111d20a7c6dbd65993baf493f9869a545a5f4919e9c43343506c21e5f2ccdc2",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "register_authority",
+      "args": [
+        "node-schedule-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/Release\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/Release/\"}"
+      ]
+    },
+    "tx": "0xdec63e48b00120f0fb7f8997fb9d078265fa39133ead7c3d222d3022b0541ff6"
+  },
+  "accept-node-schedule-observer": {
+    "binding": "a679117243466a5a89f4f69af0696a0f0e1f05850857fab40c1bc6d9a16b48b4",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "accept_authority",
+      "args": [
+        "node-schedule-observer"
+      ]
+    },
+    "tx": "0xc27575cfe7819144cb18ff24cea45f1d5afdb2765aded06c2fbfc74a634fa0ef"
+  },
+  "authority-node-release-observer": {
+    "binding": "2eb8dcf82ea0c7cd3020354bf511999e5d46c0f5d49d3f1fe943f2697ef7551f",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "register_authority",
+      "args": [
+        "node-release-observer",
+        "addr#bc1399c55538ec034d4da550c03c34ae0c357f53",
+        "{\"channel\":\"PUBLIC_NODEJS_RECORD\",\"public_evidence_url\":\"https://github.com/nodejs/nodejs.org\",\"scope\":\"nodejs-release\",\"url_prefix\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/\"}"
+      ]
+    },
+    "tx": "0xdb5aec0e939bb7d6949af802efb31ff612bc55bc89ce24763247f98d8ec282b1"
+  },
+  "accept-node-release-observer": {
+    "binding": "a8291b0a3545f4bc067d2148da8ab3dcaddab994af77d20dab07292e32200388",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "accept_authority",
+      "args": [
+        "node-release-observer"
+      ]
+    },
+    "tx": "0x8a0be818ff5d7528d325cd715a64d0f38df55cb3d4ac87a564c5396cf239c257"
+  },
+  "observe-node-schedule-1": {
+    "binding": "e9fa45905be1ff92f9f30c8fab1a9c9b5b6f5ef7a209b09df7433a95e4142797",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-schedule-observer\",\"byte_length\":3254,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-schedule-1\",\"spans\":[{\"end\":2860,\"span_id\":\"v24\",\"start\":2712,\"text\":\"\\\"v24\\\": {\\n    \\\"start\\\": \\\"2025-05-06\\\",\\n    \\\"lts\\\": \\\"2025-10-28\\\",\\n    \\\"maintenance\\\": \\\"2026-10-20\\\",\\n    \\\"end\\\": \\\"2028-04-30\\\",\\n    \\\"codename\\\": \\\"Krypton\\\"\\n  }\"},{\"end\":3112,\"span_id\":\"v26\",\"start\":2964,\"text\":\"\\\"v26\\\": {\\n    \\\"start\\\": \\\"2026-05-05\\\",\\n    \\\"lts\\\": \\\"2026-10-28\\\",\\n    \\\"maintenance\\\": \\\"2027-10-20\\\",\\n    \\\"end\\\": \\\"2029-04-30\\\",\\n    \\\"codename\\\": \\\"Lithium\\\"\\n  }\"}],\"subject_id\":\"schedule\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/Release/c3e8696312969c95643cb52f05f124c161db87b2/schedule.json\"}"
+      ]
+    },
+    "tx": "0x79574f0fe5b94c45e3c05ead1ec57fb1089ece8680f4c883cae9b235a3e24c26"
+  },
+  "observe-node-release-1": {
+    "binding": "d05497203869b0e50fb651bdadabf26828a74438da3001a7a817a8b3b282f044",
+    "specification": {
+      "address": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+      "method": "observe_source",
+      "args": [
+        "{\"authority_id\":\"node-release-observer\",\"byte_length\":21059,\"channel\":\"PUBLIC_NODEJS_RECORD\",\"raw_sha256\":\"fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7\",\"revision\":1,\"scope\":\"nodejs-release\",\"source_id\":\"node-release-1\",\"spans\":[{\"end\":185,\"span_id\":\"release-header\",\"start\":0,\"text\":\"---\\ndate: '2025-05-21T15:31:30.747Z'\\ncategory: release\\ntitle: Node.js 24.1.0 (Current)\\nlayout: blog-post\\nauthor: Antoine du Hamel\\n---\\n\\n## 2025-05-21, Version 24.1.0 (Current), @aduh95\\n\\n\"}],\"subject_id\":\"v24.1.0\",\"supersedes\":\"\",\"url\":\"https://raw.githubusercontent.com/nodejs/nodejs.org/0555e2f37ef1a4f2114a9cc36d7d7e189046136c/apps/site/pages/en/blog/release/v24.1.0.md\"}"
+      ]
+    },
+    "tx": "0xd843af89138f45d2f7160b1f4bba9674f2499458bf5982d7b13319ae45154ebb"
+  }
+}

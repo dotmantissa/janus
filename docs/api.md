@@ -21,7 +21,7 @@ def digest(value):
 
 ## Authority and source registration
 
-Deploy `Janus(capacity: int)` with capacity from 1 through 10,000. The sender becomes registry owner.
+Deploy `Janus(capacity: int, transport_url: str)` with capacity from 1 through 10,000 and the HTTPS endpoint of a verified redirect-rejecting transport. The sender becomes registry owner. The published transport and its allowed publisher hosts are recorded in [transport evidence](../evidence/source-transport.json).
 
 | Write method | Arguments and behavior |
 | --- | --- |
@@ -33,7 +33,7 @@ Deploy `Janus(capacity: int)` with capacity from 1 through 10,000. The sender be
 | `register_temporal_policy` | `policy_id: str, interpretation_rules: str, accepted_time_sources: str`; owner appends a consecutive policy revision |
 | `register_consumer` | `consumer: Address, configuration: str`; consumer contract registers itself through its `register` method |
 
-Authority configuration has exactly `channel`, `url_prefix`, `scope`, and `public_evidence_url`, all nonempty strings at most 512 characters. The HTTPS prefix limits accepted source URLs; it does not establish the organization's ownership of the principal. The deployment owner audits that relationship. Current URLs support ordinary HTTPS host/path characters and reject credentials, queries, fragments, percent encoding and dot-path traversal.
+Authority configuration has exactly `channel`, `url_prefix`, `scope`, and `public_evidence_url`, all nonempty strings at most 512 characters. The HTTPS prefix limits accepted source URLs; it does not establish the organization's ownership of the principal. The deployment owner audits that relationship. Prefixes must end in `/`. URLs require canonical lowercase hosts and canonical ports and reject credentials, queries, fragments, percent encoding, duplicate slashes and dot segments at every path position. The transport rejects every HTTP redirect, including one within the same prefix.
 
 A source record has this shape; offsets count UTF-8 **bytes**, with an exclusive end:
 
@@ -96,7 +96,7 @@ The owner-approved request envelope contains exactly:
 | `target_time` | Locked instant against which intervals are evaluated |
 | `supersedes` | Empty initially; prior request ID on a successor |
 
-An executable construction example is in [the live flow](../scripts/live_flow.py). The consumer owner first calls `approve_request(canon(envelope))`. The request owner then calls `open_record(request_id, proposition, target_time, canon(manifest), canon(envelope))` on Janus. Approving a successor blocks the previous consumer state immediately.
+An executable construction example is in [the live flow](../scripts/live_flow.py). The consumer owner first calls `approve_request(canon(envelope))`. The request owner then calls `open_record(request_id, proposition, target_time, canon(manifest), canon(envelope))` on Janus. Janus checks that exact current consumer approval before mutating a subject head. Approving a successor blocks the previous consumer state immediately and requires its predecessor to have opened. The consumer owner can cancel an unopened approval and approve a new request ID at the same generation; cancellation never revives an old permission. Consumer-approved successors may change the request owner.
 
 | Write method | Arguments and behavior |
 | --- | --- |
@@ -121,7 +121,7 @@ Quarantine kinds are `AUTHORITY`, `SOURCE`, `POLICY`, and `REQUEST`. A policy re
 | `decision_vector` | Assertion IDs, roles, qualifiers, normalized intervals, and source/hash/byte witnesses |
 | `intervals` | OCCURRENCE, EFFECTIVE and PUBLICATION intervals or null |
 | `applies_at_target` | OCCURRENCE and EFFECTIVE booleans, or null when unsupported |
-| `first_publication_upper`, `publication_support` | Inclusive public-availability bound and controlling observation/hash provenance |
+| `first_publication_upper`, `publication_support` | Latest inclusive observation bound across all committed records, with hash and transport provenance |
 | `controlling_rule_ids`, `exceptions` | Policy rule IDs and source/span/rule exception witnesses |
 | `coverage`, `unresolved_flags` | Complete-packet status, missing roles and unresolved reasons |
 | `superseded_by` | Successor present when the certificate was formed; wrapper validity supplies current state |
@@ -136,7 +136,7 @@ Intervals contain `lower`, `upper`, `lower_inclusive: true`, `upper_inclusive: f
 
 Read `get_delivery(operation_id)` until `acknowledged` is true. Its fields are `request_id`, `consumer`, `payload_digest`, current `valid`, `acknowledged`, `acknowledgement`, and `broadcasts`. A synchronous certificate view alone is not finality evidence. Duplicate identical operations are idempotent; conflicting reuse is rejected.
 
-Other Janus views are `get_source(source_id)`, `get_policy(policy_id, revision)`, `get_consumer(consumer: Address)`, `get_quarantine_reason(kind, record_id)`, and `list_history(kind, offset, limit)`. History kinds are `REQUEST`, `SOURCE`, `DELIVERY`; limits are 1–50.
+Other Janus views include `get_transport_configuration()`, `get_subject_head(consumer: Address, subject_id: str)`, `get_request_state(request_id: str)` (returns `exists: false` for an unopened ID), `get_source(source_id)`, `get_policy(policy_id, revision)`, `get_consumer(consumer: Address)`, `get_quarantine_reason(kind, record_id)`, and `list_history(kind, offset, limit)`. History kinds are `REQUEST`, `SOURCE`, `DELIVERY`; limits are 1–50.
 
 ## Consumer interfaces
 
@@ -145,7 +145,9 @@ Deploy `DeprecationGate` or `EventRegistry` with `(resolver: Address, policy_id:
 | Method | Behavior |
 | --- | --- |
 | `register()` | Owner emits finalized resolver registration |
-| `approve_request(envelope: str)` | Owner approves the exact request and next subject generation |
+| `approve_request(envelope: str)` | Owner approves the exact request and next subject generation after checking the resolver head |
+| `cancel_request(request_id: str)` | Owner permanently revokes a current unopened approval after resolver-state reconciliation; preserves restrictions until replacement delivery |
+| `get_request_approval(request_id: str)` | Current canonical approved envelope, or an empty string when absent, cancelled or superseded |
 | `receive_certificate(payload: str)` | Resolver-only finalized delivery; verifies all bindings, journal and current validity; emits acknowledgement |
 | `execute(subject_id: str, action_id: str)` | Owner executes the permitted consequence with a unique action ID; rechecks current validity |
 | `get_configuration()` | Resolver, owner, mode, policy, notice period and consequence commitment |
@@ -153,4 +155,4 @@ Deploy `DeprecationGate` or `EventRegistry` with `(resolver: Address, policy_id:
 | `get_state(subject_id: str)` | Current permitted/active/unresolved flags, operation, generation, acknowledgement and execution flag |
 | `list_receipts(offset: int, limit: int)` | Paginated operation IDs, at most 50 |
 
-The notice consumer schedules activation inside the effective interval after execution. The event consumer records the certified occurrence consequence immediately. Repeating an existing action ID for the same subject is an idempotent acknowledgement of that prior execution; it does not execute a new consequence. Choose a new action ID for a new generation.
+The notice consumer schedules activation inside the effective interval after execution. The event consumer records the certified occurrence consequence immediately. Repeating an existing action ID for the same subject is an idempotent acknowledgement of that prior execution; it does not execute a new consequence. Execution is indexed by request generation independently of delivery IDs. Another delivery cannot clear activation or allow a second distinct action in that generation. Choose a new action ID for a new consumer-approved generation.

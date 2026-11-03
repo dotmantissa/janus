@@ -1,0 +1,95 @@
+TAP version 13
+# Subtest: returns exactly committed bytes without redirect following
+ok 1 - returns exactly committed bytes without redirect following
+  ---
+  duration_ms: 33.043
+  ...
+# Subtest: rejects 301 even for same-prefix redirect
+ok 2 - rejects 301 even for same-prefix redirect
+  ---
+  duration_ms: 1.3435
+  ...
+# Subtest: rejects 302 even for same-prefix redirect
+ok 3 - rejects 302 even for same-prefix redirect
+  ---
+  duration_ms: 0.9534
+  ...
+# Subtest: rejects 303 even for same-prefix redirect
+ok 4 - rejects 303 even for same-prefix redirect
+  ---
+  duration_ms: 1.0664
+  ...
+# Subtest: rejects 307 even for same-prefix redirect
+ok 5 - rejects 307 even for same-prefix redirect
+  ---
+  duration_ms: 1.0603
+  ...
+# Subtest: rejects 308 even for same-prefix redirect
+ok 6 - rejects 308 even for same-prefix redirect
+  ---
+  duration_ms: 0.984799
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/..
+ok 7 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/..
+  ---
+  duration_ms: 0.746
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/.
+ok 8 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/.
+  ---
+  duration_ms: 0.6881
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/x/../y
+ok 9 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/x/../y
+  ---
+  duration_ms: 0.6862
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/%2e%2e
+ok 10 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/%2e%2e
+  ---
+  duration_ms: 0.7067
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release-evil/record
+ok 11 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release-evil/record
+  ---
+  duration_ms: 0.6264
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com.evil/nodejs/Release/record
+ok 12 - rejects noncanonical or unconfined source https://raw.githubusercontent.com.evil/nodejs/Release/record
+  ---
+  duration_ms: 0.5807
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/record?x=1
+ok 13 - rejects noncanonical or unconfined source https://raw.githubusercontent.com/nodejs/Release/record?x=1
+  ---
+  duration_ms: 0.5931
+  ...
+# Subtest: rejects noncanonical or unconfined source https://raw.githubusercontent.com:443/nodejs/Release/record
+ok 14 - rejects noncanonical or unconfined source https://raw.githubusercontent.com:443/nodejs/Release/record
+  ---
+  duration_ms: 0.7271
+  ...
+# Subtest: rejects noncanonical or unconfined source https://127.0.0.1/record
+ok 15 - rejects noncanonical or unconfined source https://127.0.0.1/record
+  ---
+  duration_ms: 0.8595
+  ...
+# Subtest: rejects a normalized final URL changed by the HTTP client
+ok 16 - rejects a normalized final URL changed by the HTTP client
+  ---
+  duration_ms: 1.6782
+  ...
+# Subtest: rejects byte substitution and oversized streaming bodies
+ok 17 - rejects byte substitution and oversized streaming bodies
+  ---
+  duration_ms: 4.1541
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 155.400099

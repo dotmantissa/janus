@@ -1,0 +1,80 @@
+{
+  "url": "https://janus-source-transport.vercel.app/api/fetch",
+  "deployment_id": "dpl_8HesroP84GRiT51gCQaAiZh4j1k8",
+  "deployment_url": "https://janus-source-transport-31h4pq7vt-mantissas-projects.vercel.app",
+  "redirect_policy": "REJECT",
+  "trust": "DEPLOYMENT_OWNER_CONTROLLED_TRANSPORT",
+  "allowed_hosts": [
+    "raw.githubusercontent.com",
+    "github.com"
+  ],
+  "source_sha256": {
+    "gateway/core.mjs": "c31edbdbe977befda3a1122272c16e66f231441e3dfa00b589bdb6b2685b82d8",
+    "gateway/api/fetch.mjs": "6d7628d44874522222a93a72aedda2e7ec52a37a040ef5433c41a29abf2c8118",
+    "gateway/package.json": "ec93efbe6911fbbb65ffc33bcc03f9ad2c0d3f0680e5ad8c3a146bdbc55d1a1f",
+    "gateway/vercel.json": "58717bc1927a312c8775b5c6aaab920310d6d57e59ea62ff9d7921a9aa21d119"
+  },
+  "live_verification": [
+    {
+      "source_url": "https://raw.githubusercontent.com/nodejs/Release/c3e8696312969c95643cb52f05f124c161db87b2/schedule.json",
+      "status": 200,
+      "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+      "byte_length": 3254,
+      "binding_headers_verified": true
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/nodejs/nodejs.org/0555e2f37ef1a4f2114a9cc36d7d7e189046136c/apps/site/pages/en/blog/release/v24.1.0.md",
+      "status": 200,
+      "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+      "byte_length": 21059,
+      "binding_headers_verified": true
+    },
+    {
+      "source_url": "https://github.com/twitter/bootstrap",
+      "status": 409,
+      "reason": "REDIRECT_REJECTED"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/nodejs/Release/..",
+      "status": 409,
+      "reason": "SOURCE_CONFINEMENT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/nodejs/Release/.",
+      "status": 409,
+      "reason": "SOURCE_CONFINEMENT"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/nodejs/Release-evil/record",
+      "status": 409,
+      "reason": "SOURCE_CONFINEMENT"
+    }
+  ],
+  "deployment_sources_verified": [
+    {
+      "file": "gateway/api/fetch.mjs",
+      "deployment_file_id": "713076cb88f8f4a424f18ae6740f72463fb9460c",
+      "sha256": "6d7628d44874522222a93a72aedda2e7ec52a37a040ef5433c41a29abf2c8118"
+    },
+    {
+      "file": "gateway/core.mjs",
+      "deployment_file_id": "512c59c283cd88432211d159c4a80c745e31f609",
+      "sha256": "c31edbdbe977befda3a1122272c16e66f231441e3dfa00b589bdb6b2685b82d8"
+    },
+    {
+      "file": "gateway/package.json",
+      "deployment_file_id": "2973f9cca141c73621734c809a6ff61b63ae7f5b",
+      "sha256": "ec93efbe6911fbbb65ffc33bcc03f9ad2c0d3f0680e5ad8c3a146bdbc55d1a1f"
+    },
+    {
+      "file": "gateway/test/transport.test.mjs",
+      "deployment_file_id": "df92eb3768174777981ee167bae0d160af4ecb7f",
+      "sha256": "87d580713c4d6c1f5536070d2f455194a0a8096f92c5c5b96570cdb4f6ef88c5"
+    },
+    {
+      "file": "gateway/vercel.json",
+      "deployment_file_id": "ad4e5526d64da194cd0df30984ae1e449c985956",
+      "sha256": "58717bc1927a312c8775b5c6aaab920310d6d57e59ea62ff9d7921a9aa21d119"
+    }
+  ]
+}

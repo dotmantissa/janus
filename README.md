@@ -14,7 +14,7 @@ All contracts pin `py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz0
 
 ## Consensus boundary
 
-Each assessment participant independently fetches every committed HTTPS revision, checks its SHA-256 commitment and byte spans, reads the entire packet, and makes one substantive model evaluation. The model assigns dates to occurrence, effect or disclosure roles, identifies qualifiers and controlling exceptions, and selects source-grounded witnesses. Python then parses the selected date strings and builds UTC intervals deterministically.
+Each assessment participant independently fetches every committed HTTPS revision through the pinned source transport, checks its SHA-256 commitment and byte spans, reads the entire packet, and makes one substantive model evaluation. The deployment-owned transport rejects every redirect and enforces the configured source origin and directory prefix. Its code commitments and public HTTP verification are recorded in [transport evidence](evidence/source-transport.json); transport correctness and availability remain explicit trust dependencies. The model assigns dates to occurrence, effect or disclosure roles, identifies qualifiers and controlling exceptions, and selects source-grounded witnesses. Python then parses the selected date strings and builds UTC intervals deterministically.
 
 The custom validator repeats that work independently. It compares normalized roles, qualifiers, intervals, coverage, exception rule IDs and canonical witnesses. It never compares free-form prose or accepts an answer merely because its JSON is valid. A malformed or hallucinated model response fails validation. An unavailable source yields no affirmative interval conclusion. State transitions consume only the agreed canonical result.
 
@@ -24,7 +24,7 @@ Janus owns that evidence-to-certificate transition. Integrators own subject sele
 
 An authorized observation principal submits a source manifest in a signed `observe_source` transaction. Consensus verifies the complete public bytes against the locked commitment. Janus stores the exact UTF-8 text and manifest, then emits an authenticated self-callback on finalization. The callback records its own network transaction time as a conservative public-availability upper bound after the observation became final. A pending confirmation cannot support an assessment. The public historical record is signed by the principal and verified by validators.
 
-That observation establishes only an inclusive upper bound on first public availability. The lower bound remains unknown. It does not establish the source's original publication date, its truth, or availability before the observation. Assessment fetch time never becomes publication time. The certificate's availability support names the particular source hashes supporting its proposition's temporal witnesses, rather than assigning one date to every statement on a page.
+That observation establishes only an inclusive upper bound on first public availability. The lower bound remains unknown. It does not establish the source's original publication date, its truth, or availability before the observation. Assessment fetch time never becomes publication time. When temporal evidence is supported, the certificate conservatively takes the latest observation upper bound across every committed record, including controlling exceptions, corrections and records without selected temporal witnesses.
 
 This deployment supports `SIGNED_PUBLIC_OBSERVATION`. It deliberately does not accept archive timestamps, release metadata or backdated headings as historical availability evidence. Adding another provenance mechanism requires a separately audited implementation and new policy binding.
 
@@ -63,12 +63,12 @@ The scripts target `studionet`, chain ID `61999`, through the configured GenLaye
 
 For a different application, follow these steps:
 
-1. Deploy `Janus(capacity)` with your registry owner.
+1. Deploy `Janus(capacity, transport_url)` with your registry owner and a verified transport that rejects redirects. The published transport supports `raw.githubusercontent.com` and `github.com`; another publisher requires an explicitly configured transport.
 2. Have the owner call `register_authority`, disclosing channel, exact HTTPS prefix, scope and public authority evidence. Have the designated principal sign `accept_authority`.
 3. Have that principal sign `observe_source` for each complete committed revision. Wait for its successful finalized receipt and self-confirmation. Check `get_source(...).confirmed` and `valid` before opening a request.
 4. Register an immutable temporal policy and its accepted authority IDs.
 5. Deploy a consumer with its own owner and selected policy revision. Its owner calls `register`, which sends the resolver a finalized authenticated registration message.
-6. Commit the proposition, manifest, consumer, consequence, generation, target instant and deadline in a canonical envelope. The consumer owner approves that exact envelope. The request owner calls `open_record`.
+6. Commit the proposition, manifest, consumer, consequence, generation, target instant and deadline in a canonical envelope. The consumer owner approves that exact envelope. The request owner calls `open_record`, which checks consumer approval before assigning ownership or the subject head.
 7. Reserve an assessment attempt, wait for that transaction, then call `assess_intervals`. Inspect its successful receipt and certificate. Reserve no more than three application attempts per revision.
 8. Call `publish_to` with a unique operation ID. Janus emits `receive_certificate` only on finalization. The consumer authenticates Janus, verifies every binding and checks current revocation state. Its finalized acknowledgement is persisted on Janus.
 9. Execute the application action through the consumer. It checks the current generation and source validity again. UNKNOWN, pending, stale and quarantined evidence remains visibly blocked.
@@ -81,4 +81,4 @@ The notice gate checks `first_publication_upper + notice_seconds <= effective.lo
 
 The event registry checks the occurrence interval at the locked target instant. Its `execute` records that certified event consequence. A release date can be accepted as an occurrence statement under the explicit source policy even though the public observation supporting that exact revision is much later. The certificate continues to disclose that availability limitation.
 
-Both consumers require owner-approved envelopes and finalized authenticated source messages, retain their last applied generation and acknowledgements, block pending successors, and reject stale or quarantined evidence at action time. Their consequence is restricted to their own on-chain registry or scheduled activation state. They do not grant arbitrary external account permissions.
+Both consumers require owner-approved envelopes and finalized authenticated source messages, retain their last applied generation and acknowledgements, block pending successors, and reject stale or quarantined evidence at action time. Execution persists per request generation across delivery IDs. The consumer owner may cancel an approval that never opened after reconciling the resolver head, then approve a replacement at the same generation. Cancellation permanently revokes the old approval and keeps restrictions until a replacement certificate arrives. Opened generations recover through consumer-approved successors, which may explicitly change the request owner. Their consequence is restricted to their own on-chain registry or scheduled activation state. They do not grant arbitrary external account permissions.

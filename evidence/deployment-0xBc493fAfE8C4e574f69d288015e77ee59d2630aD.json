@@ -1,0 +1,20 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "runtime": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "resolver": "0xBc493fAfE8C4e574f69d288015e77ee59d2630aD",
+  "notice_consumer": "0x46a31913210362A1817e0377C09db71EdA62b9D0",
+  "event_consumer": "0x2a84271493C542604168802AFF12530eAc84a669",
+  "owners": {
+    "resolver": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+    "notice": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+    "event": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0"
+  },
+  "journal": "studio-v3",
+  "code_sha256": {
+    "contracts/janus.py": "a80a48c1f9ac42e1412faa213cbb6afaba8ef6ecb3174eb0cf9d31ea2c852cfb",
+    "contracts/notice_gate.py": "d1d22e9171839dc826cd1bcb6efd9766b773662c85e29933dd2838591fde4a8b",
+    "contracts/event_registry.py": "b60a27f6294c69473b5bae707ff6e97e7057cd56f5ecbee70f324f26fd8a332d"
+  }
+}
