@@ -13,8 +13,32 @@ from genlayer_py.types import TransactionStatus
 from genlayer_py.types.calldata import CalldataAddress
 from genlayer_py.abi import calldata
 from gltest.assertions import tx_execution_succeeded
+from genlayer_py.exceptions import GenLayerError
 
 ROOT = Path(__file__).resolve().parents[1]
+_last_rpc_at = 0.0
+
+
+def paced_rpc(request):
+    def call(method, params):
+        global _last_rpc_at
+        while True:
+            # One process shares the budget across resolver and consumer clients.
+            # Eight seconds between RPCs stays below Studio's 500/hour IP cap.
+            delay = 8 - (time.monotonic() - _last_rpc_at)
+            if delay > 0:
+                time.sleep(delay)
+            _last_rpc_at = time.monotonic()
+            try:
+                return request(method=method, params=params)
+            except GenLayerError as error:
+                if 'code=-32029' not in str(error):
+                    raise
+                # Retry the same RPC parameters, including the same signed raw
+                # transaction. Never regenerate or resubmit a journaled operation.
+                print('Studio quota reached; retrying identical RPC after 60 seconds:', method, flush=True)
+                time.sleep(60)
+    return call
 
 
 def canon(value):
@@ -62,6 +86,9 @@ class Studio:
             supplied = (ROOT / '.secrets' / key_name).read_text().strip()
         self.account = Account.from_key(supplied)
         self.client = create_client(chain=studionet, account=self.account)
+        provider = getattr(self.client, 'provider', None)
+        if provider is not None:
+            provider.make_request = paced_rpc(provider.make_request)
         self.folder = ROOT / 'evidence' / journal
         self.folder.mkdir(parents=True, exist_ok=True)
         self.journal_path = self.folder / 'journal.json'

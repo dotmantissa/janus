@@ -53,8 +53,12 @@ def test_real_studio_flow():
 def test_both_live_consumer_lifecycles():
     import live_lifecycle
     from studio import Studio
-    run_main(live_lifecycle)
     deployment = json.loads((ROOT/'evidence/deployment.json').read_text())
+    rows = json.loads((ROOT/'evidence/live-results.json').read_text())
+    current_consumers = {deployment['notice_consumer'].lower(), deployment['event_consumer'].lower()}
+    if len(rows) != 4 or any(row['delivery']['consumer'].lower() not in current_consumers for row in rows):
+        pytest.skip('Complete the four matching deployed consumer flows before lifecycle verification')
+    run_main(live_lifecycle)
     s = Studio(journal=deployment['journal'])
     results = json.loads((ROOT/'evidence/live-lifecycle-results.json').read_text())
     assert {row['mode'] for row in results} == {'notice', 'event'}

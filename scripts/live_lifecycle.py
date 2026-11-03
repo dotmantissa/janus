@@ -31,6 +31,8 @@ def main():
         cli = Studio(key, journal+'-'+key)
         resolver = deployment['resolver']
         template = json.loads((ROOT/'evidence'/('request-'+label+'-permitted.json')).read_text())
+        assert template['envelope']['consumer'] == consumer.lower(), 'Complete the matching deployment live_flow.py before lifecycle verification'
+        assert template['envelope']['owner'] == s.account.address.lower(), 'Lifecycle template belongs to another request owner'
         proposition, manifest = template['proposition'], template['manifest']
         subject = 'lifecycle-'+label
         original = {**template['envelope'], 'request_id': subject+'-1', 'subject_id': subject}

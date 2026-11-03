@@ -142,3 +142,34 @@ def test_deployment_receipt_binds_source_and_constructor():
     studio.verify_identity(receipt, 'tx-offline', '0x1111', spec)
     with pytest.raises(AssertionError, match='source mismatch'):
         studio.verify_identity(receipt, 'tx-offline', '0x1111', {**spec, 'code_sha256': '1'*64})
+
+
+def test_quota_retry_preserves_identical_signed_transaction_parameters(monkeypatch):
+    from genlayer_py.exceptions import GenLayerError
+    monkeypatch.setattr(studio, '_last_rpc_at', 0)
+    monkeypatch.setattr(studio.time, 'monotonic', lambda: 100)
+    waits = []
+    monkeypatch.setattr(studio.time, 'sleep', waits.append)
+    calls = []
+    params = ['signed-offline-fixture']
+    def request(method, params):
+        calls.append((method, params))
+        if len(calls) == 1:
+            raise GenLayerError('eth_sendRawTransaction failed (code=-32029): quota')
+        return {'result': 'journaled-hash'}
+    result = studio.paced_rpc(request)('eth_sendRawTransaction', params)
+    assert result == {'result': 'journaled-hash'}
+    assert len(calls) == 2 and all(call[1] is params for call in calls)
+    assert 60 in waits
+
+
+def test_non_quota_rpc_error_is_not_retried(monkeypatch):
+    from genlayer_py.exceptions import GenLayerError
+    monkeypatch.setattr(studio, '_last_rpc_at', 0)
+    calls = []
+    def request(method, params):
+        calls.append(method)
+        raise GenLayerError('unknown execution failure')
+    with pytest.raises(GenLayerError, match='execution failure'):
+        studio.paced_rpc(request)('gen_call', [])
+    assert calls == ['gen_call']
