@@ -25,6 +25,8 @@ def main():
     gate = notice.deploy('deploy-notice', 'contracts/notice_gate.py', [CalldataAddress(resolver), 'notice-v1', 1, 2592000])
     event = Studio('event', args.journal + '-event')
     registry = event.deploy('deploy-event', 'contracts/event_registry.py', [CalldataAddress(resolver), 'event-v1', 1, 0])
+    for address, path in ((resolver, 'contracts/janus.py'), (gate, 'contracts/notice_gate.py'), (registry, 'contracts/event_registry.py')):
+        s.verify_source(address, path)
     result = {'network': 'studionet', 'chain_id': 61999, 'rpc': 'https://studio.genlayer.com/api', 'runtime': 'py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6', 'resolver': resolver, 'notice_consumer': gate, 'event_consumer': registry, 'owners': {'resolver': s.account.address, 'notice': notice.account.address, 'event': event.account.address}}
     result['journal'] = args.journal
     result['code_sha256'] = {path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in ('contracts/janus.py', 'contracts/notice_gate.py', 'contracts/event_registry.py')}
