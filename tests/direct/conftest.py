@@ -42,11 +42,20 @@ def packet(direct_vm, direct_deploy, direct_alice, direct_bob):
     envelope = {"request_id": "request1", "owner": owner, "parties": [], "policy_id": "temporal", "policy_revision": 1, "subject_id": "service", "subject_digest": digest(proposition), "source_manifest_digest": digest(manifest), "consumer": consumer.as_hex.lower(), "consequence_digest": consequence, "generation": 1, "deadline": "2031-01-01T00:00:00Z", "target_time": "2030-01-01T00:00:00Z", "supersedes": ""}
     output = {"assertions": [{"assertion_id": "effect", "role": "EFFECTIVE", "qualifier": "FROM", "source_id": "source1", "span_id": "temporal", "start": "2030-01-01T00:00:00Z", "end": ""}, {"assertion_id": "event", "role": "OCCURRENCE", "qualifier": "EXACT", "source_id": "source1", "span_id": "temporal", "start": "2025-01-01T00:00:00Z", "end": ""}], "flags": [], "exceptions": []}
     direct_vm.mock_llm(r".*", canon(output))
-    return {"c": c, "record": record, "rules": rules, "manifest": manifest, "envelope": envelope, "output": output, "proposition": proposition, "owner": direct_alice, "consumer": consumer, "raw": raw}
+    p = {"c": c, "record": record, "rules": rules, "manifest": manifest, "envelope": envelope, "output": output, "proposition": proposition, "owner": direct_alice, "consumer": consumer, "raw": raw, "approval": None, "vm": direct_vm}
+    def hook(vm, data):
+        if 'CallContract' in data:
+            # Explicit synthetic consumer authorization; new tests override it.
+            return b'\0' + gl.calldata.encode(p['approval'] or '')
+        return None
+    direct_vm._gl_call_hook = hook
+    return p
 
 
 def open_packet(p):
     e = p["envelope"]
+    normalized = {**e, 'owner': e['owner'].lower(), 'consumer': e['consumer'].lower(), 'parties': sorted(set(e['parties']))}
+    p['approval'] = canon(normalized)
     p["c"].open_record(e["request_id"], p["proposition"], e["target_time"], canon(p["manifest"]), canon(e))
 
 

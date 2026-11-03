@@ -77,6 +77,13 @@ def test_confirmation_retries_are_principal_only_bounded_and_finalized(packet, d
     'https://evidence.example/record?redirect=outside',
     'https://evidence.example/record#fragment',
     'https://evidence.example/record\\outside',
+    'https://evidence.example/record/..',
+    'https://evidence.example/record/.',
+    'https://evidence.example/.',
+    'https://evidence.example/..',
+    'https://evidence.example/record//other',
+    'https://evidence.example:443/record',
+    'https://evidence.example.evil/record',
 ])
 def test_source_url_cannot_escape_registered_channel(packet, direct_vm, url):
     record = copy.deepcopy(packet['record'])
@@ -101,3 +108,25 @@ def test_authority_subject_pairs_cannot_collide(packet, direct_vm):
     c.observe_source(canon(second))
     assert c.get_source('first')['superseded_by'] == ''
     assert c.get_source('second')['manifest']['revision'] == 1
+
+
+@pytest.mark.parametrize('prefix', [
+    'https://evidence.example/trusted/..',
+    'https://evidence.example/trusted/.',
+    'https://evidence.example/trusted/../',
+    'https://evidence.example/trusted',
+])
+def test_authority_prefix_requires_canonical_directory_boundary(packet, direct_vm, prefix):
+    from genlayer import Address
+    config = {'channel': 'PUBLIC_SIGNED_OBSERVATION', 'url_prefix': prefix, 'scope': 'service', 'public_evidence_url': 'https://evidence.example/principal'}
+    with direct_vm.expect_revert('PUBLIC_HTTPS_REQUIRED'):
+        packet['c'].register_authority('invalid-prefix', Address(packet['owner']), canon(config))
+
+
+def test_http_redirect_response_is_unavailable_not_admitted_evidence(packet, direct_vm):
+    record = copy.deepcopy(packet['record'])
+    record.update(source_id='redirected', subject_id='redirected')
+    direct_vm._web_mocks.clear()
+    direct_vm.mock_web(r'.*', {'status': 302, 'body': packet['raw'], 'headers': {'location': b'https://outside.example/'}})
+    with direct_vm.expect_revert('UNAVAILABLE'):
+        packet['c'].observe_source(canon(record))

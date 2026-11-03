@@ -74,6 +74,24 @@ def keys(value, required):
         fail("SCHEMA_KEYS")
 
 
+def canonical_url(value):
+    # Admit only URLs whose origin/path cannot change under HTTP normalization.
+    # Percent escapes, userinfo, query, fragment and backslash are excluded.
+    if not isinstance(value, str) or len(value) > 1024:
+        return None
+    match = re.fullmatch(r"https://([a-z0-9.-]+)(?::([0-9]{1,5}))?(/[A-Za-z0-9/_.:~-]*)", value)
+    if match is None:
+        return None
+    host, port, path = match.groups()
+    if any(not label or label.startswith("-") or label.endswith("-") for label in host.split(".")):
+        return None
+    if port is not None and (not 1 <= int(port) <= 65535 or str(int(port)) != port or port == "443"):
+        return None
+    if any(segment in (".", "..") for segment in path.split("/")) or "//" in path:
+        return None
+    return ("https://" + host + (":" + port if port else ""), path)
+
+
 def utc(value, date_only=False):
     """Gregorian UTC integer seconds, explicit offsets, no locale or float math."""
     if not isinstance(value, str):
@@ -245,7 +263,7 @@ class Janus(gl.Contract):
         for name in c:
             if not isinstance(c[name], str) or not c[name] or len(c[name]) > 512:
                 fail("AUTHORITY_CONFIG")
-        if not re.fullmatch(r"https://[A-Za-z0-9.-]+(?::[0-9]{1,5})?/[A-Za-z0-9/_.:~-]*", c["url_prefix"]) or "/../" in c["url_prefix"] or "/./" in c["url_prefix"] or not c["public_evidence_url"].startswith("https://"):
+        if canonical_url(c["url_prefix"]) is None or not c["url_prefix"].endswith("/") or not c["public_evidence_url"].startswith("https://"):
             fail("PUBLIC_HTTPS_REQUIRED")
         if authority_id in self.authorities:
             a = self.authorities[authority_id]
@@ -314,7 +332,9 @@ class Janus(gl.Contract):
             fail("PRINCIPAL_ONLY")
         if not a.confirmed or a.quarantined:
             fail("AUTHORITY_INACTIVE")
-        if not isinstance(m["url"], str) or len(m["url"]) > 1024 or not m["url"].startswith(c["url_prefix"]) or not re.fullmatch(r"https://[A-Za-z0-9.-]+(?::[0-9]{1,5})?/[A-Za-z0-9/_.:~-]*", m["url"]) or "/../" in m["url"] or "/./" in m["url"]:
+        admitted = canonical_url(m["url"])
+        prefix = canonical_url(c["url_prefix"])
+        if admitted is None or prefix is None or admitted[0] != prefix[0] or not admitted[1].startswith(prefix[1]):
             fail("SOURCE_CHANNEL")
         if m["channel"] != c["channel"] or m["scope"] != c["scope"]:
             fail("SOURCE_SCOPE")
@@ -509,12 +529,17 @@ class Janus(gl.Contract):
             fail("DEADLINE_PASSED")
         if len(self.history) >= self.capacity:
             fail("CAPACITY")
+        # Consumer approval authenticates the entire canonical envelope before
+        # acquiring a subject, superseding a predecessor or changing its owner.
+        approved = gl.get_contract_at(consumer).view().get_request_approval(request_id)
+        if approved != canon(e):
+            fail("CONSUMER_APPROVAL_REQUIRED")
         head_key = e["consumer"] + ":" + e["subject_id"]
         if head_key in self.subject_heads:
             old_id = self.subject_heads[head_key]
             old = self.requests[old_id]
             old_e = json.loads(old.envelope)
-            if old.owner != gl.message.sender_address or e["supersedes"] != old_id or e["generation"] != old_e["generation"] + 1:
+            if e["supersedes"] != old_id or e["generation"] != old_e["generation"] + 1:
                 fail("REQUEST_REVISION")
         elif e["supersedes"] or e["generation"] != 1:
             fail("REQUEST_REVISION")
@@ -688,9 +713,10 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
                         flags.append("CONTRADICTION")
                         break
             role_intervals[role] = combined
-        # Every committed source has its own independent public observation upper bound.
-        # Publication evidence for this proposition requires its controlling temporal witness.
-        material_sources = sorted({a["witness"]["source_id"] for a in vector if a["witness"] and a["role"] in ("OCCURRENCE", "EFFECTIVE")})
+        # The entire committed packet is conservatively necessary, including
+        # exceptions, corrections and records without temporal assertion witnesses.
+        has_temporal_witness = any(a["witness"] and a["role"] in ("OCCURRENCE", "EFFECTIVE") for a in vector)
+        material_sources = sorted(m["records"]) if has_temporal_witness else []
         upper = max((int(self.sources[s].observed_upper) for s in material_sources), default=None)
         role_intervals["PUBLICATION"] = interval(None, upper + 1) if upper is not None else None
         covered = {a["role"] for a in vector if a["role"] in ("OCCURRENCE", "EFFECTIVE")}
@@ -826,6 +852,17 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
             fail("ACK_REUSE")
         d.acknowledged = True
         d.acknowledgement = acknowledgement
+
+    @gl.public.view
+    def get_subject_head(self, consumer: Address, subject_id: str) -> str:
+        return self.subject_heads.get(consumer.as_hex.lower() + ":" + identifier(subject_id), "")
+
+    @gl.public.view
+    def get_request_state(self, request_id: str) -> dict:
+        identifier(request_id)
+        if request_id not in self.requests:
+            return {"exists": False, "envelope": {}}
+        return {"exists": True, "envelope": json.loads(self.requests[request_id].envelope)}
 
     @gl.public.view
     def get_interval_certificate(self, request_id: str) -> dict:

@@ -67,6 +67,10 @@ class EventRegistry(gl.Contract):
     executed_operations: TreeMap[str, str]
     history: DynArray[str]
     approvals: DynArray[str]
+    cancelled: TreeMap[str, bool]
+    recovery_hold: TreeMap[str, bool]
+    executed_requests: TreeMap[str, str]
+    recovery_generation: TreeMap[str, u64]
 
     def __init__(self, resolver: Address, policy_id: str, policy_revision: int, notice_seconds: int):
         if not isinstance(policy_id, str) or not re.fullmatch(r"[A-Za-z0-9_.:-]{1,96}", policy_id):
@@ -125,6 +129,8 @@ class EventRegistry(gl.Contract):
         e["parties"] = sorted(set(Address(x).as_hex.lower() for x in e["parties"]))
         rid = e["request_id"]
         if rid in self.approved:
+            if self.cancelled.get(rid, False):
+                fail("APPROVAL_CANCELLED")
             if self.approved[rid] == canon(e):
                 return
             fail("APPROVAL_REUSE")
@@ -132,6 +138,9 @@ class EventRegistry(gl.Contract):
             fail("CAPACITY")
         subject = e["subject_id"]
         old_id = self.expected_subject.get(subject, "")
+        head = gl.get_contract_at(self.resolver).view().get_subject_head(gl.message.contract_address, subject)
+        if head != old_id:
+            fail("PREDECESSOR_NOT_OPEN")
         if old_id:
             old = json.loads(self.approved[old_id])
             if e["generation"] != old["generation"] + 1 or e["supersedes"] != old_id:
@@ -141,6 +150,37 @@ class EventRegistry(gl.Contract):
         self.approved[rid] = canon(e)
         self.expected_subject[subject] = rid
         self.approvals.append(rid)
+
+    @gl.public.write
+    def cancel_request(self, request_id: str) -> None:
+        self._owner()
+        if request_id not in self.approved:
+            fail("APPROVAL_MISSING")
+        if self.cancelled.get(request_id, False):
+            return
+        e = json.loads(self.approved[request_id])
+        subject = e["subject_id"]
+        if self.expected_subject.get(subject, "") != request_id:
+            fail("APPROVAL_NOT_CURRENT")
+        resolver = gl.get_contract_at(self.resolver).view()
+        if resolver.get_request_state(request_id)["exists"]:
+            # Opened generations are immutable; recover via an authorized successor.
+            fail("REQUEST_ALREADY_OPEN")
+        if resolver.get_subject_head(gl.message.contract_address, subject) != e["supersedes"]:
+            fail("RESOLVER_GENERATION_CONFLICT")
+        self.cancelled[request_id] = True
+        self.expected_subject[subject] = e["supersedes"]
+        # Cancellation does not revive an old permission. A fresh approved and
+        # delivered replacement must resolve the pending restriction.
+        self.recovery_hold[subject] = True
+        self.recovery_generation[subject] = u64(e["generation"])
+
+    @gl.public.view
+    def get_request_approval(self, request_id: str) -> str:
+        if request_id not in self.approved or self.cancelled.get(request_id, False):
+            return ""
+        e = json.loads(self.approved[request_id])
+        return self.approved[request_id] if self.expected_subject.get(e["subject_id"], "") == request_id else ""
 
     def _eligible(self, cert):
         if cert["lifecycle_status"] != "CERTIFIED" or cert["unresolved_flags"] or not cert["coverage"]["complete_packet"]:
@@ -187,13 +227,15 @@ class EventRegistry(gl.Contract):
             fail("DELIVERY_BINDING")
         subject = cert["subject_id"]
         last = self.last_applied_generation.get(subject, u64(0))
-        stale = not delivery["valid"] or self.expected_subject[subject] != rid or cert["generation"] < last
+        recovering_old = self.recovery_hold.get(subject, False) and cert["generation"] < self.recovery_generation.get(subject, u64(0))
+        stale = self.cancelled.get(rid, False) or recovering_old or not delivery["valid"] or self.expected_subject[subject] != rid or cert["generation"] < last
         ack = "STALE" if stale else "APPLIED" if self._eligible(cert) else "BLOCKED"
-        self.receipts[operation] = Receipt(rid, subject, u64(cert["generation"]), canon(p), ack, False)
+        self.receipts[operation] = Receipt(rid, subject, u64(cert["generation"]), canon(p), ack, rid in self.executed_requests)
         self.history.append(operation)
         if not stale:
             self.last_applied_generation[subject] = u64(cert["generation"])
             self.last_operation[subject] = operation
+            self.recovery_hold[subject] = False
         gl.get_contract_at(self.resolver).emit(on="finalized").acknowledge(operation, digest(p), ack)
 
     @gl.public.write
@@ -209,11 +251,13 @@ class EventRegistry(gl.Contract):
         if not state["permitted"]:
             fail("ACTION_BLOCKED")
         operation = state["operation_id"]
-        if self.receipts[operation].executed:
+        rid = self.receipts[operation].request_id
+        if rid in self.executed_requests:
             fail("CONSEQUENCE_ALREADY_EXECUTED")
         if len(self.executed_operations) >= 10000:
             fail("CAPACITY")
         self.executed_operations[action_id] = subject_id
+        self.executed_requests[rid] = action_id
         self.receipts[operation].executed = True
 
     @gl.public.view
@@ -225,7 +269,7 @@ class EventRegistry(gl.Contract):
         if operation_id not in self.receipts:
             return {}
         r = self.receipts[operation_id]
-        return {"request_id": r.request_id, "subject_id": r.subject_id, "generation": int(r.generation), "acknowledgement": r.acknowledgement, "executed": r.executed, "payload_digest": digest(json.loads(r.payload))}
+        return {"request_id": r.request_id, "subject_id": r.subject_id, "generation": int(r.generation), "acknowledgement": r.acknowledgement, "executed": r.request_id in self.executed_requests, "payload_digest": digest(json.loads(r.payload))}
 
     @gl.public.view
     def get_state(self, subject_id: str) -> dict:
@@ -235,15 +279,16 @@ class EventRegistry(gl.Contract):
         r = self.receipts[operation]
         cert = json.loads(r.payload)["certificate"]
         delivery = gl.get_contract_at(self.resolver).view().get_delivery(operation)
-        current = self.expected_subject.get(subject_id, "") == r.request_id and delivery["valid"]
+        current = self.expected_subject.get(subject_id, "") == r.request_id and delivery["valid"] and not self.cancelled.get(r.request_id, False) and not self.recovery_hold.get(subject_id, False)
         permitted = current and r.acknowledgement == "APPLIED"
-        active = permitted and r.executed
+        executed = r.request_id in self.executed_requests
+        active = permitted and executed
         if active and MODE == "NOTICE":
             raw = re.sub(r"\.\d+(?=Z|[+-]\d{2}:\d{2}$)", "", gl.message_raw["datetime"])
             now = utc(raw)
             effective = cert["intervals"]["EFFECTIVE"]
             active = now >= effective["lower"] and (effective["upper"] is None or now < effective["upper"])
-        return {"permitted": permitted, "active": active, "unresolved": cert["lifecycle_status"] == "UNKNOWN" or not current, "operation_id": operation, "generation": int(r.generation), "acknowledgement": r.acknowledgement, "executed": r.executed}
+        return {"permitted": permitted, "active": active, "unresolved": cert["lifecycle_status"] == "UNKNOWN" or not current, "operation_id": operation, "generation": int(r.generation), "acknowledgement": r.acknowledgement, "executed": executed}
 
     @gl.public.view
     def list_receipts(self, offset: int, limit: int) -> list[str]:
