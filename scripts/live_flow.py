@@ -51,6 +51,8 @@ def main():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, 'Deployment source differs: ' + path
     resolver, gate, registry = deployment['resolver'], deployment['notice_consumer'], deployment['event_consumer']
     s, n, ev = Studio(journal=args.journal), Studio('notice', args.journal+'-notice'), Studio('event', args.journal+'-event')
+    transport = s.call(resolver, 'get_transport_configuration')
+    assert transport == {k: deployment['source_transport'][k] for k in ('url', 'redirect_policy', 'trust')}
     verified_sources = [s.verify_source(address, path) for address, path in (
         (resolver, 'contracts/janus.py'), (gate, 'contracts/notice_gate.py'), (registry, 'contracts/event_registry.py'))]
     atomic(ROOT / 'evidence' / 'deployed-source-verification.json', verified_sources)

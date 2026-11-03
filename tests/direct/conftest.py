@@ -13,10 +13,20 @@ def digest(value):
 
 
 @pytest.fixture
-def packet(direct_vm, direct_deploy, direct_alice, direct_bob):
+def packet(direct_vm, direct_deploy, direct_alice, direct_bob, monkeypatch):
     direct_vm.sender = direct_alice
     direct_vm.warp("2026-10-31T12:00:00Z")
-    c = direct_deploy("contracts/janus.py", 100)
+    c = direct_deploy("contracts/janus.py", 100, "https://transport.example/api/fetch")
+    from genlayer import gl
+    def synthetic_transport(url, *, body, headers):
+        # Route the synthetic gateway to the existing controlled source mocks.
+        # No live test uses this transport replacement.
+        m = json.loads(body)
+        response = gl.nondet.web.get(m['url'], headers=headers)
+        response.headers['x-janus-source-url'] = m['url'].encode()
+        response.headers['x-janus-redirect-policy'] = b'REJECT'
+        return response
+    monkeypatch.setattr(gl.nondet.web, 'post', synthetic_transport)
     from genlayer import Address
     owner = Address(direct_alice).as_hex.lower()
     consumer = Address(direct_bob)

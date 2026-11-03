@@ -223,10 +223,17 @@ class Janus(gl.Contract):
     authority_count: u32
     policy_count: u32
     quarantine_reasons: TreeMap[str, str]
+    transport_url: str
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity: int, transport_url: str):
         self.owner = gl.message.sender_address
         self.capacity = u32(integer(capacity, 1, MAX_HISTORY))
+        if canonical_url(transport_url) is None:
+            fail("TRANSPORT_HTTPS_REQUIRED")
+        # The deployment owner pins a transport deployment that rejects all
+        # redirects. Hosted GenVM follows redirects without exposing their URL.
+        # This transport is an explicit trust dependency, never a semantic oracle.
+        self.transport_url = transport_url
 
     def _owner(self):
         if gl.message.sender_address != self.owner:
@@ -288,11 +295,14 @@ class Janus(gl.Contract):
 
     def _fetch(self, m):
         try:
-            response = gl.nondet.web.get(m["url"], headers={"Accept-Encoding": "identity"})
+            prefix = json.loads(self.authorities[m["authority_id"]].configuration)["url_prefix"]
+            response = gl.nondet.web.post(self.transport_url, body=canon({"url": m["url"], "url_prefix": prefix, "raw_sha256": m["raw_sha256"], "byte_length": m["byte_length"]}), headers={"Content-Type": "application/json", "Accept-Encoding": "identity"})
         except Exception:
             return {"status": "UNAVAILABLE", "text": ""}
         if response.status != 200 or response.body is None:
             return {"status": "UNAVAILABLE", "text": ""}
+        if response.headers.get("x-janus-source-url") != m["url"].encode("utf-8") or response.headers.get("x-janus-redirect-policy") != b"REJECT":
+            return {"status": "TRANSPORT_BINDING", "text": ""}
         raw = response.body
         if len(raw) > MAX_BYTES or len(raw) != m["byte_length"]:
             return {"status": "CHANGED_SOURCE", "text": ""}
@@ -730,7 +740,7 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
             iv = role_intervals[role]
             applies[role] = None if iv is None else (iv["lower"] is None or target >= iv["lower"]) and (iv["upper"] is None or target < iv["upper"])
         rules = sorted({a["rule_id"] for a in m["assertions"]} | {ex["rule_id"] for ex in outcome["exceptions"]})
-        support = [{"source_id": s, "raw_sha256": json.loads(self.sources[s].manifest)["raw_sha256"], "observation_upper": int(self.sources[s].observed_upper), "support": "SIGNED_PUBLIC_OBSERVATION"} for s in material_sources]
+        support = [{"source_id": s, "raw_sha256": json.loads(self.sources[s].manifest)["raw_sha256"], "observation_upper": int(self.sources[s].observed_upper), "support": "SIGNED_PUBLIC_OBSERVATION", "transport_url": self.transport_url, "redirect_policy": "REJECT"} for s in material_sources]
         return {**e, "proposition": r.proposition, "request_binding_digest": digest(e), "lifecycle_status": "UNKNOWN" if unresolved else "CERTIFIED", "decision_vector": vector, "intervals": role_intervals, "applies_at_target": applies, "first_publication_upper": upper, "publication_support": support, "controlling_rule_ids": rules, "exceptions": outcome["exceptions"], "coverage": {"complete_packet": outcome["kind"] == "MATERIAL", "missing_roles": missing}, "unresolved_flags": sorted(set(flags + ([reason or outcome["reason"] or "MISSING_COVERAGE"] if unresolved else []))), "superseded_by": r.superseded_by}
 
     @gl.public.write
@@ -852,6 +862,10 @@ An exception that prevents applying the proposition must include EXCEPTION; cont
             fail("ACK_REUSE")
         d.acknowledged = True
         d.acknowledgement = acknowledgement
+
+    @gl.public.view
+    def get_transport_configuration(self) -> dict:
+        return {"url": self.transport_url, "redirect_policy": "REJECT", "trust": "DEPLOYMENT_OWNER_CONTROLLED_TRANSPORT"}
 
     @gl.public.view
     def get_subject_head(self, consumer: Address, subject_id: str) -> str:

@@ -130,3 +130,18 @@ def test_http_redirect_response_is_unavailable_not_admitted_evidence(packet, dir
     direct_vm.mock_web(r'.*', {'status': 302, 'body': packet['raw'], 'headers': {'location': b'https://outside.example/'}})
     with direct_vm.expect_revert('UNAVAILABLE'):
         packet['c'].observe_source(canon(record))
+
+
+@pytest.mark.parametrize('header', ['x-janus-source-url', 'x-janus-redirect-policy'])
+def test_transport_response_must_bind_original_url_and_rejection_policy(packet, direct_vm, monkeypatch, header):
+    from genlayer import gl
+    original = gl.nondet.web.post
+    def substitute(*args, **kwargs):
+        response = original(*args, **kwargs)
+        response.headers[header] = b'forged'
+        return response
+    monkeypatch.setattr(gl.nondet.web, 'post', substitute)
+    record = copy.deepcopy(packet['record'])
+    record.update(source_id='bad-transport', subject_id='bad-transport')
+    with direct_vm.expect_revert('TRANSPORT_BINDING'):
+        packet['c'].observe_source(canon(record))
