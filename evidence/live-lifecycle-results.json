@@ -1,0 +1,282 @@
+[
+  {
+    "consumer": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+    "mode": "notice",
+    "subject_id": "lifecycle-notice",
+    "original_request": "lifecycle-notice-1",
+    "recovered_request": "lifecycle-notice-recovered-2",
+    "cancelled_requests": [
+      "lifecycle-notice-bad-2",
+      "lifecycle-notice-cancelled-2"
+    ],
+    "executed_before_redelivery": {
+      "acknowledgement": "APPLIED",
+      "active": false,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "lifecycle-notice-delivery-1",
+      "permitted": true,
+      "unresolved": false
+    },
+    "executed_after_redelivery": {
+      "acknowledgement": "APPLIED",
+      "active": false,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "lifecycle-notice-delivery-2",
+      "permitted": true,
+      "unresolved": false
+    },
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": true,
+          "OCCURRENCE": null
+        },
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1823990400,
+              "lower_inclusive": true,
+              "upper": 1872201600,
+              "upper_inclusive": false
+            },
+            "qualifier": "RANGE",
+            "role": "EFFECTIVE",
+            "witness": {
+              "end": 3112,
+              "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+              "source_id": "node-schedule-1",
+              "span_id": "v26",
+              "start": 2964
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793703620,
+        "generation": 2,
+        "intervals": {
+          "EFFECTIVE": {
+            "lower": 1823990400,
+            "lower_inclusive": true,
+            "upper": 1872201600,
+            "upper_inclusive": false
+          },
+          "OCCURRENCE": null,
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793703621,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0x4dabac1ad774d171da1fa2da18ad2da0250c1378",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "proposition": "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "publication_support": [
+          {
+            "observation_upper": 1793703620,
+            "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+            "redirect_policy": "REJECT",
+            "source_id": "node-schedule-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "77848bb65ff531d1995ac8773040c86586ea7b64658e1ad6ae7654db0d0f121d",
+        "request_id": "lifecycle-notice-recovered-2",
+        "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+        "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+        "subject_id": "lifecycle-notice",
+        "superseded_by": "",
+        "supersedes": "lifecycle-notice-1",
+        "target_time": "2027-10-20T00:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 2,
+        "owner": "0x4dabac1ad774d171da1fa2da18ad2da0250c1378",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "request_id": "lifecycle-notice-recovered-2",
+        "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+        "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+        "subject_id": "lifecycle-notice",
+        "supersedes": "lifecycle-notice-1",
+        "target_time": "2027-10-20T00:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "final_state": {
+      "acknowledgement": "APPLIED",
+      "active": false,
+      "executed": true,
+      "generation": 2,
+      "operation_id": "lifecycle-notice-recovered-delivery",
+      "permitted": true,
+      "unresolved": false
+    }
+  },
+  {
+    "consumer": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+    "mode": "event",
+    "subject_id": "lifecycle-event",
+    "original_request": "lifecycle-event-1",
+    "recovered_request": "lifecycle-event-recovered-2",
+    "cancelled_requests": [
+      "lifecycle-event-bad-2",
+      "lifecycle-event-cancelled-2"
+    ],
+    "executed_before_redelivery": {
+      "acknowledgement": "APPLIED",
+      "active": true,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "lifecycle-event-delivery-1",
+      "permitted": true,
+      "unresolved": false
+    },
+    "executed_after_redelivery": {
+      "acknowledgement": "APPLIED",
+      "active": true,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "lifecycle-event-delivery-2",
+      "permitted": true,
+      "unresolved": false
+    },
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": true
+        },
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1747785600,
+              "lower_inclusive": true,
+              "upper": 1747872000,
+              "upper_inclusive": false
+            },
+            "qualifier": "EXACT",
+            "role": "OCCURRENCE",
+            "witness": {
+              "end": 185,
+              "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+              "source_id": "node-release-1",
+              "span_id": "release-header",
+              "start": 0
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793704386,
+        "generation": 2,
+        "intervals": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": {
+            "lower": 1747785600,
+            "lower_inclusive": true,
+            "upper": 1747872000,
+            "upper_inclusive": false
+          },
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793704387,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0xdf8820cc26432c8176fbfdbee0c836adb494f9a0",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "proposition": "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "publication_support": [
+          {
+            "observation_upper": 1793704386,
+            "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+            "redirect_policy": "REJECT",
+            "source_id": "node-release-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "024792f3f4900fcd01d3385960e8b8dc3a66baa0e78d8021e33c33228567f737",
+        "request_id": "lifecycle-event-recovered-2",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "lifecycle-event",
+        "superseded_by": "",
+        "supersedes": "lifecycle-event-1",
+        "target_time": "2025-05-21T12:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 2,
+        "owner": "0xdf8820cc26432c8176fbfdbee0c836adb494f9a0",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "request_id": "lifecycle-event-recovered-2",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "lifecycle-event",
+        "supersedes": "lifecycle-event-1",
+        "target_time": "2025-05-21T12:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "final_state": {
+      "acknowledgement": "APPLIED",
+      "active": true,
+      "executed": true,
+      "generation": 2,
+      "operation_id": "lifecycle-event-recovered-delivery",
+      "permitted": true,
+      "unresolved": false
+    }
+  }
+]

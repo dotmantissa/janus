@@ -16,7 +16,7 @@ python3 -m pip --python .venv/replay/bin/python check
 .venv/replay/bin/python -m pytest tests/direct -v
 ```
 
-The isolated lock-file installation and dependency check succeeded. All three current contracts pass AST and SDK validation. The current Python 3.14 suite passes **142 direct tests** in 10.15 seconds; the redirect-rejecting transport passes **17 Node tests**. Logs: [current direct tests](../evidence/remediation-direct-tests.log), [transport tests](../evidence/source-transport-tests.log), [isolated installation](../evidence/clean-replay.log), and [current lint with source hashes](../evidence/remediation-lint.log). Earlier clean-environment results are retained as historical evidence. The lock file includes transitive dependencies; the short requirements file pins the five direct dependencies.
+The isolated lock-file installation and dependency check succeeded. All three current contracts pass AST and SDK validation. The current Python 3.14 suite passes **149 direct tests** in 4.48 seconds; the redirect-rejecting source transport passes **17 Node tests**, and the optional authenticated RPC relay passes **8 Node tests**. Logs: [current direct tests](../evidence/remediation-direct-tests.log), [source transport tests](../evidence/source-transport-tests.log), [RPC relay tests](../evidence/rpc-transport-tests.log), [isolated installation](../evidence/clean-replay.log), and [current lint with source hashes](../evidence/remediation-lint.log). Earlier clean-environment results are retained as historical evidence. The lock file includes transitive dependencies; the short requirements file pins the five direct dependencies.
 
 Direct verification covers:
 
@@ -49,7 +49,7 @@ All three deployment receipts assert FINALIZED and execution success. [On-chain 
 
 An older resolver at `0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA` predates finalized source confirmation. Its receipts are retained under `evidence/studio*`; its [archived deployment metadata](../evidence/deployment-0xaD877A491C467E0bbb0a619675cC6aaA643BD0BA.json) is historical evidence, not the current implementation. Resuming its flow exposed the mismatch; the current flow rejects deployment metadata without source commitments. An initial new-deployment attempt hit Studio's reported 500 requests/hour cap before returning a transaction hash; a later attempt succeeded.
 
-Both real public source observations and their authenticated finalized self-confirmations completed successfully on this deployment. Their confirmed views are preserved for the [schedule](../evidence/source-confirmed-node-schedule-1.json) and [release](../evidence/source-confirmed-node-release-1.json). Each observation has four validators and three agreeing votes with `leader_only: false`. Both consumer registrations and policies finalized. The current four-case flow is still in progress: the first notice assessment finalized successfully and produced a valid CERTIFIED result; its delivery is in progress. Earlier notice outcomes belong to the historical deployment and do not establish current deployment coverage.
+Both real public source observations and their authenticated finalized self-confirmations completed successfully on this deployment. Their confirmed views are preserved for the [schedule](../evidence/source-confirmed-node-schedule-1.json) and [release](../evidence/source-confirmed-node-release-1.json). Each observation has four validators and three agreeing votes with `leader_only: false`. Both consumer registrations and policies finalized. All four current baseline cases completed request opening, multi-validator assessment, finalized delivery and acknowledgement, and successful or intentionally blocked execution. Their resulting chain state is preserved in [live results](../evidence/live-results.json). Earlier notice outcomes remain separately labelled historical evidence.
 
 The flow uses two complete immutable public records:
 
@@ -60,14 +60,16 @@ The flow uses two complete immutable public records:
 
 Their committed URLs and byte spans are in [source manifests](../evidence/live-source-manifests.json). The schedule tests an adequate notice period for v26 maintenance and late availability for v24 maintenance. The release announcement tests an occurrence target inside its release day and another at the exclusive next-day boundary. Each source observation and assessment must have at least two agreeing validator votes with `leader_only: false`. Parent and triggered child transactions must finalize successfully; intentionally blocked execute transactions must finalize with execution failure.
 
-Completed current consumer results will be retained in [live results](../evidence/live-results.json) after matching-deployment receipt and state checks. The current integration also runs isolated authorization, repeated-delivery, cancellation, delayed-callback, quarantine and owner-rotation transitions for both consumers. Its independent assertions compare deployed bytes, genuine finalized receipt identities, certificates, acknowledgements and chain state.
+Current consumer results are retained in [live results](../evidence/live-results.json) after matching-deployment receipt and state checks. The completed integration runs isolated authorization, repeated-delivery, cancellation, delayed-callback, quarantine and owner-rotation transitions for both consumers; both isolated lifecycles passed on the matching deployment. Its independent assertions compare deployed bytes, genuine finalized receipt identities, certificates, acknowledgements and chain state.
+
+The final live integration completed with **2 passed and 0 skipped**. Its [full log](../evidence/remediation-integration-tests.log), [machine-readable summary](../evidence/verification-summary.json) and [receipt identity report](../evidence/receipt-verification.json) retain the measured checks. Both [notice lifecycle](../evidence/lifecycle-notice.json) and [event lifecycle](../evidence/lifecycle-event.json) verify unapproved opening rejection, preserved execution across a second delivery, rejection of a second distinct action, cancellation of unopenable and unopened successors, stale delayed delivery, and consumer-approved generation-2 recovery with a changed request owner after quarantine. Cancellation of an already opened generation is rejected. All emitted delivery and acknowledgement children finalized successfully.
 
 | Current case | Assessment | Delivery and execution |
 | --- | --- | --- |
-| notice-permitted | CERTIFIED, finalized successful assessment | Delivery in progress; execution pending |
-| notice-refused | Pending | Pending |
-| event-permitted | Pending | Pending |
-| event-refused | Pending | Pending |
+| notice-permitted | CERTIFIED, finalized successful assessment | APPLIED acknowledgement; finalized successful execution, scheduled activation |
+| notice-refused | CERTIFIED, finalized successful assessment | BLOCKED acknowledgement; finalized failed execution with ACTION_BLOCKED |
+| event-permitted | CERTIFIED, finalized successful assessment | APPLIED acknowledgement; finalized successful execution, active registry consequence |
+| event-refused | CERTIFIED, finalized successful assessment | BLOCKED acknowledgement; finalized failed execution with ACTION_BLOCKED |
 
 The current schedule availability upper bound is 2026-11-03T11:00:20Z; the release upper bound is 2026-11-03T11:13:06Z. These are finalized observation bounds for the complete committed revisions. Historical [two-notice results](../evidence/studio-v2-results/live-results.json) and [resumption logs](../evidence/live-flow-v3-resume.log) remain separate evidence for the earlier deployment.
 
@@ -78,6 +80,8 @@ To resume the same deployment:
 .venv/bin/python scripts/live_flow.py
 .venv/bin/gltest tests/integration/test_studio.py -v -s --network studionet
 ```
+
+[RPC transport evidence](../evidence/rpc-transport.json) records the optional authenticated relay used during final verification. It forwards requests unchanged to the same Studio API and returns the original response bytes with lossless compression. Six uploaded source identities, the actual Studio chain ID, all three on-chain contract sources and rejection of unauthenticated access were checked. Client pacing remains eight seconds. An optional mode-0600 `.secrets/studio-rpc.json` contains only `url` and `token`; the private token is excluded from evidence. This transport is tooling controlled by the deployment owner and makes no consensus or semantic decisions.
 
 Use the original signers from their ignored local secret files or environment variables. A different signer needs its own new deployment and journal. Scripts assert code commitments and bind journals to the account and chain before reuse. Receipt polling can be interrupted and resumed without resubmitting an already journaled operation. There remains an unavoidable client-side gap between the RPC accepting a submission and its returned hash being persisted; an interrupted submission without a saved hash requires reconciliation before retrying. Do not interpret missing local evidence as proof that the network never received a transaction.
 

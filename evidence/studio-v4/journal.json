@@ -158,5 +158,403 @@
       ]
     },
     "tx": "0xdf8bd1a2ffc78078a692ce6e732d9ae381c7ace54072551620f879ff2dcf2489"
+  },
+  "open-notice-refused": {
+    "binding": "a5294aeb00a31461fcaf44aa53742e10fcad6bb338518e23fccf5a8d98e32fcd",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "notice-refused",
+        "Node.js v24 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2026-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v24?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-refused\",\"source_manifest_digest\":\"16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89\",\"subject_digest\":\"c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8\",\"subject_id\":\"notice-refused\",\"supersedes\":\"\",\"target_time\":\"2026-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x6c4b9dc53f431e83f739f8219014e28897c7566be9a2c83991130bf8ce20d6f5"
+  },
+  "reserve-notice-refused": {
+    "binding": "2a1bbfe85231a48844ececc5e11ed3b7e9a438adbe477da44de42ca713df7edf",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "notice-refused",
+        1
+      ]
+    },
+    "tx": "0xe3728e79c477a154d8552d88adc1360ba381a64761f8356fd91d6fec2a7f9d8b"
+  },
+  "assess-notice-refused": {
+    "binding": "f3fafa8467ee32d4e8ba2f5574f21345ee64d480b2f1480395098fe9033b21f2",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "notice-refused",
+        1
+      ]
+    },
+    "tx": "0xfa4e3681b684a64fb2d3eda9f1073ee8bebba59c49dc6da19e6c63e4feb16fcf"
+  },
+  "publish-notice-refused": {
+    "binding": "b1e54d0776eb1f8513cbc3ea21e5f167f13731a0b750b89b48e25d1644b4f8b9",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "notice-refused",
+        "addr#f5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "deliver-notice-refused"
+      ]
+    },
+    "tx": "0x177d6e10f240bdc7449e868e9ae2bce85a7a6444233c3c819ad558c4406a639a"
+  },
+  "open-event-permitted": {
+    "binding": "b270c6f6a28925b08114b409768803171f218f11183697fd9d00577d6e2de90a",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "event-permitted",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"event-permitted\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"event-permitted\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x891e27889d07eacd4e461f42f6396191703ac57b470c9b786e3212ebb159261a"
+  },
+  "reserve-event-permitted": {
+    "binding": "e304e2d7bd6531859aae0172dbab803cd045ff46758fb1c5f2804665ad460788",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "event-permitted",
+        1
+      ]
+    },
+    "tx": "0xc6895ce99c5a5844ff4688440589f8a52c15e0e1ce31bc41805805c47985d791"
+  },
+  "assess-event-permitted": {
+    "binding": "433862361e2752647513c9408ff294431bf416c69a563fde43a83748566984c8",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "event-permitted",
+        1
+      ]
+    },
+    "tx": "0x65939e988daf526049db81cf8cce4315877ad7f16fba75b5ce311268c05746cb"
+  },
+  "publish-event-permitted": {
+    "binding": "ec8c5a02ea074b7fb2e776920d6c112173d2eaee1371f2b4817bbee701de0d97",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "event-permitted",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "deliver-event-permitted"
+      ]
+    },
+    "tx": "0x7069bbf8217f9d2cc7e351b3e85ded16e175f0441501e95173d6e143a84f0ff3"
+  },
+  "open-event-refused": {
+    "binding": "cc33e0f701946a33d706339334838ced24d97c5bfad93f7b991e9dfea408407a",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "event-refused",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-22T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"event-refused\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"event-refused\",\"supersedes\":\"\",\"target_time\":\"2025-05-22T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x5db58f9b04903d71575700a3c0fd879edd3a37c869e25c372e9e5ce53593becc"
+  },
+  "reserve-event-refused": {
+    "binding": "8084b0d813da05ff677df1d5cf794d350486a8364459cf628226f1a52f23e65e",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "event-refused",
+        1
+      ]
+    },
+    "tx": "0xe3e87a1c543ab7929d6511a231377abc2268d6201be326dd0319b4562ee3b0ac"
+  },
+  "assess-event-refused": {
+    "binding": "a3d556ca3cceb08b93c981f6b84ab7952836af037973b6f730afa9ecbb8512d9",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "event-refused",
+        1
+      ]
+    },
+    "tx": "0xb88ff5e00d9fb09fc1a86d1a067386eeeca12ef96acff9660eb925f9adb2f144"
+  },
+  "publish-event-refused": {
+    "binding": "215d31d8b223b51bbd85c50c0b085cbf86f0f5d0bef3f0b6501079f3c5875beb",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "event-refused",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "deliver-event-refused"
+      ]
+    },
+    "tx": "0xb68b553ad57c44198fc1c9f33218e230493470616d438d717a3b0ecb4fef0c54"
+  },
+  "lifecycle-notice-open-original": {
+    "binding": "67537537817981d403197826fa405d5c9a7967ab6ba1e7d08ff13438df03ba61",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-notice-1",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-1\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0xdcb1b7734404cd2f578031b1068e65c00b6200e2bdaa65f2b56a87662e77ec2a"
+  },
+  "lifecycle-notice-reserve-original": {
+    "binding": "6247da9807046116aae5e25c7b6766a2e00368440c4aa4063c14b0cacf7506fc",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "lifecycle-notice-1",
+        1
+      ]
+    },
+    "tx": "0xc71d24ffd9f523a83e244fac8e496e1c8ee8e72fa4de018d6fec32f80d52542a"
+  },
+  "lifecycle-notice-assess-original": {
+    "binding": "d8ec202ff6e471dc04c164f316bdac89d0fcfe2ce5b4c441f3bc4c3199825323",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "lifecycle-notice-1",
+        1
+      ]
+    },
+    "tx": "0xfc3bac516ede8c97d318b2406940db3a26ad8e73f75b338a20b418c3419ee51e"
+  },
+  "publish-lifecycle-notice-delivery-1": {
+    "binding": "4e5b2bc9e96551273468afa426aff14df309750531814fea86b8d952b0886d20",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-notice-1",
+        "addr#f5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "lifecycle-notice-delivery-1"
+      ]
+    },
+    "tx": "0x6c15caca208009f1c59f04640501eaeb7b0eef888faeda723ee0a352d2bebca1"
+  },
+  "publish-lifecycle-notice-delivery-2": {
+    "binding": "d1568c961d74e14c202995948198f321c567d3e915625d15e438465c3e230d5a",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-notice-1",
+        "addr#f5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "lifecycle-notice-delivery-2"
+      ]
+    },
+    "tx": "0xa9a1cde568703b234e4706f0bdabf69b51c64baae8831e22f1c9323d3b2ead07"
+  },
+  "lifecycle-notice-bad-open-blocked": {
+    "binding": "0218951696e13f7a73123875302b09dec5ece854d6f81d936dbc640e1b033968",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-notice-bad-2",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-bad-2\",\"source_manifest_digest\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0xa837b2a5041eebe9356c944eeaa777727b4d15eb2e7ce6d3df2f5bf9a1b7fb59"
+  },
+  "publish-lifecycle-notice-delayed-old": {
+    "binding": "9e1c13a5576bdedfe355e112be7c9eb333e86a0f7acbb62a8f8145a6a62c05f1",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-notice-1",
+        "addr#f5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "lifecycle-notice-delayed-old"
+      ]
+    },
+    "tx": "0x206829689dbe06cf3ebecd89cf0591f1123a65376b9681d93068525f18bd4561"
+  },
+  "lifecycle-notice-cancelled-open-blocked": {
+    "binding": "97e2c01bfc9c3782fcfadbac36bb7e2aa47569fbfc4380ff6f1dfb4b7ab97cb9",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-notice-cancelled-2",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-cancelled-2\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x7baf4ba9482c22de26ad7e7aaafe0e1a369049e3ccd3b1e5e85e0dece4553c6a"
+  },
+  "lifecycle-notice-quarantine-original": {
+    "binding": "8a29a317b5a53090055e6fff0e1a1ea2ba2fca490ca07856af5d4fb9b1f5efdc",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "quarantine",
+      "args": [
+        "REQUEST",
+        "lifecycle-notice-1",
+        "b04bb620980b2734faebbb66315c63eba0a07ddb92e1a2a362372ee6876585bf"
+      ]
+    },
+    "tx": "0x3917a5a85704a642bb70b44e7ff45707df8bc65470effd78ea48ae9a75b28346"
+  },
+  "lifecycle-event-open-original": {
+    "binding": "6c5768b38bd863367b2f91e05cc0617b9424232ebdf79855272365ee0d331175",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-event-1",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-1\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0xb4e6f608c2d4a89a46e5bd0be495bd99f9a8fe4d3ef0459236ab083cbb29c42a"
+  },
+  "lifecycle-event-reserve-original": {
+    "binding": "dd2f7ac73afaf0e0e95d75599684b178e42f35a67795d5a40de57d43e0bfc0a1",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "lifecycle-event-1",
+        1
+      ]
+    },
+    "tx": "0xcaff7b1cac6e46fa002db0a1f6528cc4e7dfdf0eb0595bade6be7fc990ab4a27"
+  },
+  "lifecycle-event-assess-original": {
+    "binding": "6fcf2c9886b694130a4ca563a5cf38a0759322df95ac760e270f82807413125a",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "lifecycle-event-1",
+        1
+      ]
+    },
+    "tx": "0x8ccebf1362d4224ce5cc0c5c9dee1ba7e2a5a670654e1937e1def53d69d78b9a"
+  },
+  "publish-lifecycle-event-delivery-1": {
+    "binding": "da210681402eed672f24bc10f2b902693392f63a6608fc69e200b2bbc67b4393",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-event-1",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "lifecycle-event-delivery-1"
+      ]
+    },
+    "tx": "0x5adda85612b7da5a390769f77270049a22d4bda216bccb2ee8fcc83deff9871d"
+  },
+  "publish-lifecycle-event-delivery-2": {
+    "binding": "34d3458a3f84030ff75ba3db24219d8684574450e2d02dbc1a7894c0736854f8",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-event-1",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "lifecycle-event-delivery-2"
+      ]
+    },
+    "tx": "0x6b9e55b03fb06b0c5d6ab0e9551acb40cb4b163b36485987985623d5cd9f21c4"
+  },
+  "lifecycle-event-bad-open-blocked": {
+    "binding": "13a2f2f313a6e4b960c52edce896dc8add4d65b82394d422649c5ac338672ee7",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-event-bad-2",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-bad-2\",\"source_manifest_digest\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0xb83c5b4e05957b755a7f871e37bca084bcfd942405dfc86b6941391e569030c2"
+  },
+  "publish-lifecycle-event-delayed-old": {
+    "binding": "277cbb856d5ca19f8319df0f838eca4ebd6f0c1ca3aab04d0f313a8caf301582",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-event-1",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "lifecycle-event-delayed-old"
+      ]
+    },
+    "tx": "0x3832f6569fc5996fb5e62380958406386830e34e1a3c9c4f2695580f50219932"
+  },
+  "lifecycle-event-cancelled-open-blocked": {
+    "binding": "572552b090d0fe1a8141cceca622b3cbec021274e67a7fee8c96e7f8af02a82d",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-event-cancelled-2",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-cancelled-2\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x5304152f2ab37c20758ee260764fd2647e0881b1c88b6aca94c7f71014657e91"
+  },
+  "lifecycle-event-quarantine-original": {
+    "binding": "ee722189188e4cf9e2cfb6552382cf9ef878aecb7e6f0700f57c505b87390d77",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "quarantine",
+      "args": [
+        "REQUEST",
+        "lifecycle-event-1",
+        "b04bb620980b2734faebbb66315c63eba0a07ddb92e1a2a362372ee6876585bf"
+      ]
+    },
+    "tx": "0xc28f4a26d67a3ec55e69d985ea268cb94fcbf782af1e456391251163c2a1cf1f"
   }
 }

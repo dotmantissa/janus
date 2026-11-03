@@ -1,1 +1,502 @@
-[]
+[
+  {
+    "request_id": "notice-permitted",
+    "operation_id": "deliver-notice-permitted",
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": true,
+          "OCCURRENCE": null
+        },
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1823990400,
+              "lower_inclusive": true,
+              "upper": 1872201600,
+              "upper_inclusive": false
+            },
+            "qualifier": "RANGE",
+            "role": "EFFECTIVE",
+            "witness": {
+              "end": 3112,
+              "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+              "source_id": "node-schedule-1",
+              "span_id": "v26",
+              "start": 2964
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793703620,
+        "generation": 1,
+        "intervals": {
+          "EFFECTIVE": {
+            "lower": 1823990400,
+            "lower_inclusive": true,
+            "upper": 1872201600,
+            "upper_inclusive": false
+          },
+          "OCCURRENCE": null,
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793703621,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "proposition": "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "publication_support": [
+          {
+            "observation_upper": 1793703620,
+            "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+            "redirect_policy": "REJECT",
+            "source_id": "node-schedule-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "c39c2afc9c752dc18a657280507b29245ef871cb495e9b4bae91d2407bc33e49",
+        "request_id": "notice-permitted",
+        "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+        "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+        "subject_id": "notice-permitted",
+        "superseded_by": "",
+        "supersedes": "",
+        "target_time": "2027-10-20T00:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 1,
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "request_id": "notice-permitted",
+        "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+        "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+        "subject_id": "notice-permitted",
+        "supersedes": "",
+        "target_time": "2027-10-20T00:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "delivery": {
+      "acknowledged": true,
+      "acknowledgement": "APPLIED",
+      "broadcasts": 1,
+      "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+      "payload_digest": "df79b86c92b849c858390c2e5ffa1f241d17b7943fbee6a4cf046ae94740b037",
+      "request_id": "notice-permitted",
+      "valid": true
+    },
+    "consumer_state": {
+      "acknowledgement": "APPLIED",
+      "active": false,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "deliver-notice-permitted",
+      "permitted": true,
+      "unresolved": false
+    },
+    "expected_permitted": true
+  },
+  {
+    "request_id": "notice-refused",
+    "operation_id": "deliver-notice-refused",
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": true,
+          "OCCURRENCE": null
+        },
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1792454400,
+              "lower_inclusive": true,
+              "upper": 1840665600,
+              "upper_inclusive": false
+            },
+            "qualifier": "RANGE",
+            "role": "EFFECTIVE",
+            "witness": {
+              "end": 2860,
+              "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+              "source_id": "node-schedule-1",
+              "span_id": "v24",
+              "start": 2712
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793703620,
+        "generation": 1,
+        "intervals": {
+          "EFFECTIVE": {
+            "lower": 1792454400,
+            "lower_inclusive": true,
+            "upper": 1840665600,
+            "upper_inclusive": false
+          },
+          "OCCURRENCE": null,
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793703621,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "proposition": "Node.js v24 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "publication_support": [
+          {
+            "observation_upper": 1793703620,
+            "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+            "redirect_policy": "REJECT",
+            "source_id": "node-schedule-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "4206028654c63edcc37eb958f8d5eeb8118512067d50648e774b967f52fe490e",
+        "request_id": "notice-refused",
+        "source_manifest_digest": "16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89",
+        "subject_digest": "c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8",
+        "subject_id": "notice-refused",
+        "superseded_by": "",
+        "supersedes": "",
+        "target_time": "2026-10-20T00:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+        "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 1,
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "notice-v1",
+        "policy_revision": 1,
+        "request_id": "notice-refused",
+        "source_manifest_digest": "16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89",
+        "subject_digest": "c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8",
+        "subject_id": "notice-refused",
+        "supersedes": "",
+        "target_time": "2026-10-20T00:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "delivery": {
+      "acknowledged": true,
+      "acknowledgement": "BLOCKED",
+      "broadcasts": 1,
+      "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+      "payload_digest": "a654c78dbf4c364796f4f3cbbab77c66838c8dfa057e89b58a8e458cb3726c2d",
+      "request_id": "notice-refused",
+      "valid": true
+    },
+    "consumer_state": {
+      "acknowledgement": "BLOCKED",
+      "active": false,
+      "executed": false,
+      "generation": 1,
+      "operation_id": "deliver-notice-refused",
+      "permitted": false,
+      "unresolved": false
+    },
+    "expected_permitted": false
+  },
+  {
+    "request_id": "event-permitted",
+    "operation_id": "deliver-event-permitted",
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": true
+        },
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1747785600,
+              "lower_inclusive": true,
+              "upper": 1747872000,
+              "upper_inclusive": false
+            },
+            "qualifier": "EXACT",
+            "role": "OCCURRENCE",
+            "witness": {
+              "end": 185,
+              "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+              "source_id": "node-release-1",
+              "span_id": "release-header",
+              "start": 0
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793704386,
+        "generation": 1,
+        "intervals": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": {
+            "lower": 1747785600,
+            "lower_inclusive": true,
+            "upper": 1747872000,
+            "upper_inclusive": false
+          },
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793704387,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "proposition": "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "publication_support": [
+          {
+            "observation_upper": 1793704386,
+            "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+            "redirect_policy": "REJECT",
+            "source_id": "node-release-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "c7f2c11ac74d32d7fc27d98fa918c34cd4fbfb86ba5b7dd5ff8653127c83a1b7",
+        "request_id": "event-permitted",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "event-permitted",
+        "superseded_by": "",
+        "supersedes": "",
+        "target_time": "2025-05-21T12:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 1,
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "request_id": "event-permitted",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "event-permitted",
+        "supersedes": "",
+        "target_time": "2025-05-21T12:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "delivery": {
+      "acknowledged": true,
+      "acknowledgement": "APPLIED",
+      "broadcasts": 1,
+      "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+      "payload_digest": "b674ee90c339736401f91d3eeb472fb6ce3e7bbf0d365f700eb639d1390a3ff7",
+      "request_id": "event-permitted",
+      "valid": true
+    },
+    "consumer_state": {
+      "acknowledgement": "APPLIED",
+      "active": true,
+      "executed": true,
+      "generation": 1,
+      "operation_id": "deliver-event-permitted",
+      "permitted": true,
+      "unresolved": false
+    },
+    "expected_permitted": true
+  },
+  {
+    "request_id": "event-refused",
+    "operation_id": "deliver-event-refused",
+    "certificate": {
+      "assessed_attempt": 1,
+      "attempts": 1,
+      "certificate": {
+        "applies_at_target": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": false
+        },
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "controlling_rule_ids": [
+          "temporal-role"
+        ],
+        "coverage": {
+          "complete_packet": true,
+          "missing_roles": []
+        },
+        "deadline": "2032-01-01T00:00:00Z",
+        "decision_vector": [
+          {
+            "assertion_id": "temporal",
+            "interval": {
+              "lower": 1747785600,
+              "lower_inclusive": true,
+              "upper": 1747872000,
+              "upper_inclusive": false
+            },
+            "qualifier": "EXACT",
+            "role": "OCCURRENCE",
+            "witness": {
+              "end": 185,
+              "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+              "source_id": "node-release-1",
+              "span_id": "release-header",
+              "start": 0
+            }
+          }
+        ],
+        "exceptions": [],
+        "first_publication_upper": 1793704386,
+        "generation": 1,
+        "intervals": {
+          "EFFECTIVE": null,
+          "OCCURRENCE": {
+            "lower": 1747785600,
+            "lower_inclusive": true,
+            "upper": 1747872000,
+            "upper_inclusive": false
+          },
+          "PUBLICATION": {
+            "lower": null,
+            "lower_inclusive": true,
+            "upper": 1793704387,
+            "upper_inclusive": false
+          }
+        },
+        "lifecycle_status": "CERTIFIED",
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "proposition": "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "publication_support": [
+          {
+            "observation_upper": 1793704386,
+            "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+            "redirect_policy": "REJECT",
+            "source_id": "node-release-1",
+            "support": "SIGNED_PUBLIC_OBSERVATION",
+            "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+          }
+        ],
+        "request_binding_digest": "e59c69f848b1f2cb4d682805eca721ba90893bd28366fe4c64fac66b95012b3b",
+        "request_id": "event-refused",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "event-refused",
+        "superseded_by": "",
+        "supersedes": "",
+        "target_time": "2025-05-22T00:00:00Z",
+        "unresolved_flags": []
+      },
+      "envelope": {
+        "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+        "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "deadline": "2032-01-01T00:00:00Z",
+        "generation": 1,
+        "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+        "parties": [],
+        "policy_id": "event-v1",
+        "policy_revision": 1,
+        "request_id": "event-refused",
+        "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+        "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+        "subject_id": "event-refused",
+        "supersedes": "",
+        "target_time": "2025-05-22T00:00:00Z"
+      },
+      "status": "CERTIFIED",
+      "superseded_by": "",
+      "valid": true
+    },
+    "delivery": {
+      "acknowledged": true,
+      "acknowledgement": "BLOCKED",
+      "broadcasts": 1,
+      "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+      "payload_digest": "e7011a78c8f4fe933b56595d906b7cf36395b5f1b0c03e5d19f7590aa2df1ca1",
+      "request_id": "event-refused",
+      "valid": true
+    },
+    "consumer_state": {
+      "acknowledgement": "BLOCKED",
+      "active": false,
+      "executed": false,
+      "generation": 1,
+      "operation_id": "deliver-event-refused",
+      "permitted": false,
+      "unresolved": false
+    },
+    "expected_permitted": false
+  }
+]

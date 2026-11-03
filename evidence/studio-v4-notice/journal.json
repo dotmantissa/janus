@@ -32,5 +32,220 @@
       ]
     },
     "tx": "0x1e6dd8d4c43bd1fd4f17c9c4f183c1845d837d761a94790e7cecd9759c35b0bf"
+  },
+  "execute-notice-permitted": {
+    "binding": "030bfcc9060ed79347bec5bdf24fbd1382d3dd3f08902a1f493315b798ee7fd4",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "execute",
+      "args": [
+        "notice-permitted",
+        "action-notice-permitted"
+      ]
+    },
+    "tx": "0x9ae2032b38cfc6a36eda4821d37051738b9d0455774b958d6b20446a65e073c6"
+  },
+  "approve-notice-refused": {
+    "binding": "95ecf8b703a6bda936e0eda198e752314782433650d07223d3123e3f424e5178",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"notice-refused\",\"source_manifest_digest\":\"16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89\",\"subject_digest\":\"c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8\",\"subject_id\":\"notice-refused\",\"supersedes\":\"\",\"target_time\":\"2026-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0xfa091783b0dce2422bd82217afa4dda00332d72a7bd7fb46738b80941d3db5b3"
+  },
+  "execute-notice-refused": {
+    "binding": "2b33047aa6692fb1d1adba72714a60c9196472ea764b9ada4e7b02769ef7f571",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "execute",
+      "args": [
+        "notice-refused",
+        "action-notice-refused"
+      ]
+    },
+    "tx": "0xc720023a959d6c798ccced2da9a1eafa7e358d3a527b477f71fd5adbed2a7c0c"
+  },
+  "lifecycle-notice-unapproved-open": {
+    "binding": "95ead6784396e8cf3653402b70a720eac1554cc097450f80a87e4c95c39120ea",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-notice-unauthorized",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0x4dabac1ad774d171da1fa2da18ad2da0250c1378\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-unauthorized\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x6621a59a1a10b6ee8e05aa72d13e0a6deab870b4b885ae72ff7228fdcee8c239"
+  },
+  "lifecycle-notice-approve-original": {
+    "binding": "09981c35cf0b4fa6a71ae851054ce70106a639ef6fcd8d2bc2aafa7f91f75c0d",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-1\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0xcfa67e16518b152ffcb8322ed8e0ded4a5dcb90565b51f5ade24802aa3d6e4ce"
+  },
+  "lifecycle-notice-execute-1": {
+    "binding": "d31b60944ea60b13c65785800059610e1e7b762e342a22e664f8a020794fe962",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "execute",
+      "args": [
+        "lifecycle-notice",
+        "lifecycle-notice-action-1"
+      ]
+    },
+    "tx": "0x9e43eb9ab92288673809efb81a909529a49cf76e8911e7efda42b2f6ab64e805"
+  },
+  "lifecycle-notice-second-action-blocked": {
+    "binding": "99c1df8c342931a89a2774532705e78f4a19716e7fc54b463bbdd4aadc5b0f32",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "execute",
+      "args": [
+        "lifecycle-notice",
+        "lifecycle-notice-action-2"
+      ]
+    },
+    "tx": "0xe952297cb541ec9783852f7921aa40e9f778f6ce5af96ab06d2d896b67dce28b"
+  },
+  "lifecycle-notice-approve-bad": {
+    "binding": "116188b1c77e2c355112d06d24a59c314ea12a8222827e00358738cac92671e7",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-bad-2\",\"source_manifest_digest\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x76895e2496f7b4ebf4bc34c5365168ee86b6c1ffc3f891e63d82d0570732d05e"
+  },
+  "lifecycle-notice-cancel-bad": {
+    "binding": "3ac3f9520ef91ee9164d70b2e2cc0aadb04f1d4249bb3f7fba774636bfaf86aa",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-notice-bad-2"
+      ]
+    },
+    "tx": "0xbe0f2dae338e4be030df28ed08d73a649ca0ddc0412a89c11f47670c31ccc874"
+  },
+  "lifecycle-notice-approve-cancellable": {
+    "binding": "7cae1ad1155a92e5760698cdaab83b320514d0f700e696e58693a2eb7a22b43c",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-cancelled-2\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x7ea0599cdf23aaa9541fb724d921f9fb7163e71112c43a522c58f70a5eab6b03"
+  },
+  "lifecycle-notice-cancel-cancellable": {
+    "binding": "e8bc3c3b823c1f310d2a8868a3949992eed7b00d12bc27231475a6327e170fbf",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-notice-cancelled-2"
+      ]
+    },
+    "tx": "0x70ef97bcc90e334744221023f7e5ce1802e1eb8126aad98ed3d111e33db5ee7a"
+  },
+  "lifecycle-notice-approve-recovery": {
+    "binding": "fa3703e712a62134dc4ff252f3d7d10578cb0042790f4a98671d4c69a29b6891",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0x4dabac1ad774d171da1fa2da18ad2da0250c1378\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-recovered-2\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0xe244212ac6e37d829516891e3a704a025a3bb84b063b6b2834eb303780f88b86"
+  },
+  "lifecycle-notice-open-recovery": {
+    "binding": "633205423f0e9f8cc656ca3e9437a5f1f31d13aac5315a427d8ef01d4bdc9303",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-notice-recovered-2",
+        "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+        "2027-10-20T00:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"When is the effective maintenance interval for v26?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-schedule-1\"]}",
+        "{\"consequence_digest\":\"4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf\",\"consumer\":\"0xf5d64152e73bb2b74034ca9b80dfbd7b04945384\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0x4dabac1ad774d171da1fa2da18ad2da0250c1378\",\"parties\":[],\"policy_id\":\"notice-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-notice-recovered-2\",\"source_manifest_digest\":\"d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296\",\"subject_digest\":\"af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4\",\"subject_id\":\"lifecycle-notice\",\"supersedes\":\"lifecycle-notice-1\",\"target_time\":\"2027-10-20T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x52145515d0337aa66a1bec795bfb7dfd4481b063fa633b217ba42e47297ff2c2"
+  },
+  "lifecycle-notice-reserve-recovery": {
+    "binding": "00690b0e14b7c7fd4b62828b5262a0e1d3980671dbe911605e4df7a98179b20e",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "lifecycle-notice-recovered-2",
+        1
+      ]
+    },
+    "tx": "0x076e48b448e61c5851654a11180683ff6a2c9bff282a2dc76a74335818762f5b"
+  },
+  "lifecycle-notice-assess-recovery": {
+    "binding": "321bac74f4545c3a10573f5e2fd042538744ba63a9a6dca4abb94f983a5cc263",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "lifecycle-notice-recovered-2",
+        1
+      ]
+    },
+    "tx": "0x4cd9e5a7ef13293c878a495aadf9c1b6701fbba2e37f50695ffee476a61a40e1"
+  },
+  "publish-lifecycle-notice-recovered-delivery": {
+    "binding": "bc11b41b971aad6c94030a5357706a93415ed64c0bbbc2b5c74fe5b21ede25fa",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-notice-recovered-2",
+        "addr#f5d64152e73bb2b74034ca9b80dfbd7b04945384",
+        "lifecycle-notice-recovered-delivery"
+      ]
+    },
+    "tx": "0x17d35c825ac9471adac49d47fb1caa0ab25949fe6e018af1a6ef221a42792008"
+  },
+  "lifecycle-notice-execute-recovery": {
+    "binding": "eb9d6317be337320f14ee41e5f53f165cff88f17212120115deaa48e0f187baa",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "execute",
+      "args": [
+        "lifecycle-notice",
+        "lifecycle-notice-recovered-action"
+      ]
+    },
+    "tx": "0xa5d348a6909a79efc603749c3e7e20f2489c67165bd7ed93dc64b0ffdc3d29d6"
+  },
+  "lifecycle-notice-opened-cancellation-blocked": {
+    "binding": "80688a5f22a8b4a6830815d5a12692253e079248832fbf9fecf6f3ace644d614",
+    "specification": {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-notice-recovered-2"
+      ]
+    },
+    "tx": "0x2a1df1f9d18e809d6e626e182541ed809e8ef231f637c1e90f90493f5e18df2e"
   }
 }

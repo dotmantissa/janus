@@ -1,0 +1,102 @@
+{
+  "assessed_attempt": 1,
+  "attempts": 1,
+  "certificate": {
+    "applies_at_target": {
+      "EFFECTIVE": true,
+      "OCCURRENCE": null
+    },
+    "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+    "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+    "controlling_rule_ids": [
+      "temporal-role"
+    ],
+    "coverage": {
+      "complete_packet": true,
+      "missing_roles": []
+    },
+    "deadline": "2032-01-01T00:00:00Z",
+    "decision_vector": [
+      {
+        "assertion_id": "temporal",
+        "interval": {
+          "lower": 1792454400,
+          "lower_inclusive": true,
+          "upper": 1840665600,
+          "upper_inclusive": false
+        },
+        "qualifier": "RANGE",
+        "role": "EFFECTIVE",
+        "witness": {
+          "end": 2860,
+          "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+          "source_id": "node-schedule-1",
+          "span_id": "v24",
+          "start": 2712
+        }
+      }
+    ],
+    "exceptions": [],
+    "first_publication_upper": 1793703620,
+    "generation": 1,
+    "intervals": {
+      "EFFECTIVE": {
+        "lower": 1792454400,
+        "lower_inclusive": true,
+        "upper": 1840665600,
+        "upper_inclusive": false
+      },
+      "OCCURRENCE": null,
+      "PUBLICATION": {
+        "lower": null,
+        "lower_inclusive": true,
+        "upper": 1793703621,
+        "upper_inclusive": false
+      }
+    },
+    "lifecycle_status": "CERTIFIED",
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "notice-v1",
+    "policy_revision": 1,
+    "proposition": "Node.js v24 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+    "publication_support": [
+      {
+        "observation_upper": 1793703620,
+        "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+        "redirect_policy": "REJECT",
+        "source_id": "node-schedule-1",
+        "support": "SIGNED_PUBLIC_OBSERVATION",
+        "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+      }
+    ],
+    "request_binding_digest": "4206028654c63edcc37eb958f8d5eeb8118512067d50648e774b967f52fe490e",
+    "request_id": "notice-refused",
+    "source_manifest_digest": "16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89",
+    "subject_digest": "c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8",
+    "subject_id": "notice-refused",
+    "superseded_by": "",
+    "supersedes": "",
+    "target_time": "2026-10-20T00:00:00Z",
+    "unresolved_flags": []
+  },
+  "envelope": {
+    "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+    "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+    "deadline": "2032-01-01T00:00:00Z",
+    "generation": 1,
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "notice-v1",
+    "policy_revision": 1,
+    "request_id": "notice-refused",
+    "source_manifest_digest": "16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89",
+    "subject_digest": "c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8",
+    "subject_id": "notice-refused",
+    "supersedes": "",
+    "target_time": "2026-10-20T00:00:00Z"
+  },
+  "status": "CERTIFIED",
+  "superseded_by": "",
+  "valid": true
+}

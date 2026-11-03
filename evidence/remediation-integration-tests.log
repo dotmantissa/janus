@@ -1,0 +1,173 @@
+INFO: File `gltest.config.yaml` found in the current directory, using it
+INFO: Clearing artifacts directory: artifacts
+INFO: Using the following configuration:
+INFO:   RPC URL: https://studio.genlayer.com/api
+INFO:   Selected Network: studionet
+INFO:   Available networks: ['studionet', 'localnet']
+INFO:   Selected chain type: studionet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.7.0 -- /home/dotmantissa/GenLayer_dApps/primitives/janus/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/dotmantissa/GenLayer_dApps/primitives/janus
+configfile: pytest.ini
+plugins: genlayer-test-0.29.2
+collecting ... collected 2 items
+
+tests/integration/test_studio.py::test_real_studio_flow Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+authority-node-schedule-observer FINALIZED SUCCESS
+accept-node-schedule-observer FINALIZED SUCCESS
+authority-node-release-observer FINALIZED SUCCESS
+accept-node-release-observer FINALIZED SUCCESS
+observe-node-schedule-1 FINALIZED SUCCESS
+observe-node-release-1 FINALIZED SUCCESS
+policy-notice-v1 FINALIZED SUCCESS
+policy-event-v1 FINALIZED SUCCESS
+register-notice FINALIZED SUCCESS
+register-event FINALIZED SUCCESS
+approve-notice-permitted FINALIZED SUCCESS
+open-notice-permitted FINALIZED SUCCESS
+reserve-notice-permitted FINALIZED SUCCESS
+assess-notice-permitted FINALIZED SUCCESS
+publish-notice-permitted FINALIZED SUCCESS
+execute-notice-permitted FINALIZED SUCCESS
+VERIFIED notice-permitted APPLIED
+approve-notice-refused FINALIZED SUCCESS
+open-notice-refused FINALIZED SUCCESS
+reserve-notice-refused FINALIZED SUCCESS
+assess-notice-refused FINALIZED SUCCESS
+publish-notice-refused FINALIZED SUCCESS
+execute-notice-refused FINALIZED FAILED
+VERIFIED notice-refused BLOCKED
+approve-event-permitted FINALIZED SUCCESS
+open-event-permitted FINALIZED SUCCESS
+reserve-event-permitted FINALIZED SUCCESS
+assess-event-permitted FINALIZED SUCCESS
+publish-event-permitted FINALIZED SUCCESS
+execute-event-permitted FINALIZED SUCCESS
+VERIFIED event-permitted APPLIED
+approve-event-refused FINALIZED SUCCESS
+open-event-refused FINALIZED SUCCESS
+reserve-event-refused FINALIZED SUCCESS
+assess-event-refused FINALIZED SUCCESS
+publish-event-refused FINALIZED SUCCESS
+execute-event-refused FINALIZED FAILED
+VERIFIED event-refused BLOCKED
+All four real-source finalized consumer flows verified.
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+PASSED
+tests/integration/test_studio.py::test_both_live_consumer_lifecycles Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+lifecycle-notice-unapproved-open FINALIZED FAILED
+lifecycle-notice-approve-original FINALIZED SUCCESS
+lifecycle-notice-open-original FINALIZED SUCCESS
+lifecycle-notice-reserve-original FINALIZED SUCCESS
+lifecycle-notice-assess-original submitted 0xfc3bac516ede8c97d318b2406940db3a26ad8e73f75b338a20b418c3419ee51e
+lifecycle-notice-assess-original FINALIZED SUCCESS
+publish-lifecycle-notice-delivery-1 submitted 0x6c15caca208009f1c59f04640501eaeb7b0eef888faeda723ee0a352d2bebca1
+publish-lifecycle-notice-delivery-1 FINALIZED SUCCESS
+lifecycle-notice-execute-1 submitted 0x9e43eb9ab92288673809efb81a909529a49cf76e8911e7efda42b2f6ab64e805
+lifecycle-notice-execute-1 FINALIZED SUCCESS
+publish-lifecycle-notice-delivery-2 submitted 0xa9a1cde568703b234e4706f0bdabf69b51c64baae8831e22f1c9323d3b2ead07
+publish-lifecycle-notice-delivery-2 FINALIZED SUCCESS
+lifecycle-notice-second-action-blocked submitted 0xe952297cb541ec9783852f7921aa40e9f778f6ce5af96ab06d2d896b67dce28b
+lifecycle-notice-second-action-blocked FINALIZED FAILED
+lifecycle-notice-approve-bad submitted 0x76895e2496f7b4ebf4bc34c5365168ee86b6c1ffc3f891e63d82d0570732d05e
+lifecycle-notice-approve-bad FINALIZED SUCCESS
+lifecycle-notice-bad-open-blocked submitted 0xa837b2a5041eebe9356c944eeaa777727b4d15eb2e7ce6d3df2f5bf9a1b7fb59
+lifecycle-notice-bad-open-blocked FINALIZED FAILED
+lifecycle-notice-cancel-bad submitted 0xbe0f2dae338e4be030df28ed08d73a649ca0ddc0412a89c11f47670c31ccc874
+lifecycle-notice-cancel-bad FINALIZED SUCCESS
+publish-lifecycle-notice-delayed-old submitted 0x206829689dbe06cf3ebecd89cf0591f1123a65376b9681d93068525f18bd4561
+publish-lifecycle-notice-delayed-old FINALIZED SUCCESS
+lifecycle-notice-approve-cancellable submitted 0x7ea0599cdf23aaa9541fb724d921f9fb7163e71112c43a522c58f70a5eab6b03
+lifecycle-notice-approve-cancellable FINALIZED SUCCESS
+lifecycle-notice-cancel-cancellable submitted 0x70ef97bcc90e334744221023f7e5ce1802e1eb8126aad98ed3d111e33db5ee7a
+lifecycle-notice-cancel-cancellable FINALIZED SUCCESS
+lifecycle-notice-cancelled-open-blocked submitted 0x7baf4ba9482c22de26ad7e7aaafe0e1a369049e3ccd3b1e5e85e0dece4553c6a
+lifecycle-notice-cancelled-open-blocked FINALIZED FAILED
+lifecycle-notice-quarantine-original submitted 0x3917a5a85704a642bb70b44e7ff45707df8bc65470effd78ea48ae9a75b28346
+lifecycle-notice-quarantine-original FINALIZED SUCCESS
+lifecycle-notice-approve-recovery submitted 0xe244212ac6e37d829516891e3a704a025a3bb84b063b6b2834eb303780f88b86
+lifecycle-notice-approve-recovery FINALIZED SUCCESS
+lifecycle-notice-open-recovery submitted 0x52145515d0337aa66a1bec795bfb7dfd4481b063fa633b217ba42e47297ff2c2
+lifecycle-notice-open-recovery FINALIZED SUCCESS
+lifecycle-notice-reserve-recovery submitted 0x076e48b448e61c5851654a11180683ff6a2c9bff282a2dc76a74335818762f5b
+lifecycle-notice-reserve-recovery FINALIZED SUCCESS
+lifecycle-notice-assess-recovery submitted 0x4cd9e5a7ef13293c878a495aadf9c1b6701fbba2e37f50695ffee476a61a40e1
+lifecycle-notice-assess-recovery FINALIZED SUCCESS
+publish-lifecycle-notice-recovered-delivery submitted 0x17d35c825ac9471adac49d47fb1caa0ab25949fe6e018af1a6ef221a42792008
+publish-lifecycle-notice-recovered-delivery FINALIZED SUCCESS
+lifecycle-notice-execute-recovery submitted 0xa5d348a6909a79efc603749c3e7e20f2489c67165bd7ed93dc64b0ffdc3d29d6
+lifecycle-notice-execute-recovery FINALIZED SUCCESS
+lifecycle-notice-opened-cancellation-blocked submitted 0x2a1df1f9d18e809d6e626e182541ed809e8ef231f637c1e90f90493f5e18df2e
+lifecycle-notice-opened-cancellation-blocked FINALIZED FAILED
+VERIFIED notice authorization, repeated delivery, cancellation, delayed delivery, quarantine and owner recovery
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+lifecycle-event-unapproved-open submitted 0xe20d7f6c6073449e3d9f2091be791bc4d3cdf6dd30e07035a1a5c63116a799e6
+lifecycle-event-unapproved-open FINALIZED FAILED
+lifecycle-event-approve-original submitted 0x97cb9ba154b6d9db41c00f5ff39dfcdf3d5c6525592c6e2214ef41ce58351032
+lifecycle-event-approve-original FINALIZED SUCCESS
+lifecycle-event-open-original submitted 0xb4e6f608c2d4a89a46e5bd0be495bd99f9a8fe4d3ef0459236ab083cbb29c42a
+lifecycle-event-open-original FINALIZED SUCCESS
+lifecycle-event-reserve-original submitted 0xcaff7b1cac6e46fa002db0a1f6528cc4e7dfdf0eb0595bade6be7fc990ab4a27
+lifecycle-event-reserve-original FINALIZED SUCCESS
+lifecycle-event-assess-original submitted 0x8ccebf1362d4224ce5cc0c5c9dee1ba7e2a5a670654e1937e1def53d69d78b9a
+lifecycle-event-assess-original FINALIZED SUCCESS
+publish-lifecycle-event-delivery-1 submitted 0x5adda85612b7da5a390769f77270049a22d4bda216bccb2ee8fcc83deff9871d
+publish-lifecycle-event-delivery-1 FINALIZED SUCCESS
+lifecycle-event-execute-1 submitted 0xc7731658a48b72672b599f4bf8ebbb18599709e63695978d1c6fdecb4ada03f1
+lifecycle-event-execute-1 FINALIZED SUCCESS
+publish-lifecycle-event-delivery-2 submitted 0x6b9e55b03fb06b0c5d6ab0e9551acb40cb4b163b36485987985623d5cd9f21c4
+publish-lifecycle-event-delivery-2 FINALIZED SUCCESS
+lifecycle-event-second-action-blocked submitted 0x0fac888dcb633bdd392a1da83834cffb7bd344e203bfece2ec904e211c0cd57f
+lifecycle-event-second-action-blocked FINALIZED FAILED
+lifecycle-event-approve-bad submitted 0x0b51d289bbb8e4be762c55a63b84a9a58f1669e6cebb58de95a635f6601c8cb4
+lifecycle-event-approve-bad FINALIZED SUCCESS
+lifecycle-event-bad-open-blocked submitted 0xb83c5b4e05957b755a7f871e37bca084bcfd942405dfc86b6941391e569030c2
+lifecycle-event-bad-open-blocked FINALIZED FAILED
+lifecycle-event-cancel-bad submitted 0xd3110ab75adaaeb4fad47e053160fb7b3d15b420537ed9fd40b4b81641a1c0c0
+lifecycle-event-cancel-bad FINALIZED SUCCESS
+publish-lifecycle-event-delayed-old submitted 0x3832f6569fc5996fb5e62380958406386830e34e1a3c9c4f2695580f50219932
+publish-lifecycle-event-delayed-old FINALIZED SUCCESS
+lifecycle-event-approve-cancellable submitted 0x4435155311cb7a44cbb8b23444659a1a8ee59aa5f76caf75b065bd467a7568c5
+lifecycle-event-approve-cancellable FINALIZED SUCCESS
+lifecycle-event-cancel-cancellable submitted 0xe34f78fa0588e2fd2ca370a075ac79e8cb0d9d4b01a37f0514e9fcbb030b5fb0
+lifecycle-event-cancel-cancellable FINALIZED SUCCESS
+lifecycle-event-cancelled-open-blocked submitted 0x5304152f2ab37c20758ee260764fd2647e0881b1c88b6aca94c7f71014657e91
+lifecycle-event-cancelled-open-blocked FINALIZED FAILED
+lifecycle-event-quarantine-original submitted 0xc28f4a26d67a3ec55e69d985ea268cb94fcbf782af1e456391251163c2a1cf1f
+lifecycle-event-quarantine-original FINALIZED SUCCESS
+lifecycle-event-approve-recovery submitted 0x42221947c316417db56f67ff9673cceba056c5b4a85e08648d1cc93dd5754d12
+lifecycle-event-approve-recovery FINALIZED SUCCESS
+lifecycle-event-open-recovery submitted 0x45dce5dfa8829830c73dbc96d89d8d49064bf22b37d50fdf6d54eb82757aa745
+lifecycle-event-open-recovery FINALIZED SUCCESS
+lifecycle-event-reserve-recovery submitted 0xf005fed63985267fb14fdc9664b67fd28f8b22b991efe35705d7284e5aa6ac54
+lifecycle-event-reserve-recovery FINALIZED SUCCESS
+lifecycle-event-assess-recovery submitted 0x7e17f3188206a3e5be13d1f5c9fe92d6a8ab16734b572b9966e26c56bc0f943c
+lifecycle-event-assess-recovery FINALIZED SUCCESS
+publish-lifecycle-event-recovered-delivery submitted 0x871991918950e5b68a07370530635dab897c6020bd2dea42e905ba0546ee31b3
+publish-lifecycle-event-recovered-delivery FINALIZED SUCCESS
+lifecycle-event-execute-recovery submitted 0xd6da784e21a480e69adab33f3b5b470fd32b24751d26490984559e5a5c74b3b4
+lifecycle-event-execute-recovery FINALIZED SUCCESS
+lifecycle-event-opened-cancellation-blocked submitted 0x874507a150ab8b399b862e3ffa57a988ee381c0cfeb2430f3f74844f561271d6
+lifecycle-event-opened-cancellation-blocked FINALIZED FAILED
+VERIFIED event authorization, repeated delivery, cancellation, delayed delivery, quarantine and owner recovery
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+Using authenticated verification RPC transport: https://janus-verification-rpc.vercel.app/api/rpc
+PASSED
+
+======================== 2 passed in 4840.71s (1:20:40) ========================

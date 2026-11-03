@@ -1,0 +1,140 @@
+{
+  "consumer": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+  "mode": "notice",
+  "subject_id": "lifecycle-notice",
+  "original_request": "lifecycle-notice-1",
+  "recovered_request": "lifecycle-notice-recovered-2",
+  "cancelled_requests": [
+    "lifecycle-notice-bad-2",
+    "lifecycle-notice-cancelled-2"
+  ],
+  "executed_before_redelivery": {
+    "acknowledgement": "APPLIED",
+    "active": false,
+    "executed": true,
+    "generation": 1,
+    "operation_id": "lifecycle-notice-delivery-1",
+    "permitted": true,
+    "unresolved": false
+  },
+  "executed_after_redelivery": {
+    "acknowledgement": "APPLIED",
+    "active": false,
+    "executed": true,
+    "generation": 1,
+    "operation_id": "lifecycle-notice-delivery-2",
+    "permitted": true,
+    "unresolved": false
+  },
+  "certificate": {
+    "assessed_attempt": 1,
+    "attempts": 1,
+    "certificate": {
+      "applies_at_target": {
+        "EFFECTIVE": true,
+        "OCCURRENCE": null
+      },
+      "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+      "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+      "controlling_rule_ids": [
+        "temporal-role"
+      ],
+      "coverage": {
+        "complete_packet": true,
+        "missing_roles": []
+      },
+      "deadline": "2032-01-01T00:00:00Z",
+      "decision_vector": [
+        {
+          "assertion_id": "temporal",
+          "interval": {
+            "lower": 1823990400,
+            "lower_inclusive": true,
+            "upper": 1872201600,
+            "upper_inclusive": false
+          },
+          "qualifier": "RANGE",
+          "role": "EFFECTIVE",
+          "witness": {
+            "end": 3112,
+            "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+            "source_id": "node-schedule-1",
+            "span_id": "v26",
+            "start": 2964
+          }
+        }
+      ],
+      "exceptions": [],
+      "first_publication_upper": 1793703620,
+      "generation": 2,
+      "intervals": {
+        "EFFECTIVE": {
+          "lower": 1823990400,
+          "lower_inclusive": true,
+          "upper": 1872201600,
+          "upper_inclusive": false
+        },
+        "OCCURRENCE": null,
+        "PUBLICATION": {
+          "lower": null,
+          "lower_inclusive": true,
+          "upper": 1793703621,
+          "upper_inclusive": false
+        }
+      },
+      "lifecycle_status": "CERTIFIED",
+      "owner": "0x4dabac1ad774d171da1fa2da18ad2da0250c1378",
+      "parties": [],
+      "policy_id": "notice-v1",
+      "policy_revision": 1,
+      "proposition": "Node.js v26 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+      "publication_support": [
+        {
+          "observation_upper": 1793703620,
+          "raw_sha256": "50fe35a4df02398f741fdffbc666aceca323fcdb7f46d05af93145bf610d0049",
+          "redirect_policy": "REJECT",
+          "source_id": "node-schedule-1",
+          "support": "SIGNED_PUBLIC_OBSERVATION",
+          "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+        }
+      ],
+      "request_binding_digest": "77848bb65ff531d1995ac8773040c86586ea7b64658e1ad6ae7654db0d0f121d",
+      "request_id": "lifecycle-notice-recovered-2",
+      "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+      "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+      "subject_id": "lifecycle-notice",
+      "superseded_by": "",
+      "supersedes": "lifecycle-notice-1",
+      "target_time": "2027-10-20T00:00:00Z",
+      "unresolved_flags": []
+    },
+    "envelope": {
+      "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+      "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+      "deadline": "2032-01-01T00:00:00Z",
+      "generation": 2,
+      "owner": "0x4dabac1ad774d171da1fa2da18ad2da0250c1378",
+      "parties": [],
+      "policy_id": "notice-v1",
+      "policy_revision": 1,
+      "request_id": "lifecycle-notice-recovered-2",
+      "source_manifest_digest": "d5f0f28741bb0f972e20d92f8da9f3ac51a9a329f1d9d849056fe6a46b9a5296",
+      "subject_digest": "af879499b103bf3b0542fefef7516b80e8b1a28206c46d1b4dabb7e66daec3e4",
+      "subject_id": "lifecycle-notice",
+      "supersedes": "lifecycle-notice-1",
+      "target_time": "2027-10-20T00:00:00Z"
+    },
+    "status": "CERTIFIED",
+    "superseded_by": "",
+    "valid": true
+  },
+  "final_state": {
+    "acknowledgement": "APPLIED",
+    "active": false,
+    "executed": true,
+    "generation": 2,
+    "operation_id": "lifecycle-notice-recovered-delivery",
+    "permitted": true,
+    "unresolved": false
+  }
+}

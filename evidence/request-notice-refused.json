@@ -1,0 +1,31 @@
+{
+  "proposition": "Node.js v24 is in its maintenance support phase during the maintenance interval specified in the committed Node.js schedule.",
+  "manifest": {
+    "records": [
+      "node-schedule-1"
+    ],
+    "assertions": [
+      {
+        "assertion_id": "temporal",
+        "question": "When is the effective maintenance interval for v24?",
+        "rule_id": "temporal-role"
+      }
+    ]
+  },
+  "envelope": {
+    "request_id": "notice-refused",
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "notice-v1",
+    "policy_revision": 1,
+    "subject_id": "notice-refused",
+    "subject_digest": "c5f32dc24474d4140d95499267ac212e98e1254ae19d977286f86ea69ac951c8",
+    "source_manifest_digest": "16511a0bba3b985bbf965b6d845356bd68c94304915d20a5d6502f3c8f9b8e89",
+    "consumer": "0xf5d64152e73bb2b74034ca9b80dfbd7b04945384",
+    "consequence_digest": "4d40881c09843b8755c11e78aca8d48f65931f3846598a80c80edde76c6c19bf",
+    "generation": 1,
+    "deadline": "2032-01-01T00:00:00Z",
+    "target_time": "2026-10-20T00:00:00Z",
+    "supersedes": ""
+  }
+}

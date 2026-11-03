@@ -1,0 +1,102 @@
+{
+  "assessed_attempt": 1,
+  "attempts": 1,
+  "certificate": {
+    "applies_at_target": {
+      "EFFECTIVE": null,
+      "OCCURRENCE": false
+    },
+    "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+    "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+    "controlling_rule_ids": [
+      "temporal-role"
+    ],
+    "coverage": {
+      "complete_packet": true,
+      "missing_roles": []
+    },
+    "deadline": "2032-01-01T00:00:00Z",
+    "decision_vector": [
+      {
+        "assertion_id": "temporal",
+        "interval": {
+          "lower": 1747785600,
+          "lower_inclusive": true,
+          "upper": 1747872000,
+          "upper_inclusive": false
+        },
+        "qualifier": "EXACT",
+        "role": "OCCURRENCE",
+        "witness": {
+          "end": 185,
+          "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+          "source_id": "node-release-1",
+          "span_id": "release-header",
+          "start": 0
+        }
+      }
+    ],
+    "exceptions": [],
+    "first_publication_upper": 1793704386,
+    "generation": 1,
+    "intervals": {
+      "EFFECTIVE": null,
+      "OCCURRENCE": {
+        "lower": 1747785600,
+        "lower_inclusive": true,
+        "upper": 1747872000,
+        "upper_inclusive": false
+      },
+      "PUBLICATION": {
+        "lower": null,
+        "lower_inclusive": true,
+        "upper": 1793704387,
+        "upper_inclusive": false
+      }
+    },
+    "lifecycle_status": "CERTIFIED",
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "event-v1",
+    "policy_revision": 1,
+    "proposition": "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+    "publication_support": [
+      {
+        "observation_upper": 1793704386,
+        "raw_sha256": "fe45d6ed72cd08143dc86976e07186c25aca559f25ede9585ec3ab38d4cf46d7",
+        "redirect_policy": "REJECT",
+        "source_id": "node-release-1",
+        "support": "SIGNED_PUBLIC_OBSERVATION",
+        "transport_url": "https://janus-source-transport.vercel.app/api/fetch"
+      }
+    ],
+    "request_binding_digest": "e59c69f848b1f2cb4d682805eca721ba90893bd28366fe4c64fac66b95012b3b",
+    "request_id": "event-refused",
+    "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+    "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+    "subject_id": "event-refused",
+    "superseded_by": "",
+    "supersedes": "",
+    "target_time": "2025-05-22T00:00:00Z",
+    "unresolved_flags": []
+  },
+  "envelope": {
+    "consequence_digest": "81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b",
+    "consumer": "0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+    "deadline": "2032-01-01T00:00:00Z",
+    "generation": 1,
+    "owner": "0xbc1399c55538ec034d4da550c03c34ae0c357f53",
+    "parties": [],
+    "policy_id": "event-v1",
+    "policy_revision": 1,
+    "request_id": "event-refused",
+    "source_manifest_digest": "9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea",
+    "subject_digest": "4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e",
+    "subject_id": "event-refused",
+    "supersedes": "",
+    "target_time": "2025-05-22T00:00:00Z"
+  },
+  "status": "CERTIFIED",
+  "superseded_by": "",
+  "valid": true
+}

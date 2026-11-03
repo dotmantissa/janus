@@ -61,6 +61,8 @@ Set `JANUS_DEPLOYER_KEY`, `JANUS_NOTICE_KEY` and `JANUS_EVENT_KEY` in the proces
 
 The scripts target `studionet`, chain ID `61999`, through the configured GenLayer Python SDK. Studio is gasless. Choose a new journal name for each new deployment and retain it when resuming. Transactions are journaled by operation before polling; rerunning an unchanged command resumes the same transaction instead of rebroadcasting. Journals bind the signer and chain. All successful operations assert execution success as well as `FINALIZED` status. The live flow reads its journal and code commitments from deployment metadata, uses immutable public Node.js records and requires multiple agreeing validators. `requirements.lock` records the verified Python 3.14 dependency environment; `requirements.txt` pins direct dependencies for other supported Python versions.
 
+The optional `rpc_transport` service forwards authenticated verification requests to the same Studio API without changing their signed parameters or receipt bytes. Private endpoint configuration uses the ignored `.secrets/studio-rpc.json` with `url` and `token`. [Verification](docs/verification.md) records deployed transport provenance and real chain checks.
+
 For a different application, follow these steps:
 
 1. Deploy `Janus(capacity, transport_url)` with your registry owner and a verified transport that rejects redirects. The published transport supports `raw.githubusercontent.com` and `github.com`; another publisher requires an explicitly configured transport.

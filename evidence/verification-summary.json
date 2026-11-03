@@ -1,0 +1,78 @@
+{
+  "verified_at": "2026-11-03T14:42:20.728521+00:00",
+  "chain_id": 61999,
+  "journal": "studio-v4",
+  "contracts": {
+    "resolver": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+    "notice_consumer": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+    "event_consumer": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B"
+  },
+  "source_sha256": {
+    "contracts/janus.py": "90f36a3d83c9b8950b272e75df66f6d383b950b4032295bcec2f0c517f145172",
+    "contracts/notice_gate.py": "d1d22e9171839dc826cd1bcb6efd9766b773662c85e29933dd2838591fde4a8b",
+    "contracts/event_registry.py": "b60a27f6294c69473b5bae707ff6e97e7057cd56f5ecbee70f324f26fd8a332d"
+  },
+  "tests": {
+    "direct": 149,
+    "source_transport_node": 17,
+    "rpc_transport_node": 8,
+    "live_integration": 2,
+    "live_integration_skipped": 0
+  },
+  "live_cases": [
+    {
+      "request_id": "notice-permitted",
+      "assessment": "CERTIFIED",
+      "acknowledgement": "APPLIED",
+      "execution": true,
+      "active": false
+    },
+    {
+      "request_id": "notice-refused",
+      "assessment": "CERTIFIED",
+      "acknowledgement": "BLOCKED",
+      "execution": false,
+      "active": false
+    },
+    {
+      "request_id": "event-permitted",
+      "assessment": "CERTIFIED",
+      "acknowledgement": "APPLIED",
+      "execution": true,
+      "active": true
+    },
+    {
+      "request_id": "event-refused",
+      "assessment": "CERTIFIED",
+      "acknowledgement": "BLOCKED",
+      "execution": false,
+      "active": false
+    }
+  ],
+  "live_lifecycles": [
+    {
+      "mode": "notice",
+      "generation": 2,
+      "executed": true,
+      "cancelled_request_count": 2
+    },
+    {
+      "mode": "event",
+      "generation": 2,
+      "executed": true,
+      "cancelled_request_count": 2
+    }
+  ],
+  "receipt_identity_checks": {
+    "parent_count": 85,
+    "child_count": 28,
+    "pending_count": 0
+  },
+  "logs": [
+    "evidence/remediation-direct-tests.log",
+    "evidence/source-transport-tests.log",
+    "evidence/rpc-transport-tests.log",
+    "evidence/remediation-lint.log",
+    "evidence/remediation-integration-tests.log"
+  ]
+}

@@ -1,0 +1,1087 @@
+{
+  "verified_at": "2026-11-03T14:42:20.542869+00:00",
+  "journal": "studio-v4",
+  "chain_id": 61999,
+  "parent_count": 85,
+  "child_count": 28,
+  "missing_receipts": [],
+  "parents": [
+    {
+      "operation": "deploy-janus",
+      "journal": "studio-v4",
+      "transaction_hash": "0x17a27ecff9fd762c476680dca0e6a83b409a5b1d46b58c7b567c504e04f70fa6",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "authority-node-schedule-observer",
+      "journal": "studio-v4",
+      "transaction_hash": "0x11e29d006d91706311022e2ad5aa4844e8a4de0f0d45dbf51aad070576d6f398",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "accept-node-schedule-observer",
+      "journal": "studio-v4",
+      "transaction_hash": "0x37b58e432bd328ef66e45b8934dd322fb5b4af15026beec6d220d3256d9b06a9",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "authority-node-release-observer",
+      "journal": "studio-v4",
+      "transaction_hash": "0x095b491f584f21b7d8f507ba5de1e907f27c8c8c11ec656cd73e71022862317a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "accept-node-release-observer",
+      "journal": "studio-v4",
+      "transaction_hash": "0xdf0603677e0abf0b4014d9f971c6ea0e3f0ba35f75ffeac9fb51aa159965ecf6",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "observe-node-schedule-1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x361327a4d6242626067701ef8e6cda40349c8f45a5641a68e0eff72a5b4ebcf6",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "observe-node-release-1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x7277b4b5d6d77ce25970ff906ca2c709e93d2536c8f121a24600a1d75e9fa47e",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "policy-notice-v1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x2e2aee795f0b87154799eb765d7eb7bf92a0ef41eebad50c22a2e9539221afc0",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "policy-event-v1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x4907c0a9210545871e42f5c87cbb45d4b98ffc06e6d8654abe433c5aef60dee3",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "open-notice-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0x66a95272f8ffb1444f76b5ba6e5ed8b89d78e63eb4a9af0daf6e3a72c09b0d69",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "reserve-notice-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0x380b4939522825af7084c4663d0b635b6be2606a3bcf2f56609c433366c1c0ab",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "assess-notice-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0xd35657282c7d023748a2b94f013885bac272d6f4fb1c810f3319a0413f09a4cc",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-notice-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0xdf8bd1a2ffc78078a692ce6e732d9ae381c7ace54072551620f879ff2dcf2489",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "open-notice-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0x6c4b9dc53f431e83f739f8219014e28897c7566be9a2c83991130bf8ce20d6f5",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "reserve-notice-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0xe3728e79c477a154d8552d88adc1360ba381a64761f8356fd91d6fec2a7f9d8b",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "assess-notice-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0xfa4e3681b684a64fb2d3eda9f1073ee8bebba59c49dc6da19e6c63e4feb16fcf",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-notice-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0x177d6e10f240bdc7449e868e9ae2bce85a7a6444233c3c819ad558c4406a639a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "open-event-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0x891e27889d07eacd4e461f42f6396191703ac57b470c9b786e3212ebb159261a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "reserve-event-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0xc6895ce99c5a5844ff4688440589f8a52c15e0e1ce31bc41805805c47985d791",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "assess-event-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0x65939e988daf526049db81cf8cce4315877ad7f16fba75b5ce311268c05746cb",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-event-permitted",
+      "journal": "studio-v4",
+      "transaction_hash": "0x7069bbf8217f9d2cc7e351b3e85ded16e175f0441501e95173d6e143a84f0ff3",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "open-event-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0x5db58f9b04903d71575700a3c0fd879edd3a37c869e25c372e9e5ce53593becc",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "reserve-event-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0xe3e87a1c543ab7929d6511a231377abc2268d6201be326dd0319b4562ee3b0ac",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "assess-event-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0xb88ff5e00d9fb09fc1a86d1a067386eeeca12ef96acff9660eb925f9adb2f144",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-event-refused",
+      "journal": "studio-v4",
+      "transaction_hash": "0xb68b553ad57c44198fc1c9f33218e230493470616d438d717a3b0ecb4fef0c54",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-open-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xdcb1b7734404cd2f578031b1068e65c00b6200e2bdaa65f2b56a87662e77ec2a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-reserve-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xc71d24ffd9f523a83e244fac8e496e1c8ee8e72fa4de018d6fec32f80d52542a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-assess-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xfc3bac516ede8c97d318b2406940db3a26ad8e73f75b338a20b418c3419ee51e",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-notice-delivery-1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x6c15caca208009f1c59f04640501eaeb7b0eef888faeda723ee0a352d2bebca1",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-notice-delivery-2",
+      "journal": "studio-v4",
+      "transaction_hash": "0xa9a1cde568703b234e4706f0bdabf69b51c64baae8831e22f1c9323d3b2ead07",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-bad-open-blocked",
+      "journal": "studio-v4",
+      "transaction_hash": "0xa837b2a5041eebe9356c944eeaa777727b4d15eb2e7ce6d3df2f5bf9a1b7fb59",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-notice-delayed-old",
+      "journal": "studio-v4",
+      "transaction_hash": "0x206829689dbe06cf3ebecd89cf0591f1123a65376b9681d93068525f18bd4561",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-cancelled-open-blocked",
+      "journal": "studio-v4",
+      "transaction_hash": "0x7baf4ba9482c22de26ad7e7aaafe0e1a369049e3ccd3b1e5e85e0dece4553c6a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-quarantine-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0x3917a5a85704a642bb70b44e7ff45707df8bc65470effd78ea48ae9a75b28346",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-open-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xb4e6f608c2d4a89a46e5bd0be495bd99f9a8fe4d3ef0459236ab083cbb29c42a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-reserve-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xcaff7b1cac6e46fa002db0a1f6528cc4e7dfdf0eb0595bade6be7fc990ab4a27",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-assess-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0x8ccebf1362d4224ce5cc0c5c9dee1ba7e2a5a670654e1937e1def53d69d78b9a",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-event-delivery-1",
+      "journal": "studio-v4",
+      "transaction_hash": "0x5adda85612b7da5a390769f77270049a22d4bda216bccb2ee8fcc83deff9871d",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-event-delivery-2",
+      "journal": "studio-v4",
+      "transaction_hash": "0x6b9e55b03fb06b0c5d6ab0e9551acb40cb4b163b36485987985623d5cd9f21c4",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-bad-open-blocked",
+      "journal": "studio-v4",
+      "transaction_hash": "0xb83c5b4e05957b755a7f871e37bca084bcfd942405dfc86b6941391e569030c2",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-event-delayed-old",
+      "journal": "studio-v4",
+      "transaction_hash": "0x3832f6569fc5996fb5e62380958406386830e34e1a3c9c4f2695580f50219932",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-cancelled-open-blocked",
+      "journal": "studio-v4",
+      "transaction_hash": "0x5304152f2ab37c20758ee260764fd2647e0881b1c88b6aca94c7f71014657e91",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-quarantine-original",
+      "journal": "studio-v4",
+      "transaction_hash": "0xc28f4a26d67a3ec55e69d985ea268cb94fcbf782af1e456391251163c2a1cf1f",
+      "signer": "0xBC1399c55538eC034d4Da550C03c34Ae0C357f53",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "deploy-notice",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x1954ab5b84907b214d62027c35cd2b866b1bb8b4b76d0fe29a9189bc3d829204",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "register-notice",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x8b72b768103f84dbf75b07fba8b5be52e8c6931dcb21076d7659241e5315509d",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "approve-notice-permitted",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x1e6dd8d4c43bd1fd4f17c9c4f183c1845d837d761a94790e7cecd9759c35b0bf",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "execute-notice-permitted",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x9ae2032b38cfc6a36eda4821d37051738b9d0455774b958d6b20446a65e073c6",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "approve-notice-refused",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xfa091783b0dce2422bd82217afa4dda00332d72a7bd7fb46738b80941d3db5b3",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "execute-notice-refused",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xc720023a959d6c798ccced2da9a1eafa7e358d3a527b477f71fd5adbed2a7c0c",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-unapproved-open",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x6621a59a1a10b6ee8e05aa72d13e0a6deab870b4b885ae72ff7228fdcee8c239",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-approve-original",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xcfa67e16518b152ffcb8322ed8e0ded4a5dcb90565b51f5ade24802aa3d6e4ce",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-execute-1",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x9e43eb9ab92288673809efb81a909529a49cf76e8911e7efda42b2f6ab64e805",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-second-action-blocked",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xe952297cb541ec9783852f7921aa40e9f778f6ce5af96ab06d2d896b67dce28b",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-approve-bad",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x76895e2496f7b4ebf4bc34c5365168ee86b6c1ffc3f891e63d82d0570732d05e",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-cancel-bad",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xbe0f2dae338e4be030df28ed08d73a649ca0ddc0412a89c11f47670c31ccc874",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-approve-cancellable",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x7ea0599cdf23aaa9541fb724d921f9fb7163e71112c43a522c58f70a5eab6b03",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-cancel-cancellable",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x70ef97bcc90e334744221023f7e5ce1802e1eb8126aad98ed3d111e33db5ee7a",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-approve-recovery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xe244212ac6e37d829516891e3a704a025a3bb84b063b6b2834eb303780f88b86",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-open-recovery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x52145515d0337aa66a1bec795bfb7dfd4481b063fa633b217ba42e47297ff2c2",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-reserve-recovery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x076e48b448e61c5851654a11180683ff6a2c9bff282a2dc76a74335818762f5b",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-assess-recovery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x4cd9e5a7ef13293c878a495aadf9c1b6701fbba2e37f50695ffee476a61a40e1",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-notice-recovered-delivery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x17d35c825ac9471adac49d47fb1caa0ab25949fe6e018af1a6ef221a42792008",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-execute-recovery",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0xa5d348a6909a79efc603749c3e7e20f2489c67165bd7ed93dc64b0ffdc3d29d6",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-notice-opened-cancellation-blocked",
+      "journal": "studio-v4-notice",
+      "transaction_hash": "0x2a1df1f9d18e809d6e626e182541ed809e8ef231f637c1e90f90493f5e18df2e",
+      "signer": "0x4dABac1Ad774d171da1FA2Da18aD2Da0250c1378",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "deploy-event",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xeb98946673048d6db478da8c188278ad9f5734e266687854a669c17522551593",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "register-event",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x533e7a8630642c2bcc6274309c42917c34d5029511c24f17148db781a5ccc3a6",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "approve-event-permitted",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xe6aafd10520ba40f7fd433c42e5fcdb043ff03929b74aa4af24b6940ae862f27",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "execute-event-permitted",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x29034979cc0c89df0761f08726f90cfbb9c21edea812f52b66ef1751c94487eb",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "approve-event-refused",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x8bb904da700223261662f91e73eaa10c9a20c518c40e6e566b05dc4ca9e5a2db",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "execute-event-refused",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x311ac838e6dc39ecb07c569538fa7222a1d25665863cd93eb91a7ab04f7ddc1c",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-unapproved-open",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xe20d7f6c6073449e3d9f2091be791bc4d3cdf6dd30e07035a1a5c63116a799e6",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-approve-original",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x97cb9ba154b6d9db41c00f5ff39dfcdf3d5c6525592c6e2214ef41ce58351032",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-execute-1",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xc7731658a48b72672b599f4bf8ebbb18599709e63695978d1c6fdecb4ada03f1",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-second-action-blocked",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x0fac888dcb633bdd392a1da83834cffb7bd344e203bfece2ec904e211c0cd57f",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-approve-bad",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x0b51d289bbb8e4be762c55a63b84a9a58f1669e6cebb58de95a635f6601c8cb4",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-cancel-bad",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xd3110ab75adaaeb4fad47e053160fb7b3d15b420537ed9fd40b4b81641a1c0c0",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-approve-cancellable",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x4435155311cb7a44cbb8b23444659a1a8ee59aa5f76caf75b065bd467a7568c5",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-cancel-cancellable",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xe34f78fa0588e2fd2ca370a075ac79e8cb0d9d4b01a37f0514e9fcbb030b5fb0",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-approve-recovery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x42221947c316417db56f67ff9673cceba056c5b4a85e08648d1cc93dd5754d12",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-open-recovery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x45dce5dfa8829830c73dbc96d89d8d49064bf22b37d50fdf6d54eb82757aa745",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-reserve-recovery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xf005fed63985267fb14fdc9664b67fd28f8b22b991efe35705d7284e5aa6ac54",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-assess-recovery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x7e17f3188206a3e5be13d1f5c9fe92d6a8ab16734b572b9966e26c56bc0f943c",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "publish-lifecycle-event-recovered-delivery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x871991918950e5b68a07370530635dab897c6020bd2dea42e905ba0546ee31b3",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-execute-recovery",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0xd6da784e21a480e69adab33f3b5b470fd32b24751d26490984559e5a5c74b3b4",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "calldata_bound": true
+    },
+    {
+      "operation": "lifecycle-event-opened-cancellation-blocked",
+      "journal": "studio-v4-event",
+      "transaction_hash": "0x874507a150ab8b399b862e3ffa57a988ee381c0cfeb2430f3f74844f561271d6",
+      "signer": "0xdF8820cc26432C8176fbfdbEe0c836AdB494f9A0",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "EXPECTED_FAILURE",
+      "calldata_bound": true
+    }
+  ],
+  "children": [
+    {
+      "transaction_hash": "0x87056ee36a33d1abb3aad98ad7fa2247f4e5cbf9fd9344c512091fcfb6e4f7f9",
+      "parent": "0x361327a4d6242626067701ef8e6cda40349c8f45a5641a68e0eff72a5b4ebcf6",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xd092be52752886ed2fe8e98a957fb09ea74ac0b7d400a4a197bd89d470bd24f0",
+      "parent": "0x7277b4b5d6d77ce25970ff906ca2c709e93d2536c8f121a24600a1d75e9fa47e",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x2b003aaf1f93d19c523f1b264e3ecfad2043d83570aaaf1c267897db97bc897e",
+      "parent": "0xdf8bd1a2ffc78078a692ce6e732d9ae381c7ace54072551620f879ff2dcf2489",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xb38473846fb4d88224825c2de748dafd624b756dda11c7ae448dd08c6e2d6ef0",
+      "parent": "0x2b003aaf1f93d19c523f1b264e3ecfad2043d83570aaaf1c267897db97bc897e",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xbb193d93ad9e4aa7b3c752158c2b580c5721677c1111819148e36e5f438f9ee1",
+      "parent": "0x177d6e10f240bdc7449e868e9ae2bce85a7a6444233c3c819ad558c4406a639a",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x4c7519f9369f51fc5c4614fb1cb4f958de05cf172e2e0b809f14ec45712c1358",
+      "parent": "0xbb193d93ad9e4aa7b3c752158c2b580c5721677c1111819148e36e5f438f9ee1",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xa9490f02527ac5609a739769cf315f40509a5e8c5afd123c0a2be4b2a622c8d5",
+      "parent": "0x7069bbf8217f9d2cc7e351b3e85ded16e175f0441501e95173d6e143a84f0ff3",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x771ca367e82e71a68fcf74b634c743c399c9fb4c60e36cad2b2ba0a44b37be3e",
+      "parent": "0xa9490f02527ac5609a739769cf315f40509a5e8c5afd123c0a2be4b2a622c8d5",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x590a7bf41d97087a28c0324c78c85a62f0e5e188766466410e1e86563a4ea4bb",
+      "parent": "0xb68b553ad57c44198fc1c9f33218e230493470616d438d717a3b0ecb4fef0c54",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xd2d81eb05130f3aee17245f26180570ae50ad7333bce883ff042855b97fcff06",
+      "parent": "0x590a7bf41d97087a28c0324c78c85a62f0e5e188766466410e1e86563a4ea4bb",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x6ef4b9e9e632ca2adf595f55cccdb4ce265e464142b4c49199ebb69ee4e739a0",
+      "parent": "0x6c15caca208009f1c59f04640501eaeb7b0eef888faeda723ee0a352d2bebca1",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x93eb0f2c7331c41820f40a833bc922db1c1376caa9f69449a9f22de4a53bdfbd",
+      "parent": "0x6ef4b9e9e632ca2adf595f55cccdb4ce265e464142b4c49199ebb69ee4e739a0",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xb22b2069ad34ce4612375cccf13e0b3da970cc449e4d55ada2d34e822462568f",
+      "parent": "0xa9a1cde568703b234e4706f0bdabf69b51c64baae8831e22f1c9323d3b2ead07",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x723d39004d35e900fa9078aa7ec3f5d7b6dc1fe69ba08fa6fa2c391fd0fb34f8",
+      "parent": "0xb22b2069ad34ce4612375cccf13e0b3da970cc449e4d55ada2d34e822462568f",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x9f0940007ee3c23533af6c3b96049116a3068688e56a0d3d01c583984f152e70",
+      "parent": "0x206829689dbe06cf3ebecd89cf0591f1123a65376b9681d93068525f18bd4561",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xd8408fa65d294cf283fc53e31240aa9e1d48fd4f6fd7ebd8f2a1c3cd93290179",
+      "parent": "0x9f0940007ee3c23533af6c3b96049116a3068688e56a0d3d01c583984f152e70",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xb6c32f2bdd81cd86093806348a0eef71d5399dd880d78b618bd60752e3dc7caa",
+      "parent": "0x5adda85612b7da5a390769f77270049a22d4bda216bccb2ee8fcc83deff9871d",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x71853b5538678d1733fb40355c6a561ee0771f8819f9addcab955c63b9411de5",
+      "parent": "0xb6c32f2bdd81cd86093806348a0eef71d5399dd880d78b618bd60752e3dc7caa",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xf8346886b48ebc7916d8516ae7143c9858405df332b4c42a12ebe33d48cd367d",
+      "parent": "0x6b9e55b03fb06b0c5d6ab0e9551acb40cb4b163b36485987985623d5cd9f21c4",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x6b0c30e78b1dd3429e47ea2ffba18c3a61dc2737a712b86964444019aee9177f",
+      "parent": "0xf8346886b48ebc7916d8516ae7143c9858405df332b4c42a12ebe33d48cd367d",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x8c4f6210c102e3cd32b4692e3f7b08a414267014f5bc891f1120d008c4ca3688",
+      "parent": "0x3832f6569fc5996fb5e62380958406386830e34e1a3c9c4f2695580f50219932",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xe41ec7f4d74a85449b6031e1219837b35a1ba499d584945649128db4b8e4b764",
+      "parent": "0x8c4f6210c102e3cd32b4692e3f7b08a414267014f5bc891f1120d008c4ca3688",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x32bbdadd050167c6bb609a3cfb6f0b2477620b9f28aa031a6c599b9768e183e5",
+      "parent": "0x8b72b768103f84dbf75b07fba8b5be52e8c6931dcb21076d7659241e5315509d",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xcd1a0e430829185698de93e217b36ef4ccabbeb1092779e95878468ff7db8437",
+      "parent": "0x17d35c825ac9471adac49d47fb1caa0ab25949fe6e018af1a6ef221a42792008",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0x8996d1670a42094a7c5fa720e5948694fbf57ce8f2755797f783fc6be01c0fd9",
+      "parent": "0xcd1a0e430829185698de93e217b36ef4ccabbeb1092779e95878468ff7db8437",
+      "sender": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xdf84ac91ba808bcc20294f46672af9b37a425fef78536e7e88691b35f74f82e5",
+      "parent": "0x533e7a8630642c2bcc6274309c42917c34d5029511c24f17148db781a5ccc3a6",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xa4a242d80ca83cd14592ffb9d26b1142083700f4cb7765b0e419fcede4561458",
+      "parent": "0x871991918950e5b68a07370530635dab897c6020bd2dea42e905ba0546ee31b3",
+      "sender": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "destination": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "transaction_hash": "0xdabfd92dd3f8256038d19f4f0a50c9702163d233719a2e5f39dd1bf392eb9b2d",
+      "parent": "0xa4a242d80ca83cd14592ffb9d26b1142083700f4cb7765b0e419fcede4561458",
+      "sender": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "destination": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    }
+  ],
+  "checks": "Journal specification digest, transaction hash, signer, destination/type, exact calldata/deployment source, finality, expected execution result, consensus votes for assessments/observations, emitted child sender/destination/calldata/value/parent/finalized trigger."
+}

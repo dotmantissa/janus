@@ -21,5 +21,231 @@
       "args": []
     },
     "tx": "0x533e7a8630642c2bcc6274309c42917c34d5029511c24f17148db781a5ccc3a6"
+  },
+  "approve-event-permitted": {
+    "binding": "cd6a8f46d389aee9647bdf19e46ccab0a5d22bf257af93f1b3f767aff36a2d39",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"event-permitted\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"event-permitted\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0xe6aafd10520ba40f7fd433c42e5fcdb043ff03929b74aa4af24b6940ae862f27"
+  },
+  "execute-event-permitted": {
+    "binding": "2884fc8964dd9e94c8565a3ead8364ab4a888d5340df37d83b0f895aeed0cdc2",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "execute",
+      "args": [
+        "event-permitted",
+        "action-event-permitted"
+      ]
+    },
+    "tx": "0x29034979cc0c89df0761f08726f90cfbb9c21edea812f52b66ef1751c94487eb"
+  },
+  "approve-event-refused": {
+    "binding": "387bc272f7354d5b4ca0f85fe6aa3c9e41b479751a7975c89f02b2f5cc7547f4",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"event-refused\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"event-refused\",\"supersedes\":\"\",\"target_time\":\"2025-05-22T00:00:00Z\"}"
+      ]
+    },
+    "tx": "0x8bb904da700223261662f91e73eaa10c9a20c518c40e6e566b05dc4ca9e5a2db"
+  },
+  "execute-event-refused": {
+    "binding": "5ab7dbd0e03a5624b5d0023fb69ad0a930ab92015a5c47bbeebefee44e4a7ca8",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "execute",
+      "args": [
+        "event-refused",
+        "action-event-refused"
+      ]
+    },
+    "tx": "0x311ac838e6dc39ecb07c569538fa7222a1d25665863cd93eb91a7ab04f7ddc1c"
+  },
+  "lifecycle-event-unapproved-open": {
+    "binding": "b24ce16e37d7c61dd5db59622f62faedf1b15bc37354864718438fa399f70429",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-event-unauthorized",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xdf8820cc26432c8176fbfdbee0c836adb494f9a0\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-unauthorized\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0xe20d7f6c6073449e3d9f2091be791bc4d3cdf6dd30e07035a1a5c63116a799e6"
+  },
+  "lifecycle-event-approve-original": {
+    "binding": "b4c65e7c7bd7749081f3aaabac3e6cbe89bf5c1b2845998c0117a77504ae4b69",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":1,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-1\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x97cb9ba154b6d9db41c00f5ff39dfcdf3d5c6525592c6e2214ef41ce58351032"
+  },
+  "lifecycle-event-execute-1": {
+    "binding": "f0c1dd99643e997e56ac2c013951209e4f1c86f646e3cd433ce5fb3bdb19f4a0",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "execute",
+      "args": [
+        "lifecycle-event",
+        "lifecycle-event-action-1"
+      ]
+    },
+    "tx": "0xc7731658a48b72672b599f4bf8ebbb18599709e63695978d1c6fdecb4ada03f1"
+  },
+  "lifecycle-event-second-action-blocked": {
+    "binding": "293d31509068892a66466e02c2e437264e7b6a76ab49e78398bac5c929484391",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "execute",
+      "args": [
+        "lifecycle-event",
+        "lifecycle-event-action-2"
+      ]
+    },
+    "tx": "0x0fac888dcb633bdd392a1da83834cffb7bd344e203bfece2ec904e211c0cd57f"
+  },
+  "lifecycle-event-approve-bad": {
+    "binding": "bf91c3124c90b20629dd2766d07bf2751bc1df8b343a138627f65513458a2b4a",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-bad-2\",\"source_manifest_digest\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x0b51d289bbb8e4be762c55a63b84a9a58f1669e6cebb58de95a635f6601c8cb4"
+  },
+  "lifecycle-event-cancel-bad": {
+    "binding": "e2f96b74c2bb0a06e52a666e469602815a47d72f8d0c860ea494760b16debb3b",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-event-bad-2"
+      ]
+    },
+    "tx": "0xd3110ab75adaaeb4fad47e053160fb7b3d15b420537ed9fd40b4b81641a1c0c0"
+  },
+  "lifecycle-event-approve-cancellable": {
+    "binding": "356b2b90ee7c5349117d35fa22041a1aa7fd13342092fc11e76fa7d348d376a7",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xbc1399c55538ec034d4da550c03c34ae0c357f53\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-cancelled-2\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x4435155311cb7a44cbb8b23444659a1a8ee59aa5f76caf75b065bd467a7568c5"
+  },
+  "lifecycle-event-cancel-cancellable": {
+    "binding": "727582ce9ee9105835613b9982ad71eaf0737a6cc29577aa84c9a7e4b46d0278",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-event-cancelled-2"
+      ]
+    },
+    "tx": "0xe34f78fa0588e2fd2ca370a075ac79e8cb0d9d4b01a37f0514e9fcbb030b5fb0"
+  },
+  "lifecycle-event-approve-recovery": {
+    "binding": "92fa3d219c2c440d442a61f9a8c2a1b1c94b37ccb41578db1d41ba152aae2506",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "approve_request",
+      "args": [
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xdf8820cc26432c8176fbfdbee0c836adb494f9a0\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-recovered-2\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x42221947c316417db56f67ff9673cceba056c5b4a85e08648d1cc93dd5754d12"
+  },
+  "lifecycle-event-open-recovery": {
+    "binding": "7f8aca25a3cdde1f7b607d95129d0d2cc72751cd5825eb47c532d759d5db1d07",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "open_record",
+      "args": [
+        "lifecycle-event-recovered-2",
+        "The Node.js v24.1.0 release occurred on the date of its committed release announcement.",
+        "2025-05-21T12:00:00Z",
+        "{\"assertions\":[{\"assertion_id\":\"temporal\",\"question\":\"On what UTC date did the v24.1.0 release occurrence take place?\",\"rule_id\":\"temporal-role\"}],\"records\":[\"node-release-1\"]}",
+        "{\"consequence_digest\":\"81b610ed6ff201a09ed3fbe802f79c8b3b0dd0594a1f9795d3123dd4f55c968b\",\"consumer\":\"0x751d7bc9ba337aacbf6928e79ba45c7c1097ca9b\",\"deadline\":\"2032-01-01T00:00:00Z\",\"generation\":2,\"owner\":\"0xdf8820cc26432c8176fbfdbee0c836adb494f9a0\",\"parties\":[],\"policy_id\":\"event-v1\",\"policy_revision\":1,\"request_id\":\"lifecycle-event-recovered-2\",\"source_manifest_digest\":\"9c9f23f3c4739c78b37fab78a3932af43cfcea8e16ccbae848e63adeb151ecea\",\"subject_digest\":\"4c8af3588038ad5f30013fdd77c902b5b8e4c3ddc0e7a4584a4ade44f63df96e\",\"subject_id\":\"lifecycle-event\",\"supersedes\":\"lifecycle-event-1\",\"target_time\":\"2025-05-21T12:00:00Z\"}"
+      ]
+    },
+    "tx": "0x45dce5dfa8829830c73dbc96d89d8d49064bf22b37d50fdf6d54eb82757aa745"
+  },
+  "lifecycle-event-reserve-recovery": {
+    "binding": "d2834e0641a8ba9622cb4178f6a08832f436982b2ae4602fa80f9b9f4a59f611",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "reserve_assessment",
+      "args": [
+        "lifecycle-event-recovered-2",
+        1
+      ]
+    },
+    "tx": "0xf005fed63985267fb14fdc9664b67fd28f8b22b991efe35705d7284e5aa6ac54"
+  },
+  "lifecycle-event-assess-recovery": {
+    "binding": "9307deaa039661fc2a9eb21c30c8eb1727c490a6a65bf057f558a9fe0fec4c72",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "assess_intervals",
+      "args": [
+        "lifecycle-event-recovered-2",
+        1
+      ]
+    },
+    "tx": "0x7e17f3188206a3e5be13d1f5c9fe92d6a8ab16734b572b9966e26c56bc0f943c"
+  },
+  "publish-lifecycle-event-recovered-delivery": {
+    "binding": "8f06b7e0ee1b9ea7239688bcc8fb9458f5b10186a9a9c2ad7fe89e39ae3cf9f2",
+    "specification": {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "method": "publish_to",
+      "args": [
+        "lifecycle-event-recovered-2",
+        "addr#751d7bc9ba337aacbf6928e79ba45c7c1097ca9b",
+        "lifecycle-event-recovered-delivery"
+      ]
+    },
+    "tx": "0x871991918950e5b68a07370530635dab897c6020bd2dea42e905ba0546ee31b3"
+  },
+  "lifecycle-event-execute-recovery": {
+    "binding": "66185108b8970801968a9b368a8b22ce83fc49690d94df88d57255ccbcf5b38a",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "execute",
+      "args": [
+        "lifecycle-event",
+        "lifecycle-event-recovered-action"
+      ]
+    },
+    "tx": "0xd6da784e21a480e69adab33f3b5b470fd32b24751d26490984559e5a5c74b3b4"
+  },
+  "lifecycle-event-opened-cancellation-blocked": {
+    "binding": "60fb11ded0bf4cb89e032d9b6160ff639bf8184d0646e461c23d82e6c70accee",
+    "specification": {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "method": "cancel_request",
+      "args": [
+        "lifecycle-event-recovered-2"
+      ]
+    },
+    "tx": "0x874507a150ab8b399b862e3ffa57a988ee381c0cfeb2430f3f74844f561271d6"
   }
 }
