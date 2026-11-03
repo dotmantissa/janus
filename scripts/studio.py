@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 import re
 import time
+import requests
+from urllib.parse import urlsplit
 from eth_account import Account
 from genlayer_py import create_client
 from genlayer_py.chains import studionet
@@ -17,6 +19,35 @@ from genlayer_py.exceptions import GenLayerError
 
 ROOT = Path(__file__).resolve().parents[1]
 _last_rpc_at = 0.0
+
+
+def authenticated_rpc(url, token):
+    parsed = urlsplit(url)
+    if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment:
+        raise ValueError('RPC transport must be a plain HTTPS endpoint')
+    if not isinstance(token, str) or not re.fullmatch(r'[0-9a-f]{64}', token):
+        raise ValueError('RPC transport token must contain 64 lowercase hex characters')
+
+    def call(method, params):
+        try:
+            response = requests.post(url, json={'jsonrpc': '2.0', 'id': int(time.time() * 1000), 'method': method, 'params': params},
+                                     headers={'Content-Type': 'application/json', 'User-Agent': 'genlayer-py', 'Authorization': 'Bearer ' + token},
+                                     timeout=(10, 75), allow_redirects=False)
+        except requests.exceptions.RequestException as error:
+            # A transport error can make a submission ambiguous. Propagate it;
+            # only explicit quota rejections are retried by paced_rpc.
+            raise GenLayerError('RPC transport failed: ' + type(error).__name__) from error
+        try:
+            reply = response.json()
+        except ValueError as error:
+            raise GenLayerError('RPC transport returned invalid JSON') from error
+        if not isinstance(reply, dict) or reply.get('jsonrpc') != '2.0' or not ('result' in reply or 'error' in reply):
+            raise GenLayerError('RPC transport returned an invalid reply')
+        if reply.get('error'):
+            error = reply['error']
+            raise GenLayerError(f"{method} failed (code={error.get('code', 'unknown')}): {error.get('message', 'unknown error')}")
+        return reply
+    return call
 
 
 def paced_rpc(request):
@@ -88,6 +119,13 @@ class Studio:
         self.client = create_client(chain=studionet, account=self.account)
         provider = getattr(self.client, 'provider', None)
         if provider is not None:
+            transport_path = ROOT / '.secrets' / 'studio-rpc.json'
+            if transport_path.exists():
+                transport = json.loads(transport_path.read_text())
+                if set(transport) != {'url', 'token'}:
+                    raise ValueError('Invalid private RPC transport configuration')
+                provider.make_request = authenticated_rpc(transport['url'], transport['token'])
+                print('Using authenticated verification RPC transport:', transport['url'], flush=True)
             provider.make_request = paced_rpc(provider.make_request)
         self.folder = ROOT / 'evidence' / journal
         self.folder.mkdir(parents=True, exist_ok=True)

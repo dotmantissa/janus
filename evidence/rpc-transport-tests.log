@@ -1,0 +1,53 @@
+TAP version 13
+# Janus RPC transport failure RangeError
+# Janus RPC transport failure SyntaxError
+# Janus RPC transport failure Error
+# Subtest: authentication and absent configuration fail closed
+ok 1 - authentication and absent configuration fail closed
+  ---
+  duration_ms: 42.598497
+  ...
+# Subtest: administrative methods, batches and invalid JSON are rejected
+ok 2 - administrative methods, batches and invalid JSON are rejected
+  ---
+  duration_ms: 7.165399
+  ...
+# Subtest: request bytes and reply bytes are preserved; authentication stays at relay
+ok 3 - request bytes and reply bytes are preserved; authentication stays at relay
+  ---
+  duration_ms: 8.5819
+  ...
+# Subtest: genuine quota response is passed through without a retry
+ok 4 - genuine quota response is passed through without a retry
+  ---
+  duration_ms: 2.865899
+  ...
+# Subtest: redirects and changed final URLs are rejected
+ok 5 - redirects and changed final URLs are rejected
+  ---
+  duration_ms: 4.1713
+  ...
+# Subtest: request and streamed response sizes are bounded
+ok 6 - request and streamed response sizes are bounded
+  ---
+  duration_ms: 78.048094
+  ...
+# Subtest: non-RPC replies and network failures cannot become successful receipts
+ok 7 - non-RPC replies and network failures cannot become successful receipts
+  ---
+  duration_ms: 4.420599
+  ...
+# Subtest: large genuine reply remains exact after compression
+ok 8 - large genuine reply remains exact after compression
+  ---
+  duration_ms: 148.543889
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 452.727364

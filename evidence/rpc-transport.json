@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-11-03T13:18:57.623903+00:00",
+  "url": "https://janus-verification-rpc.vercel.app/api/rpc",
+  "upstream": "https://studio.genlayer.com/api",
+  "chain_id": 61999,
+  "deployment_id": "dpl_CDgnJ82zpNb1RvcY1gmavfyhHHHM",
+  "project_id": "prj_0xHeafCxVii0vMr3LTYMUmZ3AGAU",
+  "authentication": "256-bit private bearer token; unauthenticated request rejected with HTTP 401",
+  "request_policy": "One upstream request per authenticated request, identical request bytes, no redirect or relay retry; eight-second client pacing",
+  "reply_policy": "Original upstream response bytes, lossless gzip; no result synthesis",
+  "source_files": [
+    {
+      "file": "rpc_transport/.vercelignore",
+      "vercel_file_id": "0819094e0bda9d26469b531be8774ebb64f853c3",
+      "sha256": "5c954ef7fd8af232a209572a4023dab1763c2116e444ffef7db17c1508563095"
+    },
+    {
+      "file": "rpc_transport/api/rpc.mjs",
+      "vercel_file_id": "ddb2fd0cc02f294dc77abe49ef07635da60af23d",
+      "sha256": "95f611a9e838006d51393524e7a5b56c1609d5f2072801441914df08d6940bd5"
+    },
+    {
+      "file": "rpc_transport/core.mjs",
+      "vercel_file_id": "5be07d59e4d652e3844a1a7d0f1d13219cce27c3",
+      "sha256": "600450d10911c5dfa7415f2c14890e303c13fcab13a263b6bfe2ae58321d8361"
+    },
+    {
+      "file": "rpc_transport/package.json",
+      "vercel_file_id": "8964a0be154927c4ea04bc7587a17afb31f9b2b6",
+      "sha256": "2945aece5d3939f9bbd3bd417414af81e770771927b03b2e16a61e6d09ec3839"
+    },
+    {
+      "file": "rpc_transport/test/rpc.test.mjs",
+      "vercel_file_id": "7e3032948b2667394f8b3bfa392545a2ea376a05",
+      "sha256": "2358930efd4e8015e5f057bca6591d576e973a96d0882a65685c00a563dbe2d0"
+    },
+    {
+      "file": "rpc_transport/vercel.json",
+      "vercel_file_id": "e004721f3b5a84f54562193dafd0d640c1c6e933",
+      "sha256": "da2746e47ed1d99a410a3f8ea5db1d75a3f2857208cb89f7cbabfb09ba4ceb27"
+    }
+  ],
+  "contracts": [
+    {
+      "address": "0x053f2c4bD3Db613AE3A566B8EFc543c44D212e9E",
+      "file": "contracts/janus.py",
+      "sha256": "90f36a3d83c9b8950b272e75df66f6d383b950b4032295bcec2f0c517f145172",
+      "byte_length": 44985
+    },
+    {
+      "address": "0xf5d64152E73Bb2B74034CA9B80dfBd7b04945384",
+      "file": "contracts/notice_gate.py",
+      "sha256": "d1d22e9171839dc826cd1bcb6efd9766b773662c85e29933dd2838591fde4a8b",
+      "byte_length": 14298
+    },
+    {
+      "address": "0x751d7Bc9bA337AAcbf6928e79BA45c7C1097cA9B",
+      "file": "contracts/event_registry.py",
+      "sha256": "b60a27f6294c69473b5bae707ff6e97e7057cd56f5ecbee70f324f26fd8a332d",
+      "byte_length": 14294
+    }
+  ],
+  "trust": "Optional deployment-owned RPC transport; genuine Studio receipts and on-chain state remain authoritative. Private token is not published."
+}
